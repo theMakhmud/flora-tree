@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://floratreeservices.com.au/sitemap.xml

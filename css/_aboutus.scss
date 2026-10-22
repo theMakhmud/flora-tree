@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: signika;
+}
+.gsctext {
+  text-align: center;
+  margin: 20px 0 20px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.gardencard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin: 0 auto;
+  width: 90%;
+  padding: 20px 0;
+
+  a {
+    flex: 1 1 220px; /* responsive */
+    max-width: 280px;
+    box-sizing: border-box;
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-decoration: none;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    }
+
+    img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      border: 4px solid #5B8C51; /* brand green frame */
+    }
+
+    h4 {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #222;
+    }
+
+    p {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.5;
+    }
+  }
+}
+
+/* Optional section background */
+.services-section {
+    background: #f6fbf1;
+    padding: 60px 0;
+}
+
+/* ====== ≤ 1024px (tablet/small laptop) ====== */
+@media (max-width: 1024px) {
+  
+  .gsctext { margin: 48px 0 28px; font-size: 1.8rem; }
+
+  .gardencard {
+    gap: 22px;
+    width: 94%;
+    padding: 8px 0;
+
+    > div {
+      flex: 1 1 45%;       /* 2-up grid */
+      max-width: 360px;
+      padding: 22px 18px;
+      border-radius: 14px;
+
+      img {
+        width: 104px; height: 104px;
+        border-width: 3px;
+        margin-bottom: 14px;
+      }
+      h4 { font-size: 1.05rem; margin-top: 6px; }
+      p  { font-size: .95rem; line-height: 1.5; }
+    }
+  }
+}
+
+/* ====== ≤ 480px (mobile) ====== */
+@media (max-width: 480px) {
+  .gsctext { margin: 36px 0 18px; font-size: 1.55rem; }
+
+  .gardencard {
+    gap: 14px;
+    width: 92%;
+
+    > div {
+      flex: 1 1 100%;      /* 1-up stack */
+      max-width: 100%;
+      padding: 16px 14px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,.06);
+      transition: box-shadow .2s ease; /* avoid jumpy hover on touch */
+      &:hover { transform: none; }
+
+      img {
+        width: 88px; height: 88px;
+        border-width: 3px;
+        margin-bottom: 10px;
+      }
+      h4 { font-size: 1rem; margin-top: 4px; }
+      p  { font-size: .92rem; line-height: 1.45; }
+    }
+  }
+}

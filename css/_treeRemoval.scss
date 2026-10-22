@@ -1,0 +1,278 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: signika;
+}
+
+:root{
+    --brand: #6AB435;      
+    --ink: #111827;        
+    --muted: #6b7280;     
+    --line: rgba(17,24,39,.08);
+}
+.treeremoval-page header section{
+   margin: auto;
+     h1{
+    width: 100%;
+    text-align: center;
+}
+}
+.h1_text{
+    margin: 0 auto;
+    font-size: 35px;
+}
+   
+
+/* ===== Tree Removal Section ===== */
+.ourTreeRemoval{
+    --radius: 28px;
+    --pad: clamp(16px, 2vw, 28px);
+    display: grid;
+    grid-template-columns: 1.1fr 1.2fr;
+    gap: clamp(18px, 3vw, 36px);
+    align-items: center;
+    width: 90%;
+    margin: clamp(24px, 5vw, 20px) auto;
+
+    .otr-media{
+        position: relative;
+        margin: 0;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,.08);
+        
+        img{
+            width: 100%;
+            height: clamp(260px, 52vh, 520px);
+            object-fit: cover;
+            object-position: 50% 25%;
+            display: block;
+            transform: scale(1.01);
+            transition: transform .6s ease;
+        }
+    
+        /* soft edge vignette for premium feel */
+        &::after{
+            content:"";
+            position:absolute; inset:0;
+            background: radial-gradient(100% 60% at 50% 40%, transparent 50%, rgba(0,0,0,.06) 100%);
+            pointer-events:none;
+        }
+    
+        &:hover img{ transform: scale(1.04); }
+    }
+
+    .otr-content{
+        background: linear-gradient(180deg, #fff, #fbfdf9);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: clamp(18px, 3vw, 36px);
+        box-shadow: 0 12px 32px rgba(17,24,39,.06);
+        
+        .otr-kicker{
+            font-size: .9rem;
+            font-weight: 700;
+            letter-spacing: .04em;
+            color: var(--brand);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            
+            &::before{
+              content:"";
+              width: 8px; height: 8px;
+              border-radius: 999px;
+              background: var(--brand);
+          }
+        }
+
+    h2{
+        font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+        line-height: 1.15;
+        margin: 0 0 10px;
+        color: var(--ink);
+    }
+
+    .otr-intro{
+        color: var(--muted);
+        font-size: clamp(1rem, 1.4vw, 1.05rem);
+        margin: 0 0 18px;
+    }
+
+    .otr-list{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px 22px;
+        list-style: none;
+        padding: 0;
+        margin: 0 0 22px;
+        
+        li{
+          display: flex; align-items: flex-start; gap: 10px;
+          font-size: clamp(1rem, 1.5vw, 1.075rem);
+          color: var(--ink);
+        
+          i{
+            color: #6AB435;
+            font-size: 1.1em;
+            margin-top: 2px;
+            filter: drop-shadow(0 1px 0 rgba(0,0,0,.08));
+          }
+        }
+    }
+
+    .otr-cta{
+        display: inline-flex; align-items: center; gap: 8px;
+        background: var(--brand);
+        color: #fff; text-decoration: none;
+        font-weight: 700; letter-spacing: .02em;
+        border-radius: 999px;
+        padding: 12px 20px;
+        box-shadow: 0 8px 18px rgba(91,140,81,.24);
+        transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+        
+        &:hover{
+          transform: translateY(-1px);
+          box-shadow: 0 12px 22px rgba(91,140,81,.32);
+        }
+        &:active{ transform: translateY(0); }
+    }
+  }
+}
+
+
+ 
+
+
+
+
+.howTreeCard{
+  background:#6AB435;
+  color:#fff;
+  padding: clamp(32px, 6vw, 72px) 0;
+  text-align:center;
+
+}
+
+.howTreeCard h2{
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  margin: 0 0 clamp(18px, 3vw, 28px);
+}
+
+.howTree-wrap{
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr;   /* image | steps */
+  gap: clamp(18px, 3vw, 40px);
+  align-items: center;
+  text-align: left;                      /* content reads left */
+}
+
+.howTree-wrap > img{
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
+}
+
+.howTree-steps{
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 2.2vw, 20px);
+}
+
+.texthowtree{
+  display: grid;
+  grid-template-columns: 64px 1fr;      /* number column + content */
+  align-items: start;
+  gap: 16px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  transition: background .15s ease, color .15s ease, transform .15s ease;
+}
+
+.texthowtree:hover{
+  background: rgba(255,255,255,.12);
+  transform: translateY(-1px);
+}
+
+.step-num{
+  display: grid; place-items: center;
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.12);
+  border: 2px solid rgba(255,255,255,.25);
+  font-weight: 800;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  line-height: 1;
+  color:#fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+}
+
+.texthowtree h3{
+  margin: 0 0 6px;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  color:#fff;
+  font-weight: 700;
+}
+
+.texthowtree p{
+  margin: 0;
+  color: rgba(255,255,255,.92);
+  font-size: clamp(.95rem, 1.5vw, 1.05rem);
+}
+
+
+
+@media (max-width: 1024px){
+    .ourTreeRemoval{
+        grid-template-columns: 1fr !important;
+  }
+
+    .ourTreeRemoval .otr-content .otr-list{
+        grid-template-columns: 1fr 1fr;
+  }
+    .howTree-wrap{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+    .howTree-wrap > img{
+      order: 1;   /* image first; swap to 2 if you want text first */
+    }
+    .howTree-steps{
+      order: 2;
+    }
+}
+
+
+@media (max-width: 480px){
+  .ourTreeRemoval{
+    grid-template-columns: 1fr !important; 
+
+    gap: 14px;
+  }
+  .ourTreeRemoval .otr-media img{
+    height: 38vh;
+    object-position: 50% 30%;
+  }
+  .ourTreeRemoval .otr-content{
+    padding: 16px;
+  }
+  .ourTreeRemoval .otr-content .otr-list{
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .ourTreeRemoval .otr-cta{
+    width: 100%;
+    justify-content: center;
+    padding: 14px 18px;
+  }
+  .howTreeCard h2{
+    padding: 10px;
+  }
+  .texthowtree{ grid-template-columns: 52px 1fr; }
+  .step-num{ width:48px; height:48px; border-radius:12px; }
+}

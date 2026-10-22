@@ -1,0 +1,502 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: signika;
+}
+
+body {
+  background-color: #F8F7F0;
+}
+
+header {
+  background: url(../img/header_pages.jpg);
+  background-size: cover;
+  height: 65.5vh;
+  box-sizing: border-box;
+  border-radius: 0 0 20px 20px;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+header nav img {
+  width: 100px;
+}
+header nav > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: white;
+}
+header nav > div a,
+header nav > div p {
+  -webkit-text-decoration: 0;
+          text-decoration: 0;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+header nav > div h3 {
+  font-weight: 100;
+}
+header nav > div span {
+  width: 5px;
+  height: 5px;
+  background-color: yellow;
+  border-radius: 50px;
+}
+header nav .call img {
+  width: 50px;
+}
+header > section {
+  color: white;
+  padding: 100px;
+}
+header > section h1 {
+  font-size: 50px;
+  margin: 20px 0;
+}
+header > section div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header > section button {
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-size: 15px;
+  border: 0;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.drop {
+  position: relative;
+  color: yellow;
+}
+.drop > div {
+  position: absolute;
+  padding: 20px;
+  background-color: white;
+  color: black;
+  width: 150px;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
+  top: 40px;
+  border-top: 3px solid yellow;
+  animation-name: drop;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+.drop > div a,
+.drop > div p {
+  color: black;
+  -webkit-text-decoration: 0;
+          text-decoration: 0;
+}
+.drop > div > a,
+.drop > div p:hover {
+  color: green;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 100px;
+}
+main b {
+  background-color: white;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-weight: 100;
+}
+main h1 {
+  font-size: 50px;
+  font-weight: 400;
+}
+main > :nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+main > :nth-child(1) div {
+  width: 49%;
+}
+main h2 {
+  font-size: 22px;
+  margin-top: 30px;
+  background-color: white;
+  width: 100%;
+  font-weight: 400;
+  padding: 15px 30px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation-duration: 200ms;
+  animation-fill-mode: forwards;
+}
+@keyframes h2 {
+  100% {
+    background-color: #5B8C51;
+    color: white;
+  }
+}
+main .options {
+  display: none;
+  width: 100% !important;
+  padding: 20px 0;
+  box-sizing: border-box;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+@keyframes open {
+  0% {
+    opacity: 0;
+    max-height: 0;
+  }
+  100% {
+    max-height: 500px;
+  }
+}
+@keyframes exit {
+  0% {
+    height: 300px;
+  }
+  100% {
+    height: 0;
+  }
+}
+main .options p {
+  padding-left: 20px;
+  color: #666666;
+}
+
+footer .logofooter {
+  width: 200px !important;
+}
+footer > div {
+  display: flex;
+  justify-content: space-between;
+  background-color: #EDDD5E;
+  padding: 25px 100px;
+}
+footer > div div {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+footer > div div span {
+  width: 7px;
+  height: 7px;
+  background-color: white;
+  border-radius: 50px;
+}
+footer > div div a {
+  color: #404A3D;
+  text-transform: uppercase;
+  -webkit-text-decoration: 0;
+          text-decoration: 0;
+}
+footer > div div > div {
+  padding: 20px 18px;
+  background-color: white;
+  border-radius: 50px;
+}
+footer section {
+  display: flex;
+  justify-content: space-between;
+  padding: 70px 100px;
+  background-color: white;
+  background: url(../img/futer.png);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+footer section > :nth-child(1) > p {
+  font-size: 20px;
+  margin: 20px 0;
+  color: #666666;
+  line-height: 25px;
+  width: 450px;
+}
+footer section > :nth-child(1) button {
+  padding: 10px;
+  border: 0;
+  border-radius: 30px;
+  color: green;
+  font-size: 20px;
+  cursor: pointer;
+}
+footer section > :nth-child(2) h1 {
+  font-size: 30px;
+  font-weight: 400;
+  width: 650px;
+  margin-bottom: 20px;
+}
+footer section > :nth-child(2) > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+footer section > :nth-child(2) > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+footer section > :nth-child(2) > div > div h2 {
+  font-weight: 400;
+}
+footer section > :nth-child(2) > div > div p {
+  color: #666666;
+}
+footer section > :nth-child(2) > div > div a {
+  -webkit-text-decoration: 0;
+          text-decoration: 0;
+}
+footer section > :nth-child(2) > :nth-child(3) {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #cfcfcf;
+}
+footer section > :nth-child(2) > :nth-child(3) > div {
+  -moz-columns: 3;
+       columns: 3;
+  -moz-column-rule: solid 2px #cfcfcf;
+       column-rule: solid 2px #cfcfcf;
+  display: block;
+}
+footer section > :nth-child(2) > :nth-child(3) p {
+  color: #666666;
+}
+footer .copy {
+  text-align: center;
+  margin-top: -50px;
+}
+
+@media screen and (max-width: 426px) {
+  header {
+    background-size: cover;
+    background-position: 100% 50%;
+    height: 32vh;
+  }
+  header nav > :nth-child(1) {
+    padding: 10px;
+  }
+  header nav > :nth-child(1) img {
+    width: 70px;
+  }
+  header nav .text-navbar {
+    display: none;
+  }
+  header nav > :nth-child(2) > img {
+    width: 30px;
+  }
+  header nav > :nth-child(2) h3 {
+    font-size: 12px;
+    width: 90px;
+  }
+  header nav > :nth-child(2) > :nth-child(3) {
+    display: none;
+  }
+  header nav > div {
+    gap: 10px;
+  }
+  header nav .but {
+    padding: 10px !important;
+    border-bottom-left-radius: 20px;
+  }
+  header nav .but button {
+    width: 100px !important;
+    padding: 7px 14px;
+    border-radius: 10px;
+    font-size: 7px;
+  }
+  header nav .but > :nth-child(1) {
+    top: 0px;
+    left: -30px;
+  }
+  header nav .but > :nth-child(2) {
+    bottom: -30px;
+    right: 0px;
+  }
+  header > section {
+    color: white;
+    padding: 25px;
+  }
+  header > section h1 {
+    font-size: 25px;
+    margin: 20px 0;
+  }
+  header > section p {
+    font-size: 10px;
+  }
+  header > section div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  main {
+    gap: 25px;
+    padding: 10px;
+  }
+  main b {
+    background-color: white;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-weight: 100;
+  }
+  main h1 {
+    font-size: 50px;
+    font-weight: 400;
+  }
+  main > :nth-child(1) {
+    flex-direction: column;
+  }
+  main > :nth-child(1) div {
+    width: 100%;
+  }
+  main h2 {
+    font-size: 22px;
+    margin-top: 30px;
+    background-color: white;
+    width: 100%;
+    font-weight: 400;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+  }
+  @keyframes h2 {
+    100% {
+      background-color: #5B8C51;
+      color: white;
+    }
+  }
+  main .options {
+    display: none;
+    width: 100% !important;
+    padding: 20px 0;
+    box-sizing: border-box;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+  }
+  @keyframes open {
+    0% {
+      opacity: 0;
+      max-height: 0;
+    }
+    100% {
+      max-height: 500px;
+    }
+  }
+  @keyframes exit {
+    0% {
+      height: 300px;
+    }
+    100% {
+      height: 0;
+    }
+  }
+  main .options p {
+    padding-left: 20px;
+    color: #666666;
+  }
+  footer {
+    margin-top: 50px;
+  }
+  footer > div {
+    justify-content: center;
+    padding: 20px 50px;
+  }
+  footer > div > :nth-child(1) {
+    display: none;
+  }
+  footer > div > :nth-child(2) div {
+    padding: 12px 10px;
+  }
+  footer > div > :nth-child(2) p {
+    font-size: 10px;
+    width: 90px;
+  }
+  footer section {
+    flex-direction: column;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    gap: 30px;
+  }
+  footer section > :nth-child(1) > p {
+    font-size: 20px;
+    width: 340px;
+  }
+  footer section > :nth-child(2) h1 {
+    font-size: 22px;
+    width: 350px;
+  }
+  footer section > :nth-child(2) > div {
+    display: flex;
+    justify-content: space-between;
+  }
+  footer section > :nth-child(2) > div > div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  footer section > :nth-child(2) > div > div h2 {
+    font-size: 16px;
+  }
+  footer section > :nth-child(2) > div > div p {
+    font-size: 8px;
+  }
+  footer section > :nth-child(2) > :nth-child(3) > div {
+    height: 20px;
+  }
+  footer section > :nth-child(2) > :nth-child(3) p {
+    color: #666666;
+  }
+}
+#iconfixwhatsapp {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  padding: 10px 15px;
+  background-color: #5B8C51;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  z-index: 1000;
+  font-size: 18px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #555;
+}/*# sourceMappingURL=faq.css.map */

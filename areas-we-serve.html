@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Services Across Canberra & Surrounding Suburbs | Flora</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S51FPEJEGY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-S51FPEJEGY');
+    </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Helper: send GA4 event safely before navigation
+  function fire(name, params = {}) {
+    try {
+      params.transport_type = 'beacon';
+      gtag('event', name, params);
+    } catch (e) {}
+  }
+
+  // --- Phone clicks ---
+  document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+    a.addEventListener('click', () => {
+      fire('call_click', {
+        link_url: a.href,
+        event_category: 'lead',
+        event_label: 'Phone'
+      });
+    });
+  });
+
+  // --- Email clicks ---
+  document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+    a.addEventListener('click', () => {
+      fire('email_click', {
+        link_url: a.href,
+        event_category: 'lead',
+        event_label: 'Email'
+      });
+    });
+  });
+
+  // --- WhatsApp clicks (covers wa.me and api.whatsapp.com) ---
+  document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(a => {
+    a.addEventListener('click', () => {
+      fire('whatsapp_click', {
+        link_url: a.href,
+        event_category: 'lead',
+        event_label: 'WhatsApp'
+      });
+    });
+  });
+
+});
+    </script>
+
+    <meta name="description" content="Flora Tree Services provides professional tree removal, pruning, hedge trimming, stump grinding & garden care across Canberra, Queanbeyan, Googong, Jerrabomberra, Bungendore, Murrumbateman, Sutton & nearby regions.">
+    <link rel="canonical" href="https://floratreeservices.com.au/areas-we-serve.html">
+
+    <!-- ✅ Open Graph for Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Areas We Serve | Tree Services in Canberra, Queanbeyan & NSW Towns">
+    <meta property="og:description" content="Local arborists offering expert tree removal, pruning & garden care across Canberra,   Queanbeyan, Googong, Jerrabomberra & surrounding NSW towns.">
+    <meta property="og:url" content="https://floratreeservices.com.au/areas-we-serve.html">
+    <meta property="og:image" content="https://floratreeservices.com.au/images/suburbs/canberra-tree-services.jpg">
+    <meta property="og:site_name" content="Flora Tree Services">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Tree Removal & Arborist Services",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Flora Tree Services",
+        "areaServed": [
+          "Gungahlin", "Belconnen", "Tuggeranong", "Woden Valley", 
+          "Inner North", "Inner South", "Weston Creek", "Molonglo",
+          "Queanbeyan", "Googong", "Jerrabomberra", "Bungendore", 
+          "Murrumbateman", "Sutton", "Royalla", "Michelago"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Canberra",
+          "addressRegion": "ACT",
+          "addressCountry": "Australia"
+        },
+        "url": "https://floratreeservices.com.au"
+    }
+  }
+  </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/flora-tree-services-logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body class="areas-page">
+
+    <header id="head">
+       <!-- html nav -->
+         <nav>
+            <div class="nav-inner">
+                <a href="/">
+                    <img src="./images/flora-tree-services-logo.png" alt="Flora Tree Services - Tree Removal & Arborist Canberra">
+                </a>         
+                <!-- Hamburger (mobile only) -->
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu(this)">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+            
+                <div class="text-navbar">
+                    <a href="/" ><p>Home</p></a>
+                    <span></span>
+                    <a href="about-us.html"><p>About Us</p></a>
+                    <span></span>
+                    
+                     <div class="drop">
+                        <p>Services <i class="fa-solid fa-angle-down"></i></p>
+                        <div class="menu">
+                          <a href="tree-removal-canberra.html"><p>Tree Removal</p></a>
+                          <a href="tree-pruning-canberra.html"><p>Tree Pruning & Shaping</p></a>
+                          <a href="hedge-trimming-canberra.html"><p>Hedge Trimming</p></a>
+                          <a href="garden-maintenance-canberra.html"><p>Garden Maintenance</p></a>
+                          <a href="tree-removal-canberra.html"><p>Stump Grinding</p></a>
+                        </div>
+                    </div>
+                    <span></span>
+                    <div class="drop">
+                        <p>Service Areas<i class="fa-solid fa-angle-down"></i></p>
+                        <div class="menu">
+                            <a href="areas-we-serve.html" class="active"><p>All Service Areas</p></a>
+                            <a href="tree-services-tuggeranong.html"><p>Tuggeranong</p></a>
+                            <a href="tree-services-gungahlin.html"><p>Gungahlin</p></a>
+                        </div>
+                    </div>
+                
+                    <span></span>
+                    <!--<a href="/"><p>Blog</p></a>
+                    <span></span>-->
+                    <a href="contact.html"><p>Contact Us</p></a>
+                    
+                    <div class="call">
+                    <a href="tel:0480560030">
+                    <img src="images/call-flora-tree-services.png" alt="Call Flora Tree Services">
+                    <div>
+                        <h3>Call or Text us</h3>
+                        <h3 class="pnumber">0480 560 030</h3>
+                    </div>
+                    </a>
+                </div>
+                </div>
+            </div>
+        </nav>
+        
+        <section>
+            <h1>Areas We Serve — Canberra & Surrounding Regions</h1>
+
+        </section>
+    </header>
+
+
+    <main>
+<section class="areas">
+  <div class="areas-grid">
+    <!-- CARD -->
+    <a href="tree-services-gungahlin.html" style="text-decoration:none; color:inherit;">
+    <div class="area-card" data-aos="fade-up" data-aos-duration="1000">
+      <div class="area-media">
+        <img src="images/suburbs/Gungahlinwebp.webp" alt="Tree services in Gungahlin Canberra">
+      </div>
+      <div class="area-text">
+        <h2><span class="dot"></span> Gungahlin</h2>
+        <h4>Tree removal, pruning and tidy garden care across Gungahlin.</h4>
+        <p>Suburbs: Amaroo, Bonner, Casey, Franklin, Gungahlin, Harrison, Ngunnawal, Nicholls,
+          Palmerston, Taylor, Moncrieff, Forde.</p>
+      </div>
+    </div>
+    </a>
+
+    <div class="area-card" data-aos="fade-up" data-aos-duration="1500">
+      <div class="area-media">
+        <img src="images/suburbs/belconnen.jpg" alt="Tree services in Belconnen Canberra">
+      </div>
+      <div class="area-text">
+        <h2><span class="dot"></span> Belconnen</h2>
+        <h4>Professional Arborist & Tree Services in Belconnen.</h4>
+        <p>Suburbs: Aranda, Bruce, Charnwood, Cook, Evatt, Florey, Giralang, Hawker, Kaleen, Lawson,
+          Macgregor, Macquarie, Page, Scullin, Spence.</p>
+      </div>
+    </div>
+    
+    <a href="tree-services-tuggeranong.html" style="text-decoration:none; color:inherit;">
+    <div class="area-card" data-aos="fade-up" data-aos-duration="1500">
+      <div class="area-media">
+        <img src="images/suburbs/Tuggeranong.jpg" alt="Tree services in Tuggeranong Canberra">
+      </div>
+      <div class="area-text">
+        <h2><span class="dot"></span> Tuggeranong</h2>
+        <h4>Reliable Tree Services & Garden Maintenance in Tuggeranong</h4>
+        <p>Suburbs: Banks, Calwell, Chisholm, Conder, Gordon, Greenway, Isabella Plains, Kambah, Monash, Oxley, Richardson, Theodore, Wanniassa.</p>
+      </div>
+    </div>
+    </a>
+
+    <div class="area-card" data-aos="fade-up" data-aos-duration="1500">
+      <div class="area-media">
+        <img src="images/suburbs/Woden.jpg" alt="Tree services in Woden Canberra">
+      </div>
+      <div class="area-text">
+        <h2><span class="dot"></span> Woden Valley</h2>
+        <h4>Professional Tree & Garden Services in Woden Valley</h4>
+        <p>Suburbs: Chifley, Curtin, Farrer, Garran, Hughes, Lyons, Mawson, Pearce, Phillip, Torrens.</p>
+      </div>
+    </div>
+    
+    <div class="area-card" data-aos="fade-up" data-aos-duration="1500">
+      <div class="area-media">
+        <img src="images/suburbs/canberra-tree-services.jpg" alt="Tree services in Inner North Canberra">
+      </div>
+      <div class="area-text">
+        <h2><span class="dot"></span> Inner North</h2>
+        <h4>Arborist Services & Garden Care - Inner North Canberra</h4>
+        <p>Suburbs: Ainslie, Braddon, Dickson, Downer, Hackett, Lyneham, O'Connor, Turner, Watson.</p>
+      </div>
+    </div>
+    
+    <div class="area-card" data-aos="fade-up" data-aos-duration="1500">
+      <div class="area-media">
+        <img src="images/suburbs/inner_south.jpg" alt="Tree services in Inner South Canberra">
+      </div>
+      <div class="area-text">
+        <h2><span class="dot"></span> Inner South</h2>
+        <h4>Trusted Tree Removal, Pruning & Garden Maintenance in Inner South Canberra</h4>
+        <p>Suburbs: Barton, Deakin, Forrest, Griffith, Kingston, Narrabundah, Red Hill, Yarralumla.</p>
+      </div>
+    </div>
+    
+    <div class="area-card" data-aos="fade-up" data-aos-duration="1500">
+      <div class="area-media">
+        <img src="images/suburbs/molonglo_valley.jpg" alt="Tree services in Weston Creek & Molonglo Canberra">
+      </div>
+      <div class="area-text">
+        <h2><span class="dot"></span> Weston Creek & Molonglo</h2>
+        <h4>Tree Services for Weston Creek & Molonglo</h4>
+        <p>Suburbs: Coombs, Denman Prospect, Duffy, Fisher, Holder, Rivett, Stirling, Waramanga, Wright.</p>
+      </div>
+    </div>
+    
+    <div class="area-card" data-aos="fade-up" data-aos-duration="1500">
+      <div class="area-media">
+        <img src="images/suburbs/tree-services-queanbeyan.jpg" alt="Tree services in Queanbeyan">
+      </div>
+      <div class="area-text">
+        <h2><span class="dot"></span> Queanbeyan region</h2>
+        <h4>Trusted Tree Care in Queanbeyan & Surrounds</h4>
+        <p>Suburbs: Queanbeyan East/West, Crestwood, Karabar, Greenleigh; plus Jerrabomberra, Googong.
+</p>
+      </div>
+    </div>
+    
+    <div class="area-card" data-aos="fade-up" data-aos-duration="1500">
+      <div class="area-media">
+        <img src="images/suburbs/tree-services-murrumbateman.jpeg" alt="Tree services in NSW towns">
+      </div>
+      <div class="area-text">
+        <h2><span class="dot"></span> Surrounding Towns</h2>
+        <h4>Tree Removal & Garden Services in NSW Towns</h4>
+        <p>Towns: Bungendore, Sutton, Murrumbateman, Royalla, Michelago.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        
+    </main>
+
+  
+<footer class="footer-min">
+  <div class="f-wrap">
+    <div class="f-brand">
+      <a href="/" class="f-logo">
+        <img src="./images/flora-tree-services-logo.png" alt="Flora Tree Services Canberra">
+      </a>
+      <p>Tree removal, pruning, hedge trimming, garden maintenance & stump grinding across Canberra & Queanbeyan.</p>
+    </div>
+
+<div class="f-hours">
+  <h4>Opening Hours</h4>
+  <ul>
+    <li>Mon - Sun</li>
+    <li>Open 24/7 for emergencies</li>
+  </ul>
+  <ul class="f-social" aria-label="Social links">
+        <li><a href="https://www.facebook.com/floratreeservices" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+        <li><a href="https://www.instagram.com/floratreeservices" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+      </ul>
+</div>
+
+    <div class="f-cta">
+      <a class="f-line" href="tel:0480560030"><i class="fa-solid fa-phone"></i>0480 560 030</a>
+      <a class="f-line" href="mailto:info@floratreeservices.com.au"><i class="fa-solid fa-envelope"></i>info@floratreeservices.com.au</a>
+      <a class="btn-quote" href="contact.html">Get a Free Quote</a>
+    </div>
+  </div>
+
+  <div class="f-bottom">
+    <p>© 2026 <a href="/">Flora Tree Services</a>. All rights reserved.</p>
+  </div>
+</footer>
+
+       <button id="backToTop" title="Tepaga qaytish">↑</button>
+
+    <a id="iconfixwhatsapp" class="whatsapp-fab" href="https://wa.me/61480560030?text=Hi%20Flora%20Tree%20Services%2C%20I%27d%20like%20a%20quote%20for%20%5Bservice%5D.%20My%20suburb%20is%20%5Bsuburb%5D." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+   </a>
+
+
+</body>
+<script src="js/main.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</html>

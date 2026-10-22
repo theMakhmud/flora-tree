@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hedge Trimming Canberra | Hedge Shaping & Pruning Services</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S51FPEJEGY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-S51FPEJEGY');
+    </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Helper: send GA4 event safely before navigation
+  function fire(name, params = {}) {
+    try {
+      params.transport_type = 'beacon';
+      gtag('event', name, params);
+    } catch (e) {}
+  }
+
+  // --- Phone clicks ---
+  document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+    a.addEventListener('click', () => {
+      fire('call_click', {
+        link_url: a.href,
+        event_category: 'lead',
+        event_label: 'Phone'
+      });
+    });
+  });
+
+  // --- Email clicks ---
+  document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+    a.addEventListener('click', () => {
+      fire('email_click', {
+        link_url: a.href,
+        event_category: 'lead',
+        event_label: 'Email'
+      });
+    });
+  });
+
+  // --- WhatsApp clicks (covers wa.me and api.whatsapp.com) ---
+  document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(a => {
+    a.addEventListener('click', () => {
+      fire('whatsapp_click', {
+        link_url: a.href,
+        event_category: 'lead',
+        event_label: 'WhatsApp'
+      });
+    });
+  });
+
+  // --- Form submissions (fires on submit) ---
+  // If you redirect to /thank-you.html, keep this AND use the thank-you event below.
+  document.querySelectorAll('form').forEach(f => {
+    f.addEventListener('submit', () => {
+      // GA4 recommended event for enquiries
+      fire('generate_lead', {
+        event_category: 'lead',
+        form_id: f.id || '(no id)',
+        form_action: f.action || window.location.pathname
+      });
+    });
+  });
+
+  // --- Optional: track outbound links (nice-to-have) ---
+  document.querySelectorAll('a[href^="http"]').forEach(a => {
+    try {
+      const isOutbound = a.hostname && a.hostname !== location.hostname;
+      if (isOutbound) {
+        a.addEventListener('click', () => {
+          fire('click_outbound', {
+            link_url: a.href,
+            event_category: 'engagement'
+          });
+        });
+      }
+    } catch(e){}
+  });
+
+  // --- If you're on /thank-you.html, also fire a confirmation event ---
+  if (location.pathname.toLowerCase().includes('thank-you')) {
+    fire('lead_thankyou', { event_category: 'lead' });
+    // You can mark this event as a conversion too (see below).
+  }
+});
+    </script>
+
+    <meta name="description" content="Professional hedge trimming, shaping & pruning services in Canberra, Queanbeyan & nearby areas. Keep your garden neat, healthy & private. Fully insured. Free quotes.">
+    <link rel="canonical" href="https://floratreeservices.com.au/hedge-trimming-canberra.html">
+  
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hedge Trimming Canberra | Hedge Shaping & Pruning Services">
+    <meta property="og:description" content="Expert hedge trimming and pruning services in Canberra & Queanbeyan. Fully insured. Free quotes.">
+    <meta property="og:url" content="https://floratreeservices.com.au/hedge-trimming-canberra.html">
+    <meta property="og:image" content="https://floratreeservices.com.au/images/hedge-trimming-canberra.jpg">
+    <meta property="og:site_name" content="Flora Tree Services">
+  
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Service",
+      "name":"Hedge Trimming",
+      "serviceType":"Hedge Trimming & Shaping",
+      "description":"Professional hedge trimming, shaping, and pruning services in Canberra, Queanbeyan & surrounding suburbs. Fully  insured and reliable arborists.",
+      "areaServed":["Canberra","Queanbeyan","Googong","Jerrabomberra"],
+      "provider":{
+        "@type":"LocalBusiness",
+        "name":"Flora Tree Services",
+        "telephone":"+61 480 560 030",
+        "email":"info@floratreeservices.com.au",
+        "address":{
+          "@type":"PostalAddress",
+          "addressLocality":"Canberra",
+          "addressRegion":"ACT",
+          "addressCountry":"Australia"
+        },
+        "url":"https://floratreeservices.com.au"
+      }
+    }
+    </script>
+    
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/flora-tree-services-logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="hedgetrimming-page">
+
+    <header id="head">
+        <nav>
+            <div class="nav-inner">
+                <a href="/">
+                    <img src="./images/flora-tree-services-logo.png" alt="Flora Tree Services - Tree Removal & Arborist Canberra">
+                </a>         
+                <!-- Hamburger (mobile only) -->
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu(this)">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+            
+                <div class="text-navbar">
+                    <a href="/"><p>Home</p></a>
+                    <span></span>
+                    <a href="about-us.html"><p>About Us</p></a>
+                    <span></span>
+                    
+                     <div class="drop">
+                        <p>Services <i class="fa-solid fa-angle-down"></i></p>
+                        <div class="menu">
+                          <a href="tree-removal-canberra.html"><p>Tree Removal</p></a>
+                          <a href="tree-pruning-canberra.html"><p>Tree Pruning & Shaping</p></a>
+                          <a href="hedge-trimming-canberra.html"><p>Hedge Trimming</p></a>
+                          <a href="garden-maintenance-canberra.html"><p>Garden Maintenance</p></a>
+                          <a href="tree-removal-canberra.html"><p>Stump Grinding</p></a>
+                        </div>
+                    </div>
+                    <span></span>
+                    <div class="drop">
+                        <p>Service Areas<i class="fa-solid fa-angle-down"></i></p>
+                        <div class="menu">
+                            <a href="areas-we-serve.html"><p>All Service Areas</p></a>
+                            <a href="tree-services-tuggeranong.html"><p>Tuggeranong</p></a>
+                            <a href="tree-services-gungahlin.html"><p>Gungahlin</p></a>
+                        </div>
+                    </div>
+                
+                    <span></span>
+                    <!--<a href="/"><p>Blog</p></a>
+                    <span></span>-->
+                    <a href="contact.html"><p>Contact Us</p></a>
+                    
+                    <div class="call">
+                    <a href="tel:0480560030">
+                    <img src="images/call-flora-tree-services.png" alt="Call Flora Tree Services">
+                    <div>
+                        <h3>Call or Text us</h3>
+                        <h3 class="pnumber">0480 560 030</h3>
+                    </div>
+                    </a>
+                </div>
+                </div>
+            </div>
+        </nav>
+        <section>
+            <h1>Professional Hedge Trimming Services in Canberra & Surrounds</h1>
+        </section>
+    </header>
+
+
+    <main>
+
+        <section class="hedge-trimming" aria-labelledby="hedge-heading">
+            <div class="hedge-content" data-aos="fade-up">
+              <h2 id="hedge-heading">Hedge Trimming at Flora Tree Services</h2>
+              <p class="hedge-intro">
+                Keep your garden looking neat, healthy, and inviting with our expert hedge trimming and shaping services across Canberra, Queanbeyan and nearby areas.
+              </p>
+              <ul class="hedge-list">
+                <li><i class="fa-solid fa-scissors"></i> Precise trimming for crisp, even lines</li>
+                <li><i class="fa-solid fa-leaf"></i> Shaping privacy screens & boundary hedges</li>
+                <li><i class="fa-solid fa-seedling"></i> Seasonal care to promote strong, healthy growth</li>
+                <li><i class="fa-solid fa-broom"></i> Professional tools for clean cuts & fast service</li>
+              </ul>
+              <a href="contact.html" class="hedge-cta">
+                Get a Free Hedge Trimming Quote <i class="fa-solid fa-square-arrow-up-right"></i>
+              </a>
+            </div>
+            <figure class="hedge-media" data-aos="fade-up">
+              <img src="./images/hedge-trimming-canberra.jpg" 
+                   alt="Professional hedge trimming service in Canberra garden" />
+            </figure>
+        </section>
+
+
+   
+        <div class="caruselWrapper" data-aos="fade-up">
+            <button class="carusel-btn prev" aria-label="Previous image">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="caruselImgcard">
+                <img src="./images/Hedge-Trimming3.webp" alt="Professional hedge trimming in Canberra garden">
+                <img src="./images/garden-maintenance-canberra.jpg" alt="Qualified arborist shaping tall boundary hedges Queanbeyan">
+                <img src="./images/hedge-trimming-canberra2.jpg" alt="Hedge pruning and maintenance service in Canberra">
+                <img src="./images/hedge-trimming-canberra.jpg" alt="Garden hedge shaping for neat and healthy growth Canberra">
+                <img src="./images/trimming.jpg" alt="Residential hedge trimming service Bungendore and Sutton">
+                <img src="./images/tree-pruning-canberra-800.webp" alt="Expert hedge pruning and waste removal Jerrabomberra">
+            </div>
+            <button class="carusel-btn next" aria-label="Next image">
+            <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+
+        <section class="whyChoose" id="why" data-aos="fade-up" data-aos-duration="1000">
+            <div class="wc-head">
+              <b class="b"><i class="fa-solid fa-leaf"></i> Why Choose Us</b>
+              <h2>Why Choose Flora Tree Services</h2>
+              <p>We combine local expertise, safety-first practices, and fair pricing to deliver the best tree care in          Canberra & Queanbeyan.</p>
+            </div>
+        
+            <ul class="wc-grid">
+              <li class="wc-card">
+                <h3>Free Site Assessment</h3>
+                <p>No-obligation inspections to explain options and costs before you commit.</p>
+              </li>
+          
+              <li class="wc-card">
+                <h3>Qualified & Insured Arborists</h3>
+                <p>Experienced, fully insured crews for safe work in tight or hazardous conditions.</p>
+              </li>
+          
+              <li class="wc-card">
+                <h3>Fast & Reliable Service</h3>
+                <p>From storm callouts to routine pruning, we turn up on time and get it done right.</p>
+              </li>
+          
+              <li class="wc-card">
+                <h3>Trusted Local Team</h3>
+                <p>Proudly serving Canberra, Queanbeyan, Googong & Jerrabomberra with great reviews.</p>
+              </li>
+            </ul>
+        </section>
+
+    </main>
+
+  
+
+    
+<footer class="footer-min">
+  <div class="f-wrap">
+    <div class="f-brand">
+      <a href="/" class="f-logo">
+        <img src="./images/flora-tree-services-logo.png" alt="Flora Tree Services Canberra">
+      </a>
+      <p>Tree removal, pruning, hedge trimming, garden maintenance & stump grinding across Canberra & Queanbeyan.</p>
+    </div>
+
+<div class="f-hours">
+  <h4>Opening Hours</h4>
+  <ul>
+    <li>Mon - Sun</li>
+    <li>Open 24/7 for emergencies</li>
+  </ul>
+  <ul class="f-social" aria-label="Social links">
+        <li><a href="https://www.facebook.com/floratreeservices" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+        <li><a href="https://www.instagram.com/floratreeservices" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+      </ul>
+</div>
+
+    <div class="f-cta">
+      <a class="f-line" href="tel:0480560030"><i class="fa-solid fa-phone"></i>0480 560 030</a>
+      <a class="f-line" href="mailto:info@floratreeservices.com.au"><i class="fa-solid fa-envelope"></i>info@floratreeservices.com.au</a>
+      <a class="btn-quote" href="contact.html">Get a Free Quote</a>
+    </div>
+  </div>
+
+  <div class="f-bottom">
+    <p>© 2026 <a href="/">Flora Tree Services</a>. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+    <button id="backToTop" title="Tepaga qaytish">↑</button>
+
+    <a id="iconfixwhatsapp" class="whatsapp-fab" href="https://wa.me/61480560030?text=Hi%20Flora%20Tree%20Services%2C%20I%27d%20like%20a%20quote%20for%20%5Bservice%5D.%20My%20suburb%20is%20%5Bsuburb%5D." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+   </a>
+
+
+</body>
+
+<script>
+    const carousel = document.querySelector('.caruselImgcard');
+    const prevBtn = document.querySelector('.carusel-btn.prev');
+    const nextBtn = document.querySelector('.carusel-btn.next');    
+    const scrollAmount = 420;    
+    prevBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });   
+    nextBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+</script>
+<script src="js/main.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+</html>

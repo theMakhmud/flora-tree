@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Flora Tree Services Canberra - Free Quotes</title>
+
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S51FPEJEGY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-S51FPEJEGY');
+    </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Helper: send GA4 event safely before navigation
+  function fire(name, params = {}) {
+    try {
+      params.transport_type = 'beacon';
+      gtag('event', name, params);
+    } catch (e) {}
+  }
+
+  // --- Phone clicks ---
+  document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+    a.addEventListener('click', () => {
+      fire('call_click', {
+        link_url: a.href,
+        event_category: 'lead',
+        event_label: 'Phone'
+      });
+    });
+  });
+
+  // --- Email clicks ---
+  document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+    a.addEventListener('click', () => {
+      fire('email_click', {
+        link_url: a.href,
+        event_category: 'lead',
+        event_label: 'Email'
+      });
+    });
+  });
+
+  // --- WhatsApp clicks (covers wa.me and api.whatsapp.com) ---
+  document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(a => {
+    a.addEventListener('click', () => {
+      fire('whatsapp_click', {
+        link_url: a.href,
+        event_category: 'lead',
+        event_label: 'WhatsApp'
+      });
+    });
+  });
+
+  // --- Form submissions (fires on submit) ---
+  // If you redirect to /thank-you.html, keep this AND use the thank-you event below.
+  document.querySelectorAll('form').forEach(f => {
+    f.addEventListener('submit', () => {
+      // GA4 recommended event for enquiries
+      fire('generate_lead', {
+        event_category: 'lead',
+        form_id: f.id || '(no id)',
+        form_action: f.action || window.location.pathname
+      });
+    });
+  });
+
+  // --- Optional: track outbound links (nice-to-have) ---
+  document.querySelectorAll('a[href^="http"]').forEach(a => {
+    try {
+      const isOutbound = a.hostname && a.hostname !== location.hostname;
+      if (isOutbound) {
+        a.addEventListener('click', () => {
+          fire('click_outbound', {
+            link_url: a.href,
+            event_category: 'engagement'
+          });
+        });
+      }
+    } catch(e){}
+  });
+
+  // --- If you're on /thank-you.html, also fire a confirmation event ---
+  if (location.pathname.toLowerCase().includes('thank-you')) {
+    fire('lead_thankyou', { event_category: 'lead' });
+    // You can mark this event as a conversion too (see below).
+  }
+});
+    </script>
+
+    <meta name="description" content="Contact Flora Tree Services for expert tree removal, pruning, stump grinding, hedge trimming & garden care in Canberra & Queanbeyan. Call 0480 560 030 or request a free quote online.">
+    <link rel="canonical" href="https://floratreeservices.com.au/contact.html">
+
+  <!-- ✅ Open Graph for Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact Us | Flora Tree Services Canberra – Free Quotes">
+  <meta property="og:description" content="Call 0480 560 030 or email info@floratreeservices.com.au for free quotes on tree removal, pruning, stump grinding, hedge trimming & garden care in Canberra.">
+  <meta property="og:url" content="https://floratreeservices.com.au/contact.html">
+  <meta property="og:image" content="https://floratreeservices.com.au/images/flora-tree-services-logo.png">
+  <meta property="og:site_name" content="Flora Tree Services">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Flora Tree Services",
+      "image": "https://floratreeservices.com.au/images/flora-tree-services-logo.png",
+      "telephone": "+61 480 560 030",
+      "email": "info@floratreeservices.com.au",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Canberra",
+        "addressRegion": "ACT",
+        "addressCountry": "Australia"
+      },
+      "url": "https://floratreeservices.com.au/contact.html",
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "08:00",
+        "closes": "19:00"
+      }],
+      "sameAs": [
+        "https://www.facebook.com/FloraTreeServices",
+        "https://www.instagram.com/floratreeservices"
+      ]
+    }
+  </script>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/flora-tree-services-logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body class="contact-page">
+
+    <header id="head">
+        <!-- html nav -->
+        <nav>
+            <div class="nav-inner">
+                <a href="/">
+                    <img src="./images/flora-tree-services-logo.png" alt="Flora Tree Services - Tree Removal & Arborist Canberra">
+                </a>         
+                <!-- Hamburger (mobile only) -->
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu(this)">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+            
+                <div class="text-navbar">
+                    <a href="/"><p>Home</p></a>
+                    <span></span>
+                    <a href="about-us.html"><p>About Us</p></a>
+                    <span></span>
+                    
+                     <div class="drop">
+                        <p>Services <i class="fa-solid fa-angle-down"></i></p>
+                        <div class="menu">
+                          <a href="tree-removal-canberra.html"><p>Tree Removal</p></a>
+                          <a href="tree-pruning-canberra.html"><p>Tree Pruning & Shaping</p></a>
+                          <a href="hedge-trimming-canberra.html"><p>Hedge Trimming</p></a>
+                          <a href="garden-maintenance-canberra.html"><p>Garden Maintenance</p></a>
+                          <a href="tree-removal-canberra.html"><p>Stump Grinding</p></a>
+                        </div>
+                    </div>
+                    <span></span>
+                    <div class="drop">
+                        <p>Service Areas<i class="fa-solid fa-angle-down"></i></p>
+                        <div class="menu">
+                            <a href="areas-we-serve.html"><p>All Service Areas</p></a>
+                            <a href="tree-services-tuggeranong.html"><p>Tuggeranong</p></a>
+                            <a href="tree-services-gungahlin.html"><p>Gungahlin</p></a>
+                        </div>
+                    </div>
+
+                    <span></span>
+                    <!--<a href="/"><p>Blog</p></a>
+                    <span></span>-->
+                    <a href="contact.html" class="active"><p>Contact Us</p></a>
+                    
+                    <div class="call">
+                    <a href="tel:0480560030" onclick="return gtagSendEvent('tel:0480560030');">
+                    <img src="images/call-flora-tree-services.png" alt="Call Flora Tree Services">
+                    <div>
+                        <h3>Call or Text us</h3>
+                        <h3 class="pnumber">0480 560 030</h3>
+                    </div>
+                    </a>
+                </div>
+                </div>
+            </div>
+        </nav>
+
+        <section>
+            <h1>Contact Flora Tree Services</h1>
+            <p>Get in touch with our qualified Canberra arborists for tree removal, pruning, stump grinding, hedge trimming, and garden maintenance. We provide fast, free quotes and are fully insured for your peace of mind.
+            </p>
+        </section>
+    </header>
+
+
+
+    <main class="contact-main">
+        <section class="under_header">
+            <a href="mailto:info@floratreeservices.com.au" class="card-link">
+            <div>
+                <div>
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <h3>Email us</h3>
+                </div>
+                <div>
+                    <p>info@floratreeservices.com.au<br>
+                        Send photos of the service for a faster quote.</p>
+                </div>
+            </div>
+            </a>
+            <a href="tel:+61480560030" class="card-link" onclick="return gtagSendEvent('tel:0480560030');">
+            <div>
+                <div>
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h3>Call us direct</h3>
+                </div>
+                <div>
+                    <p>Phone : 0480 560 030 <br>
+                       Available Mon-Sun, 8am-7pm. </p>
+                </div>
+            </div>
+            </a>
+            <a href="https://maps.google.com/?q=Canberra" target="_blank" class="card-link">
+            <div>
+                <div>
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3>Our Locations</h3>
+                </div>
+                <div>
+                    <p>Canberra, Queanbeyan, Jerrabomberra, Googong & nearby towns.</p>
+                </div>
+            </div>
+            </a>
+        </section>
+
+
+ <section class="clara form-only" id="quote">
+            <div class="claracard">
+              <b class="pill"><i class="fa-solid fa-leaf"></i> Free Quote</b>
+              <h2>Have any questions? Get A Free Quote!</h2>
+            
+              <form id="quoteForm" action="https://formspree.io/f/xkgvlzgd" method="POST" enctype="multipart/form-data" novalidate>
+                <div class="grid">
+                  <label class="field">
+                    <span>First name *</span>
+                    <input type="text" name="first_name" autocomplete="given-name" required placeholder="Jane">
+                  </label>
+              
+                  <label class="field">
+                    <span>Phone *</span>
+                    <input type="tel" name="phone" inputmode="tel" required placeholder="0480 560 030" pattern="[\d\s()+-]{8,}          ">
+                  </label>
+              
+                  <label class="field">
+                    <span>Email *</span>
+                    <input type="email" name="email" autocomplete="email" required placeholder="you@email.com">
+                  </label>
+              
+                  <label class="field">
+                    <span>Service *</span>
+                    <select name="service" id="serviceSelect" required>
+                      <option value="" selected disabled>Select a service</option>
+                      <option>Tree Removal</option>
+                      <option>Tree Pruning / Trimming</option>
+                      <option>Hedge Trimming</option>
+                      <option>Garden Maintenance</option>
+                      <option>Stump Grinding</option>
+                      <option>Emergency Tree Services</option>
+                    </select>
+                  </label>
+              
+                  <label class="field col-2">
+                    <span>Address *</span>
+                    <input type="text" name="address" autocomplete="street-address" required placeholder="Street, suburb,           postcode">
+                  </label>
+                </div>
+            
+                <label class="field">
+                  <span>Message *</span>
+                  <textarea name="message" rows="6" required placeholder="Tell us about the job, access, tree size/type,        hazards, deadlines…"></textarea>
+                </label>
+            
+                <!--<div class="upload-zone" id="dropZone">
+                  <i class="fa-regular fa-image"></i>
+                  <span>Drag &amp; drop photos or <u>browse</u> (up to 5 images, 10 MB each)</span>
+                  <input type="file" id="photos" name="files" accept="image/*" multiple>
+                </div> -->
+                <ul class="preview" id="preview"></ul>
+            
+                <div class="actions">
+                  <label class="agree">
+                    <input type="checkbox" name="consent" required>
+                    I agree to be contacted about my request.
+                  </label>
+              
+                  <button class="btn-send" type="submit">
+                    Submit Now <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+            
+                <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+        </section>
+
+    </main>
+
+
+
+<div class="map-wrap">
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13044.022968610352!2d149.13862204855332!3d-35.18140942808271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa85bd5852cad625%3A0x9694adf82b5c7c00!2sFlora%20Tree%20Services!5e0!3m2!1sen!2sau!4v1758886766275!5m2!1sen!2sau" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+
+
+    <footer class="footer-min">
+        <div class="f-wrap">
+            <div class="f-brand">
+            <a href="/" class="f-logo">
+              <img src="./images/flora-tree-services-logo.png" alt="Flora Tree Services Canberra">
+            </a>
+            <p>Tree removal, pruning, hedge trimming, garden maintenance & stump grinding across Canberra &     Queanbeyan.</p>
+            </div>
+
+            <div class="f-hours">
+              <h4>Opening Hours</h4>
+              <ul>
+                <li>Mon - Sun</li>
+                <li>Open 24/7 for emergencies</li>
+              </ul>
+              <ul class="f-social" aria-label="Social links">
+        <li><a href="https://www.facebook.com/floratreeservices" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+        <li><a href="https://www.instagram.com/floratreeservices" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                  </ul>
+            </div>
+        
+            <div class="f-cta">
+              <a class="f-line" href="tel:0480560030"><i class="fa-solid fa-phone"></i>0480 560 030</a>
+              <a class="f-line" href="mailto:info@floratreeservices.com.au"><i class="fa-solid fa-envelope"></i>info@floratreeservices.com.au</a>
+              <a class="btn-quote" href="contact.html">Get a Free Quote</a>
+            </div>
+        </div>
+      
+        <div class="f-bottom">
+            <p>© 2026 <a href="/">Flora Tree Services</a>. All rights reserved.</p>
+        </div>
+</footer>
+
+
+    <button id="backToTop" title="Tepaga qaytish">↑</button>
+
+    <a id="iconfixwhatsapp" class="whatsapp-fab" href="https://wa.me/61480560030?text=Hi%20Flora%20Tree%20Services%2C%20I%27d%20like%20a%20quote%20for%20%5Bservice%5D.%20My%20suburb%20is%20%5Bsuburb%5D." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+   </a>
+
+</body>
+<script src="js/main.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script> AOS.init(); </script>
+</html>

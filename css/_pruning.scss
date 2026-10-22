@@ -1,0 +1,168 @@
+.treepruning-page header section{
+   margin: auto;
+     h1{
+    width: 100%;
+    text-align: center;
+}
+}
+
+:root{
+  --brand:#6AB435;
+  --ink:#111827;
+  --muted:#6b7280;
+  --line:rgba(17,24,39,.08);
+  --accent:#6AB435;           /* check icon color */
+}
+
+/* Layout */
+.pruning-block{
+  display:grid;
+  grid-template-columns: 1.1fr 1.2fr;
+  gap: clamp(18px,3vw,40px);
+  align-items:center;
+  width: 90%;
+  margin: clamp(32px,6vw,72px) auto;
+}
+
+/* Image card */
+.pb-media{ margin:0; border-radius:24px; overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+.pb-media img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+/* Copy card */
+.pb-copy{
+  background: linear-gradient(180deg,#fff,#fbfdf9);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding: clamp(18px,3vw,36px);
+  box-shadow:0 12px 32px rgba(17,24,39,.06);
+}
+
+.pb-kicker{
+  margin:0 0 6px; color:var(--brand); font-weight:700; letter-spacing:.04em;
+  display:inline-flex; align-items:center; gap:8px;
+}
+.pb-kicker::before{ content:""; width:8px; height:8px; border-radius:999px; background:var(--brand); }
+
+.pb-copy h2{
+  margin:0 0 10px; color:var(--ink);
+  font-size: clamp(1.6rem,2.6vw,2.2rem); line-height:1.15;
+}
+
+.pb-intro{
+  margin:0 0 14px; color:var(--muted);
+  font-size: clamp(1rem,1.5vw,1.05rem); line-height:1.6;
+}
+
+/* Checklist */
+.pb-list{
+  display:grid; grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 10px 22px; list-style:none; padding:0; margin:0 0 18px;
+}
+.pb-list li{
+  display:flex; align-items:flex-start; gap:10px;
+  font-size: clamp(1rem,1.4vw,1.05rem); color:var(--ink); line-height:1.4;
+}
+.pb-list i{
+  color: var(--accent); font-size:1.1em; margin-top:2px; flex:0 0 auto;
+  filter: drop-shadow(0 1px 0 rgba(0,0,0,.08));
+}
+
+/* CTA */
+.pb-cta{
+  display:inline-flex; align-items:center; justify-content:center;
+  background: var(--brand); color:#fff; text-decoration:none; font-weight:700;
+  border-radius:999px; padding:12px 20px; min-height:44px;
+  box-shadow:0 8px 18px rgba(91,140,81,.24);
+  transition: transform .15s ease, box-shadow .2s ease;
+}
+.pb-cta:hover{ transform: translateY(-1px); box-shadow:0 12px 22px rgba(91,140,81,.32); }
+
+
+
+
+
+
+.caruselWrapper{
+  position: relative;
+  width: 90%;
+  margin: 48px auto;
+}
+.caruselImgcard{
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+}
+
+.caruselImgcard img {
+  flex: 0 0 auto;           /* prevent shrinking */
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  scroll-snap-align: start;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.caruselImgcard img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.2);
+}
+.carusel-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #6AB435; /* brand green w/ opacity */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  transition: background .2s ease;
+  z-index: 2;
+}
+.carusel-btn:hover{ background: rgba(91,140,81,1); }
+
+.carusel-btn.prev{ left: -22px; }
+.carusel-btn.next{ right: -22px; }
+
+/* Hide scrollbar (but keep scrollability) */
+.caruselImgcard::-webkit-scrollbar { display: none; }
+.caruselImgcard { -ms-overflow-style: none; scrollbar-width: none; }
+
+
+@media (max-width: 1024px){
+    .pruning-block{ grid-template-columns:1fr; }
+    .pb-media{ order:2; }
+    .pb-copy{ order:1; }
+    .pb-list{ grid-template-columns: 1fr; }
+    
+    .caruselWrapper{
+      overflow: hidden;           
+      padding-inline: 12px;       
+      box-sizing: border-box;
+      }      
+    .carusel-btn.prev{ left: 8px; }
+    .carusel-btn.next{ right: 8px; }
+        
+    .caruselImgcard img{
+        width: 90%;
+        height: 100%;
+    }
+    .carusel-btn{ width: 38px; height: 38px; }
+}
+@media (max-width: 480px){
+    .caruselImgcard img{
+        width: 90%;
+        height: 160px;
+  }
+  .carusel-btn{ width: 32px; height: 32px; }
+}
