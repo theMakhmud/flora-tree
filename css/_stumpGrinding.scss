@@ -1,0 +1,260 @@
+/* ===== Stump Grinding Page ===== */
+
+.stumpgrinding-page header {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+    radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+    url(../images/stump-grinding-canberra-1200.webp) center / cover no-repeat;
+  min-height: 60vh;
+}
+
+/* ===== Stump Grinding Content Sections ===== */
+
+.sg-intro {
+  width: 90%;
+  max-width: 900px;
+  margin: clamp(40px, 6vw, 80px) auto;
+
+  h2 {
+    font-size: clamp(22px, 4vw, 38px);
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    font-size: clamp(18px, 3vw, 26px);
+    color: var(--ink);
+    margin: 28px 0 12px;
+  }
+
+  h4 {
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: var(--brand-700, #2f6d2e);
+    margin: 24px 0 10px;
+  }
+
+  p {
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 17px;
+    margin-bottom: 14px;
+  }
+}
+
+/* ===== Stump Grinding Image Block ===== */
+
+.sg-media {
+  width: 90%;
+  max-width: 900px;
+  margin: 32px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  img {
+    width: 100%;
+    height: clamp(220px, 40vh, 440px);
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  figcaption {
+    font-size: 14px;
+    color: var(--muted);
+    padding: 8px 16px;
+    background: #f7f8f5;
+  }
+}
+
+/* ===== Why Choose Block for Stump Grinding ===== */
+
+.sg-why {
+  background: linear-gradient(180deg, #f6fbf1 0%, #fff 100%);
+  padding: clamp(40px, 6vw, 80px) 5%;
+
+  .sg-why-head {
+    text-align: center;
+    margin-bottom: 40px;
+
+    b {
+      color: var(--brand);
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(22px, 4vw, 38px);
+      color: var(--ink);
+      margin: 10px 0 12px;
+    }
+
+    p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+  .sg-why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    list-style: none;
+  }
+
+  .sg-why-card {
+    background: var(--card, #fff);
+    border-radius: 16px;
+    padding: clamp(20px, 2.5vw, 32px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+    }
+
+    h3 {
+      font-size: 18px;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+  }
+}
+
+/* ===== Stump Grinding CTA Banner ===== */
+
+.sg-cta-banner {
+  background: var(--brand, #6AB435);
+  padding: clamp(40px, 6vw, 72px) 5%;
+  text-align: center;
+
+  h2 {
+    color: #fff;
+    font-size: clamp(20px, 4vw, 34px);
+    margin-bottom: 14px;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 17px;
+    max-width: 600px;
+    margin: 0 auto 28px;
+    line-height: 1.6;
+  }
+
+  .sg-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .sg-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+
+    &--white {
+      background: #fff;
+      color: var(--brand, #6AB435);
+
+      &:hover {
+        background: #f0f0f0;
+      }
+    }
+
+    &--outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+    }
+  }
+}
+
+/* ===== Related services for stump grinding page ===== */
+.sg-related {
+  .related-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(40px, 6vw, 80px) 5%;
+
+    h2 {
+      font-size: clamp(20px, 3.5vw, 32px);
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+  }
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1024px) {
+  .sg-intro {
+    width: 92%;
+  }
+
+  .sg-media {
+    width: 92%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sg-intro {
+    width: 94%;
+
+    h2 {
+      font-size: 22px;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .sg-media img {
+    height: 220px;
+  }
+
+  .sg-cta-banner {
+    .sg-cta-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sg-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

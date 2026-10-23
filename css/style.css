@@ -3653,3 +3653,186 @@ body.menu-open #backToTop {
     scroll-behavior: auto;
   }
 }/*# sourceMappingURL=style.css.map */
+/* ===== Stump Grinding Page ===== */
+.stumpgrinding-page header {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/stump-grinding-canberra-1200.webp) center/cover no-repeat;
+  min-height: 60vh;
+}
+
+/* ===== Stump Grinding Content ===== */
+.sg-intro {
+  width: 90%;
+  max-width: 900px;
+  margin: clamp(40px, 6vw, 80px) auto;
+}
+.sg-intro h2 {
+  font-size: clamp(22px, 4vw, 38px);
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+.sg-intro h3 {
+  font-size: clamp(18px, 3vw, 26px);
+  color: var(--ink);
+  margin: 28px 0 12px;
+}
+.sg-intro h4 {
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: var(--brand-700, #2f6d2e);
+  margin: 24px 0 10px;
+}
+.sg-intro p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 17px;
+  margin-bottom: 14px;
+}
+
+.sg-media {
+  width: 90%;
+  max-width: 900px;
+  margin: 32px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.sg-media img {
+  width: 100%;
+  height: clamp(220px, 40vh, 440px);
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.sg-media figcaption {
+  font-size: 14px;
+  color: var(--muted);
+  padding: 8px 16px;
+  background: #f7f8f5;
+}
+
+/* ===== Stump Grinding Why Choose ===== */
+.sg-why {
+  background: linear-gradient(180deg, #f6fbf1 0%, #fff 100%);
+  padding: clamp(40px, 6vw, 80px) 5%;
+}
+.sg-why .sg-why-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.sg-why .sg-why-head b {
+  color: var(--brand);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.sg-why .sg-why-head h2 {
+  font-size: clamp(22px, 4vw, 38px);
+  color: var(--ink);
+  margin: 10px 0 12px;
+}
+.sg-why .sg-why-head p {
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.sg-why .sg-why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  list-style: none;
+}
+.sg-why .sg-why-card {
+  background: var(--card, #fff);
+  border-radius: 16px;
+  padding: clamp(20px, 2.5vw, 32px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
+}
+.sg-why .sg-why-card:hover {
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+.sg-why .sg-why-card h3 {
+  font-size: 18px;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.sg-why .sg-why-card p {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* ===== Stump Grinding CTA Banner ===== */
+.sg-cta-banner {
+  background: var(--brand, #6AB435);
+  padding: clamp(40px, 6vw, 72px) 5%;
+  text-align: center;
+}
+.sg-cta-banner h2 {
+  color: #fff;
+  font-size: clamp(20px, 4vw, 34px);
+  margin-bottom: 14px;
+}
+.sg-cta-banner p {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 17px;
+  max-width: 600px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+.sg-cta-banner .sg-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+.sg-cta-banner .sg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.sg-cta-banner .sg-btn--white {
+  background: #fff;
+  color: var(--brand, #6AB435);
+}
+.sg-cta-banner .sg-btn--white:hover {
+  background: #f0f0f0;
+}
+.sg-cta-banner .sg-btn--outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+.sg-cta-banner .sg-btn--outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== Responsive stump grinding ===== */
+@media (max-width: 1024px) {
+  .sg-intro,
+  .sg-media {
+    width: 92%;
+  }
+}
+@media (max-width: 480px) {
+  .sg-intro h2 { font-size: 22px; }
+  .sg-intro h3 { font-size: 18px; }
+  .sg-intro p  { font-size: 16px; }
+  .sg-media img { height: 220px; }
+  .sg-cta-banner .sg-cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .sg-cta-banner .sg-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
