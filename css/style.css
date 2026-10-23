@@ -3655,8 +3655,18 @@ body.menu-open #backToTop {
 }/*# sourceMappingURL=style.css.map */
 /* ===== Stump Grinding Page ===== */
 .stumpgrinding-page header {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/stump-grinding-canberra-1200.webp) center/cover no-repeat;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/stump-grinding-canberra-hero-1920.webp) center 60%/cover no-repeat;
   min-height: 60vh;
+}
+@media (max-width: 1280px) {
+  .stumpgrinding-page header {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/stump-grinding-canberra-hero-1280.webp);
+  }
+}
+@media (max-width: 800px) {
+  .stumpgrinding-page header {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/stump-grinding-canberra-800.webp);
+  }
 }
 
 /* ===== Stump Grinding Content ===== */
@@ -4360,4 +4370,15 @@ body.menu-open #backToTop {
     max-width: none;
     justify-self: auto;
   }
+}
+
+/* ================================================================
+   DEPTH CARD PHOTOS
+   ================================================================ */
+.stump-depth-card img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
 }
