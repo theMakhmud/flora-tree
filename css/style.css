@@ -7605,3 +7605,8 @@ body.menu-open #backToTop {
   .admin-modal-actions { flex-direction: column-reverse; }
   .admin-modal-actions .btn-admin { width: 100%; justify-content: center; }
 }
+
+header .nav-inner .drop > p.active {
+  color: var(--brand);
+  font-weight: 600;
+}

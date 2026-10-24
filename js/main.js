@@ -595,3 +595,96 @@ function gtagSendEvent(url) {
   });
   return false;
 }
+
+// ===================== Active nav highlight =====================
+(function highlightNav() {
+  const path = location.pathname;
+  const page = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+
+  // Map pages to their parent dropdown
+  const servicePages = [
+    'tree-removal-canberra.html',
+    'tree-pruning-canberra.html',
+    'hedge-trimming-canberra.html',
+    'garden-maintenance-canberra.html',
+    'stump-grinding-canberra.html',
+    'emergency-tree-service-canberra.html'
+  ];
+
+  const areaPages = [
+    'areas-we-serve.html',
+    'tree-services-tuggeranong.html',
+    'tree-services-gungahlin.html',
+    'tree-removal-woden-valley.html',
+    'tree-removal-belconnen.html',
+    'tree-removal-inner-south-canberra.html',
+    'tree-removal-inner-north-canberra.html',
+    'tree-removal-queanbeyan.html',
+    'tree-removal-googong.html',
+    'tree-removal-jerrabomberra.html'
+  ];
+
+  const blogPages = ['blog.html'];
+  const isBlogPost = path.includes('/blog/post.html');
+
+  const navLinks = document.querySelectorAll('header nav a[href]');
+
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    // Normalize href: remove leading ./ or /
+    const linkPage = href.replace(/^\.?\//, '');
+
+    let isActive = false;
+
+    // Direct match
+    if (page === linkPage || (page === '' && linkPage === 'index.html') || (page === 'index.html' && (linkPage === '/' || linkPage === ''))) {
+      isActive = true;
+    }
+
+    // Blog post → highlight Blog
+    if (isBlogPost && linkPage === 'blog.html') {
+      isActive = true;
+    }
+
+    // Highlight parent dropdown trigger
+    const dropParent = link.closest('.drop');
+    if (dropParent) {
+      // This link is inside a dropdown menu
+      if (isActive) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+        // Also highlight the parent dropdown trigger
+        const trigger = dropParent.querySelector(':scope > p');
+        if (trigger) trigger.classList.add('active');
+      }
+    } else {
+      // Top-level nav link
+      if (isActive) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      }
+    }
+  });
+
+  // If current page is a service/area/blog page, highlight the dropdown trigger
+  // even if the exact link wasn't found (future pages)
+  if (!document.querySelector('header nav a.active')) {
+    const drops = document.querySelectorAll('header nav .drop');
+    drops.forEach(drop => {
+      const trigger = drop.querySelector(':scope > p');
+      if (!trigger) return;
+      const text = trigger.textContent.trim().toLowerCase();
+
+      if (text.includes('service') && !text.includes('area')) {
+        if (servicePages.includes(page)) {
+          trigger.classList.add('active');
+        }
+      }
+      if (text.includes('area')) {
+        if (areaPages.includes(page)) {
+          trigger.classList.add('active');
+        }
+      }
+    });
+  }
+})();
