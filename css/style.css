@@ -7166,6 +7166,13 @@ body.menu-open #backToTop {
 .btn-admin-icon--delete:hover { background: #FEF2F2; color: #b91c1c; }
 
 /* ---- Topbar ---- */
+.blog-admin-page .admin-topbar {
+  min-height: 0;
+  padding-bottom: 0;
+  background: #fff;
+  background-image: none;
+  background-size: auto;
+}
 .admin-topbar {
   position: sticky;
   top: 0;
