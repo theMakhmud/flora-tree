@@ -4989,3 +4989,12 @@ body.menu-open #backToTop {
     padding-bottom: 60px;
   }
 }
+
+/* Intro text fills card width on new pages */
+.underheader--wide > :nth-child(2) h2 {
+  max-width: none;
+}
+.underheader--wide > :nth-child(2) p {
+  max-width: none;
+}
+}
