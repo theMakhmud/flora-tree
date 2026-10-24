@@ -1,0 +1,194 @@
+/* ===== Jerrabomberra Page — Unique Styles ===== */
+
+/* ----- Hero background ----- */
+/* NOTE: No dedicated Jerrabomberra hero photo exists yet (pending client).
+   Using tree-removal-canberra3.webp (3840px wide) as placeholder. */
+
+.jerrabomberra-page header {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+    radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+    url(../images/tree-removal-canberra3.webp) center 50% / cover no-repeat;
+  min-height: 60vh;
+}
+
+@media (max-width: 1280px) {
+  .jerrabomberra-page header {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+      radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+      url(../images/tree-removal-canberra3.webp);
+  }
+}
+
+@media (max-width: 800px) {
+  .jerrabomberra-page header {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+      radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+      url(../images/tree-removal-canberra3.webp);
+  }
+}
+
+
+/* ----- SIGNATURE: Pruning Steps (.jerrabomberra-pruning-steps) ----- */
+/* Green howTreeCard variant for Jerrabomberra pruning section */
+/* Uses shared .howTreeCard styles — no overrides needed here */
+
+
+/* ----- SIGNATURE: Emergency (.jerrabomberra-emergency) ----- */
+/* Orange-accented note panel with exclamation icon */
+
+.jerrabomberra-emergency {
+  padding: clamp(40px, 6vw, 72px) 5%;
+  background: #fff;
+}
+
+.je-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.je-panel {
+  border: 2px solid #D35400;
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: #fff8f4;
+
+  .je-icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    background: #fde8d4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      font-size: 22px;
+      color: #D35400;
+    }
+  }
+
+  .je-body {
+    h2 {
+      font-size: clamp(18px, 2.5vw, 22px);
+      font-weight: 700;
+      color: var(--ink, #111827);
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 16px;
+      color: var(--muted, #6b7280);
+      line-height: 1.75;
+      margin-bottom: 12px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        color: #D35400;
+        font-weight: 600;
+        text-decoration: underline;
+
+        &:hover {
+          color: #a84000;
+        }
+      }
+
+      strong {
+        color: var(--ink, #111827);
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .je-panel {
+    flex-direction: column;
+    gap: 14px;
+    padding: 22px 20px;
+  }
+}
+
+
+/* ----- Jerrabomberra CTA Banner (.jerrabomberra-cta-banner) ----- */
+
+.jerrabomberra-cta-banner {
+  background: var(--brand, #6AB435);
+  padding: clamp(40px, 6vw, 72px) 5%;
+  text-align: center;
+}
+
+.jcb-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: clamp(22px, 4vw, 36px);
+    color: #fff;
+    margin-bottom: 14px;
+  }
+
+  p {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+}
+
+.jcb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.jcb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+
+  &--white {
+    background: #fff;
+    color: var(--brand-700, #2f6d2e);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+
+    &:hover {
+      background: #f0f9e8;
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .jcb-actions {
+    flex-direction: column;
+  }
+
+  .jcb-btn {
+    justify-content: center;
+  }
+}
