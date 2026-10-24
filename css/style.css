@@ -6066,3 +6066,553 @@ body.menu-open #backToTop {
     justify-content: center;
   }
 }
+
+/* ===== Googong Page — Unique Styles ===== */
+
+.googong-page header {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 40%, rgba(0,0,0,.25) 100%),
+    radial-gradient(1000px 520px at 24% 34%, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 65%),
+    url(../images/tree-removal-googong-1920.jpg) center 50% / cover no-repeat;
+  min-height: 60vh;
+}
+
+@media (max-width: 1280px) {
+  .googong-page header {
+    background-image:
+      linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 40%, rgba(0,0,0,.25) 100%),
+      radial-gradient(1000px 520px at 24% 34%, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 65%),
+      url(../images/tree-removal-googong-1280.jpg);
+  }
+}
+
+@media (max-width: 800px) {
+  .googong-page header {
+    background-image:
+      linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 40%, rgba(0,0,0,.25) 100%),
+      radial-gradient(1000px 520px at 24% 34%, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 65%),
+      url(../images/tree-removal-googong-800.jpg);
+  }
+}
+
+/* Pruning + Hedge dual-column */
+.googong-pruning-hedge { padding: clamp(48px,7vw,88px) 5%; background: #fff; }
+.gph-wrap { max-width: 1100px; margin: 0 auto; }
+.gph-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: var(--brand); margin-bottom: 10px; }
+.gph-wrap > h2 { font-size: clamp(22px,4vw,36px); color: var(--ink); margin-bottom: 10px; }
+.gph-intro { font-size: 17px; color: var(--muted); line-height: 1.7; max-width: 800px; margin-bottom: 40px; }
+.gph-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.gph-col { background: var(--bg,#f7f8f5); border-radius: 20px; padding: 36px 32px; display: flex; flex-direction: column; gap: 16px; }
+.gph-col .gph-col-icon { width: 56px; height: 56px; background: #ecf6e8; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.gph-col .gph-col-icon i { font-size: 24px; color: var(--brand,#6AB435); }
+.gph-col h3 { font-size: clamp(18px,2.5vw,22px); font-weight: 700; color: var(--ink); margin: 0; }
+.gph-col p { font-size: 16px; color: var(--muted); line-height: 1.75; margin: 0; }
+.gph-col p a { color: var(--brand-700,#2f6d2e); font-weight: 600; text-decoration: underline; }
+.gph-col-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--brand-700,#2f6d2e); background: #ecf6e8; border-radius: 999px; padding: 4px 12px; align-self: flex-start; }
+@media (max-width: 860px) { .gph-grid { grid-template-columns: 1fr; gap: 24px; } }
+@media (max-width: 480px) { .gph-col { padding: 28px 22px; } }
+
+/* Stump card */
+.googong-stump-card { padding: clamp(48px,7vw,88px) 5%; background: var(--bg,#f7f8f5); }
+.gsc-wrap { max-width: 1100px; margin: 0 auto; }
+.gsc-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: var(--brand); margin-bottom: 10px; }
+.gsc-wrap > h2 { font-size: clamp(22px,4vw,36px); color: var(--ink); margin-bottom: 28px; }
+.gsc-card { background: #fff; border-radius: 20px; padding: 36px 40px; max-width: 860px; display: flex; gap: 28px; align-items: flex-start; box-shadow: 0 4px 12px rgba(0,0,0,.06); }
+.gsc-card .gsc-card-icon { flex-shrink: 0; width: 60px; height: 60px; background: #ecf6e8; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.gsc-card .gsc-card-icon i { font-size: 26px; color: var(--brand,#6AB435); }
+.gsc-card .gsc-card-body h3 { font-size: 20px; font-weight: 700; color: var(--ink); margin-bottom: 14px; }
+.gsc-card .gsc-card-body p { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 12px; }
+.gsc-card .gsc-card-body p:last-child { margin-bottom: 0; }
+.gsc-card .gsc-card-body p a { color: var(--brand-700,#2f6d2e); font-weight: 600; text-decoration: underline; }
+@media (max-width: 640px) { .gsc-card { flex-direction: column; gap: 16px; padding: 24px 20px; } }
+
+/* Why Googong text section */
+.googong-why { padding: clamp(48px,7vw,88px) 5%; background: var(--bg,#f7f8f5); }
+.gw-wrap { max-width: 900px; margin: 0 auto; }
+.gw-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: var(--brand); margin-bottom: 10px; }
+.gw-wrap > h2 { font-size: clamp(22px,4vw,36px); color: var(--ink); margin-bottom: 28px; }
+.gw-body p { font-size: 17px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+.gw-body p:last-child { margin-bottom: 0; }
+.gw-body p a { color: var(--brand-700,#2f6d2e); font-weight: 600; text-decoration: underline; }
+.gw-principles { list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-direction: column; gap: 12px; }
+.gw-principles li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: var(--muted); line-height: 1.65; }
+.gw-principles li i { color: var(--brand,#6AB435); font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+
+/* CTA banner */
+.googong-cta-banner { background: var(--brand,#6AB435); padding: clamp(40px,6vw,72px) 5%; text-align: center; }
+.gcb-wrap { max-width: 800px; margin: 0 auto; }
+.gcb-wrap h2 { font-size: clamp(22px,4vw,36px); color: #fff; margin-bottom: 14px; }
+.gcb-wrap p { font-size: 17px; color: rgba(255,255,255,.88); line-height: 1.7; margin-bottom: 28px; }
+.gcb-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.gcb-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 999px; font-size: 16px; font-weight: 600; text-decoration: none; transition: background .2s, color .2s; }
+.gcb-btn--white { background: #fff; color: var(--brand-700,#2f6d2e); box-shadow: 0 8px 18px rgba(0,0,0,.12); }
+.gcb-btn--white:hover { background: #f0f9e8; }
+.gcb-btn--outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.75); }
+.gcb-btn--outline:hover { background: rgba(255,255,255,.15); }
+@media (max-width: 480px) { .gcb-actions { flex-direction: column; } .gcb-btn { justify-content: center; } }
+
+/* ===== Inner North Canberra Page ===== */
+
+.innernorth-page header {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+    radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+    url(../images/tree-removal-inner-north-1920.jpg) center 50% / cover no-repeat;
+  min-height: 60vh;
+}
+
+@media (max-width: 1280px) {
+  .innernorth-page header {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+      radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+      url(../images/tree-removal-inner-north-1280.jpg);
+  }
+}
+
+@media (max-width: 800px) {
+  .innernorth-page header {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+      radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+      url(../images/tree-removal-inner-north-800.jpg);
+  }
+}
+
+/* ----- SIGNATURE: Tight-Access Tree Work (.innernorth-access) ----- */
+
+.innernorth-access {
+  background: var(--brand, #6AB435);
+  padding: clamp(48px, 7vw, 88px) 5%;
+  color: #fff;
+}
+
+.ina-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ina-kicker {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 10px;
+}
+
+.ina-wrap h2 {
+  font-size: clamp(22px, 4vw, 36px);
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.ina-intro {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.7;
+  max-width: 760px;
+  margin-bottom: 40px;
+}
+
+.ina-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.ina-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: background 0.2s;
+}
+
+.ina-card:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.ina-card-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ina-card-icon i {
+  font-size: 20px;
+  color: #fff;
+}
+
+.ina-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.ina-card p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .ina-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ----- Inner North Pruning block (.innernorth-pruning-block) ----- */
+
+.innernorth-pruning-block {
+  padding: clamp(48px, 7vw, 88px) 5%;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+
+.innernorth-pruning-block img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.innernorth-pruning-block > div {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.inpb-eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin: 0;
+}
+
+.innernorth-pruning-block > div h2 {
+  font-size: clamp(20px, 3.5vw, 32px);
+  color: var(--ink);
+  margin: 0;
+}
+
+.innernorth-pruning-block > div p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.innernorth-pruning-block > div p a {
+  color: var(--brand-700, #2f6d2e);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .innernorth-pruning-block {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ----- Inner North CTA banner (.innernorth-cta-banner) ----- */
+
+.innernorth-cta-banner {
+  background: var(--brand, #6AB435);
+  padding: clamp(40px, 6vw, 72px) 5%;
+  text-align: center;
+}
+
+.incb-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.incb-wrap h2 {
+  font-size: clamp(22px, 4vw, 36px);
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.incb-wrap p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.incb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.incb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.incb-btn--white {
+  background: #fff;
+  color: var(--brand-700, #2f6d2e);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.incb-btn--white:hover {
+  background: #f0f9e8;
+}
+
+.incb-btn--outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+}
+
+.incb-btn--outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 480px) {
+  .incb-actions {
+    flex-direction: column;
+  }
+  .incb-btn {
+    justify-content: center;
+  }
+}
+
+/* ----- district-chip bordered variant ----- */
+
+.district-chip--bordered {
+  display: inline-block;
+  background: transparent;
+  border: 1.5px solid var(--brand, #6AB435);
+  color: var(--brand-700, #2f6d2e);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 8px 18px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.district-chip--bordered:hover {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+@media (max-width: 480px) {
+  .district-chip--bordered {
+    font-size: 13px;
+    padding: 7px 14px;
+  }
+}
+
+/* ===== Jerrabomberra Page — Unique Styles ===== */
+
+.jerrabomberra-page header {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+    radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+    url(../images/tree-removal-canberra3.webp) center 50% / cover no-repeat;
+  min-height: 60vh;
+}
+
+@media (max-width: 1280px) {
+  .jerrabomberra-page header {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+      radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+      url(../images/tree-removal-canberra3.webp);
+  }
+}
+
+@media (max-width: 800px) {
+  .jerrabomberra-page header {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+      radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+      url(../images/tree-removal-canberra3.webp);
+  }
+}
+
+/* Emergency panel (.jerrabomberra-emergency) */
+
+.jerrabomberra-emergency {
+  padding: clamp(40px, 6vw, 72px) 5%;
+  background: #fff;
+}
+
+.je-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.je-panel {
+  border: 2px solid #D35400;
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: #fff8f4;
+}
+
+.je-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  background: #fde8d4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.je-icon i {
+  font-size: 22px;
+  color: #D35400;
+}
+
+.je-body h2 {
+  font-size: clamp(18px, 2.5vw, 22px);
+  font-weight: 700;
+  color: var(--ink, #111827);
+  margin-bottom: 12px;
+}
+
+.je-body p {
+  font-size: 16px;
+  color: var(--muted, #6b7280);
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+.je-body p:last-child {
+  margin-bottom: 0;
+}
+
+.je-body a {
+  color: #D35400;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.je-body a:hover {
+  color: #a84000;
+}
+
+.je-body strong {
+  color: var(--ink, #111827);
+}
+
+@media (max-width: 640px) {
+  .je-panel {
+    flex-direction: column;
+    gap: 14px;
+    padding: 22px 20px;
+  }
+}
+
+/* Jerrabomberra CTA Banner (.jerrabomberra-cta-banner) */
+
+.jerrabomberra-cta-banner {
+  background: var(--brand, #6AB435);
+  padding: clamp(40px, 6vw, 72px) 5%;
+  text-align: center;
+}
+
+.jcb-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.jcb-wrap h2 {
+  font-size: clamp(22px, 4vw, 36px);
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.jcb-wrap p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.jcb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.jcb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.jcb-btn--white {
+  background: #fff;
+  color: var(--brand-700, #2f6d2e);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.jcb-btn--white:hover {
+  background: #f0f9e8;
+}
+
+.jcb-btn--outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+}
+
+.jcb-btn--outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 480px) {
+  .jcb-actions {
+    flex-direction: column;
+  }
+
+  .jcb-btn {
+    justify-content: center;
+  }
+}
