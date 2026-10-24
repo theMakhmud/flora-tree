@@ -1981,7 +1981,7 @@ header nav {
 header .nav-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 15px 20px;
+  padding: 15px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1992,7 +1992,21 @@ header .nav-inner img {
 header .nav-inner > .text-navbar {
   display: flex;
   align-items: center;
-  gap: 20px;
+  flex: 1;
+  gap: 0;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+header .nav-inner > .text-navbar > a,
+header .nav-inner > .text-navbar > .drop {
+  padding: 0 14px;
+}
+header .nav-inner > .text-navbar > a:first-child {
+  padding-left: 0;
+}
+header .nav-inner > .text-navbar > .call {
+  margin-left: auto;
+  padding: 0;
 }
 header .nav-inner > .text-navbar a,
 header .nav-inner > .text-navbar p {
@@ -2014,10 +2028,12 @@ header .nav-inner > .text-navbar h3 {
   color: var(--brand);
 }
 header .nav-inner > .text-navbar span {
-  width: 6px;
-  height: 6px;
-  background-color: black;
+  width: 5px;
+  height: 5px;
+  background-color: #333;
   border-radius: 50%;
+  flex-shrink: 0;
+  display: block;
 }
 header .nav-inner .drop {
   position: relative;
@@ -2061,7 +2077,8 @@ header .nav-inner .drop {
   /* arrow rotation */
 }
 header .nav-inner .drop p i {
-  margin-left: 6px;
+  margin-left: 4px;
+  font-size: 12px;
   transition: transform 0.2s ease;
 }
 header .nav-inner .drop:hover p i {
@@ -3214,6 +3231,33 @@ body.menu-open #backToTop {
   opacity: 0;
   transform: translateX(120%);
   pointer-events: none;
+}
+
+/* ------------------------------------------------ Desktop header intermediate breakpoints ---------------------------------------- */
+@media (max-width: 1280px) and (min-width: 1025px) {
+  header .nav-inner > .text-navbar > a,
+  header .nav-inner > .text-navbar > .drop {
+    padding: 0 10px;
+  }
+  header .nav-inner > .text-navbar a p,
+  header .nav-inner > .text-navbar > .drop > p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1160px) and (min-width: 1025px) {
+  header .nav-inner > .text-navbar > a,
+  header .nav-inner > .text-navbar > .drop {
+    padding: 0 7px;
+  }
+  header .nav-inner > .text-navbar a p,
+  header .nav-inner > .text-navbar > .drop > p {
+    font-size: 15px;
+  }
+  header .nav-inner > .text-navbar span {
+    width: 4px;
+    height: 4px;
+  }
 }
 
 /* ------------------------------------------------ Responsive ---------------------------------------- */
