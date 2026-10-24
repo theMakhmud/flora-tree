@@ -1,0 +1,208 @@
+/* ===== Shared ACT District Components ===== */
+/* Used by: Woden Valley, Belconnen, Inner South (ACT pages) */
+
+/* ----- ACT Tree Rules (.act-tree-rules) ----- */
+
+.act-tree-rules {
+  padding: clamp(48px, 7vw, 88px) 5%;
+  background: var(--bg, #f7f8f5);
+}
+
+.atr-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.atr-kicker {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 10px;
+}
+
+.atr-wrap h2 {
+  font-size: clamp(22px, 4vw, 36px);
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.atr-intro {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 780px;
+  margin-bottom: 40px;
+}
+
+.atr-thresholds {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.atr-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.atr-icon {
+  width: 56px;
+  height: 56px;
+  background: #ecf6e8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    font-size: 24px;
+    color: var(--brand);
+  }
+
+  svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+.atr-value {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  color: var(--brand);
+  line-height: 1;
+}
+
+.atr-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.atr-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.atr-note {
+  background: #fff;
+  border-left: 3px solid var(--brand);
+  border-radius: 0 8px 8px 0;
+  padding: 20px 24px;
+  max-width: 900px;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+
+  strong {
+    color: var(--ink);
+  }
+
+  a {
+    color: var(--brand-700, #2f6d2e);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 768px) {
+  .atr-thresholds {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .atr-card {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .atr-icon {
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .atr-value {
+    font-size: clamp(28px, 6vw, 40px);
+  }
+}
+
+/* ----- District Suburbs (.district-suburbs) ----- */
+
+.district-suburbs {
+  padding: clamp(48px, 7vw, 88px) 5%;
+  background: #fff;
+}
+
+.ds-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ds-kicker {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 10px;
+}
+
+.ds-wrap h2 {
+  font-size: clamp(22px, 4vw, 36px);
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.ds-intro {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 780px;
+  margin-bottom: 32px;
+}
+
+.district-suburbs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.district-chip {
+  display: inline-block;
+  background: #ecf6e8;
+  color: var(--brand-700, #2f6d2e);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 8px 18px;
+  transition: background 0.15s, color 0.15s;
+
+  &:hover {
+    background: var(--brand);
+    color: #fff;
+  }
+}
+
+@media (max-width: 480px) {
+  .district-chip {
+    font-size: 13px;
+    padding: 7px 14px;
+  }
+}
