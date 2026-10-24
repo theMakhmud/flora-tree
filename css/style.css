@@ -5247,7 +5247,6 @@ body.menu-open #backToTop {
   .belconnen-suburbs-grid { grid-template-columns: repeat(2,1fr); gap: 8px; }
   .belconnen-suburbs-grid .district-suburb-cell { font-size: 13px; padding: 8px 10px; }
 }
-}
 
 /* ===== Inner South Canberra Page ===== */
 .innersouth-page header { background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 40%, rgba(0,0,0,.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 65%), url(../images/tree-removal-canberra5.webp) center 40%/cover no-repeat; min-height: 60vh; }
