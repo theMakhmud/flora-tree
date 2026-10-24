@@ -1960,7 +1960,8 @@ body {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/hero.webp) center/cover no-repeat;
 }
 
-.tuggeranong-page header {
+.tuggeranong-page header,
+.gungahlin-page header {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/treepruning-canberra3.jpeg) center/cover no-repeat;
   min-height: 60vh;
 }
