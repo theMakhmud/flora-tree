@@ -395,31 +395,48 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
           </div>
           <figure class="otr-media">
-            <img src="./images/tree-pruning-canberra-800.webp"
-                 srcset="images/tree-pruning-canberra-800.webp 800w, images/tree-pruning-canberra.webp 1200w"
-                 sizes="(max-width: 1024px) 92vw, 480px"
-                 width="600" height="450"
+            <img src="./images/stump-grinding-canberra-800.webp"
+                 width="800" height="544"
                  loading="lazy"
-                 alt="Arborist inspecting a mature tree at a Belconnen property">
+                 alt="Stump grinding work by Flora Tree Services in Canberra">
           </figure>
         </section>
 
 
-        <!-- ===== Block 4: Tree Pruning — full text ===== -->
-        <section class="belconnen-pruning" data-aos="fade-up">
-          <div class="bp-wrap">
-            <p class="bp-kicker">Tree Pruning</p>
+        <!-- ===== Block 4: Tree Pruning — belconnen-pruning-card ===== -->
+        <section class="belconnen-pruning-card" data-aos="fade-up">
+          <div class="bpc-content">
+            <p class="bpc-kicker">Tree Care</p>
             <h2>Tree Pruning in Belconnen</h2>
-            <p>
-                Tree pruning is the second-priority service on this page. The goal should be a defined arboricultural outcome rather than indiscriminate cutting. Depending on the individual tree, <a href="tree-pruning-canberra.html">tree pruning services</a> might address dead or damaged branches, clearance requirements, specific limb management or other identified canopy concerns.
-            </p>
-            <p>
-                ACT rules matter for pruning as well as removal. Certain work affecting protected trees is regulated, so the status of the tree and proposed work should be checked when required.
-            </p>
-            <p>
-                This section links to Flora's existing Canberra-wide Tree Pruning page for deeper service information, preventing unnecessary duplication between the district page and core service page.
+            <ul class="bpc-list">
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Crown thinning to reduce wind loading and improve canopy light</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Deadwood removal to address dead or damaged branches</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Clearance pruning to manage limb conflicts with structures and access areas</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Shaping to achieve a defined arboricultural outcome rather than indiscriminate cutting</span>
+              </li>
+            </ul>
+            <p class="bpc-body">
+                Tree pruning is the second-priority service on this page. The goal should be a defined arboricultural outcome rather than indiscriminate cutting. Depending on the individual tree, <a href="tree-pruning-canberra.html">tree pruning services</a> might address dead or damaged branches, clearance requirements, specific limb management or other identified canopy concerns. ACT rules matter for pruning as well as removal — certain work affecting protected trees is regulated, so the status of the tree and proposed work should be checked when required.
             </p>
           </div>
+          <figure class="bpc-media">
+            <img src="./images/tree-removal-canberra3.webp"
+                 width="800" height="450"
+                 loading="lazy"
+                 alt="Arborist working on tree removal in Canberra"
+                 style="object-fit:cover;">
+          </figure>
         </section>
 
 
@@ -465,7 +482,67 @@ document.addEventListener("DOMContentLoaded", function () {
         </section>
 
 
-        <!-- ===== Block 6: SIGNATURE — Belconnen Site Access (.belconnen-access) ===== -->
+        <!-- ===== Block 6: ACT Tree Rules (.act-tree-rules) ===== -->
+        <section class="act-tree-rules" id="act-tree-rules" data-aos="fade-up">
+          <div class="atr-wrap">
+            <p class="atr-kicker">ACT Tree Protection</p>
+            <h2>ACT Tree Removal Rules in Belconnen</h2>
+            <p class="atr-intro">
+                Belconnen is in the ACT, so current ACT tree-protection legislation applies. Under current ACT guidance, a private tree is protected if it meets any one of the thresholds below.
+            </p>
+
+            <div class="atr-thresholds">
+
+              <div class="atr-card">
+                <div class="atr-icon">
+                  <i class="fa-solid fa-ruler-vertical" aria-hidden="true"></i>
+                </div>
+                <div class="atr-value">8 m</div>
+                <div class="atr-label">Height</div>
+                <p class="atr-desc">Tree is 8 metres or taller</p>
+              </div>
+
+              <div class="atr-card">
+                <div class="atr-icon">
+                  <i class="fa-solid fa-tree" aria-hidden="true"></i>
+                </div>
+                <div class="atr-value">8 m</div>
+                <div class="atr-label">Canopy Width</div>
+                <p class="atr-desc">Canopy is 8 metres or wider</p>
+              </div>
+
+              <div class="atr-card">
+                <div class="atr-icon">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="9" y="2" width="6" height="16" rx="1" fill="var(--brand)" opacity="0.25"/>
+                    <rect x="10" y="2" width="4" height="16" rx="1" fill="var(--brand)" opacity="0.5"/>
+                    <path d="M9 10 Q5 10 5 13 Q5 16 9 16" stroke="var(--brand)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+                    <path d="M15 10 Q19 10 19 13 Q19 16 15 16" stroke="var(--brand)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+                    <polyline points="7,15 5,16 6,14" stroke="var(--brand)" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="17,15 19,16 18,14" stroke="var(--brand)" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="8" y1="13" x2="16" y2="13" stroke="var(--brand)" stroke-width="0.8" stroke-dasharray="1.5 1"/>
+                  </svg>
+                </div>
+                <div class="atr-value">1 m</div>
+                <div class="atr-label">Trunk Circumference</div>
+                <p class="atr-desc">Trunk circumference at least 1 m measured 1.4 m above ground</p>
+              </div>
+
+            </div>
+
+            <div class="atr-note">
+              <p>
+                <strong>A private tree is protected</strong> if it meets any relevant protected category, including being 8 metres or taller, having a canopy 8 metres or wider, or having a trunk circumference of at least 1 metre measured 1.4 metres above natural ground level. Registered trees, certain dead native trees and some replacement trees are also protected.
+              </p>
+              <p style="margin-top: 12px;">
+                Approval is required for removal and certain other activities affecting protected trees. If the tree's protection status is uncertain, check it before scheduling regulated work. <a href="contact.html">Contact Flora</a> — we can help you understand what tree work appears necessary.
+              </p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ===== Block 7: SIGNATURE — Belconnen Site Access (.belconnen-access) ===== -->
         <section class="belconnen-access" aria-labelledby="ba-heading" data-aos="fade-up">
           <div class="ba-wrap">
             <p class="ba-kicker">Site Conditions</p>
@@ -538,66 +615,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             <div class="ba-note">
               <strong>Before work begins</strong>, the practical scope should assess the tree, surrounding work zone, access, services and space available to process branches and timber. <a href="contact.html">Contact Flora</a> to discuss the site conditions at your Belconnen property.
-            </div>
-          </div>
-        </section>
-
-
-        <!-- ===== Block 7: ACT Tree Rules (.act-tree-rules) ===== -->
-        <section class="act-tree-rules" id="act-tree-rules" data-aos="fade-up">
-          <div class="atr-wrap">
-            <p class="atr-kicker">ACT Tree Protection</p>
-            <h2>ACT Tree Removal Rules in Belconnen</h2>
-            <p class="atr-intro">
-                Belconnen is in the ACT, so current ACT tree-protection legislation applies. Under current ACT guidance, a private tree is protected if it meets any one of the thresholds below.
-            </p>
-
-            <div class="atr-thresholds">
-
-              <div class="atr-card">
-                <div class="atr-icon">
-                  <i class="fa-solid fa-ruler-vertical" aria-hidden="true"></i>
-                </div>
-                <div class="atr-value">8 m</div>
-                <div class="atr-label">Height</div>
-                <p class="atr-desc">Tree is 8 metres or taller</p>
-              </div>
-
-              <div class="atr-card">
-                <div class="atr-icon">
-                  <i class="fa-solid fa-tree" aria-hidden="true"></i>
-                </div>
-                <div class="atr-value">8 m</div>
-                <div class="atr-label">Canopy Width</div>
-                <p class="atr-desc">Canopy is 8 metres or wider</p>
-              </div>
-
-              <div class="atr-card">
-                <div class="atr-icon">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <rect x="9" y="2" width="6" height="16" rx="1" fill="var(--brand)" opacity="0.25"/>
-                    <rect x="10" y="2" width="4" height="16" rx="1" fill="var(--brand)" opacity="0.5"/>
-                    <path d="M9 10 Q5 10 5 13 Q5 16 9 16" stroke="var(--brand)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-                    <path d="M15 10 Q19 10 19 13 Q19 16 15 16" stroke="var(--brand)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-                    <polyline points="7,15 5,16 6,14" stroke="var(--brand)" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <polyline points="17,15 19,16 18,14" stroke="var(--brand)" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="8" y1="13" x2="16" y2="13" stroke="var(--brand)" stroke-width="0.8" stroke-dasharray="1.5 1"/>
-                  </svg>
-                </div>
-                <div class="atr-value">1 m</div>
-                <div class="atr-label">Trunk Circumference</div>
-                <p class="atr-desc">Trunk circumference at least 1 m measured 1.4 m above ground</p>
-              </div>
-
-            </div>
-
-            <div class="atr-note">
-              <p>
-                <strong>A private tree is protected</strong> if it meets any relevant protected category, including being 8 metres or taller, having a canopy 8 metres or wider, or having a trunk circumference of at least 1 metre measured 1.4 metres above natural ground level. Registered trees, certain dead native trees and some replacement trees are also protected.
-              </p>
-              <p style="margin-top: 12px;">
-                Approval is required for removal and certain other activities affecting protected trees. If the tree's protection status is uncertain, check it before scheduling regulated work. <a href="contact.html">Contact Flora</a> — we can help you understand what tree work appears necessary.
-              </p>
             </div>
           </div>
         </section>
