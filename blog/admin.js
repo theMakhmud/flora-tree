@@ -3,82 +3,186 @@ import { SUPABASE_URL, SUPABASE_ANON_KEY } from './supabase-config.js';
 const { createClient } = supabase;
 const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// DOM refs
-const loginSection = document.getElementById('admin-login');
-const dashboard = document.getElementById('admin-dashboard');
-const loginForm = document.getElementById('login-form');
-const loginError = document.getElementById('login-error');
-const postsList = document.getElementById('admin-posts-list');
-const formWrap = document.getElementById('admin-form-wrap');
-const formHeading = document.getElementById('form-heading');
-const postForm = document.getElementById('post-form');
-const formError = document.getElementById('form-error');
-const slugWarning = document.getElementById('slug-warning');
-const titleInput = document.getElementById('post-title');
-const slugInput = document.getElementById('post-slug');
-const excerptInput = document.getElementById('post-excerpt');
-const contentInput = document.getElementById('post-content');
+// ===================== DOM refs =====================
+const loginScreen   = document.getElementById('admin-login');
+const dashboard     = document.getElementById('admin-dashboard');
+const loginForm     = document.getElementById('login-form');
+const loginError    = document.getElementById('login-error');
+const loginErrorTxt = document.getElementById('login-error-text');
+const loginBtn      = document.getElementById('login-btn');
+const loginBtnText  = document.getElementById('login-btn-text');
+const loginSpinner  = document.getElementById('login-spinner');
+
+const screenPosts   = document.getElementById('screen-posts');
+const screenEditor  = document.getElementById('screen-editor');
+
+const postsList     = document.getElementById('admin-posts-list');
+const postsCount    = document.getElementById('posts-count');
+const adminEmail    = document.getElementById('admin-user-email');
+
+const formHeading   = document.getElementById('form-heading');
+const postForm      = document.getElementById('post-form');
+const titleInput    = document.getElementById('post-title');
+const slugInput     = document.getElementById('post-slug');
+const excerptInput  = document.getElementById('post-excerpt');
+const contentInput  = document.getElementById('post-content');
+
+const slugPreview   = document.getElementById('slug-preview');
+const slugWarning   = document.getElementById('slug-warning');
+const excerptCounter = document.getElementById('excerpt-counter');
+
+const errorTitle    = document.getElementById('error-title');
+const errorSlug     = document.getElementById('error-slug');
+const errorContent  = document.getElementById('error-content');
+
+const postDates     = document.getElementById('post-dates');
+const postCreatedAt = document.getElementById('post-created-at');
+const postUpdatedAt = document.getElementById('post-updated-at');
+
+const deleteModal   = document.getElementById('delete-modal');
+const deleteTitle   = document.getElementById('delete-title');
+const deleteCancel  = document.getElementById('delete-cancel');
+const deleteConfirm = document.getElementById('delete-confirm');
+
+const toastsEl      = document.getElementById('admin-toasts');
 
 let editingId = null;
+let formDirty = false;
+let deleteTargetId = null;
 
-// --- Init: check session ---
+// ===================== Init: check session =====================
 (async () => {
   const { data: { session } } = await sb.auth.getSession();
   if (session) {
-    showDashboard();
+    showDashboard(session.user.email);
   }
 })();
 
-// --- Login ---
+// ===================== Toggle password visibility =====================
+document.getElementById('toggle-password').addEventListener('click', () => {
+  const pwInput = document.getElementById('login-password');
+  const eyeIcon = document.getElementById('eye-icon');
+  const isHidden = pwInput.type === 'password';
+  pwInput.type = isHidden ? 'text' : 'password';
+  eyeIcon.classList.toggle('fa-eye', !isHidden);
+  eyeIcon.classList.toggle('fa-eye-slash', isHidden);
+  document.getElementById('toggle-password').setAttribute('aria-label', isHidden ? 'Hide password' : 'Show password');
+});
+
+// ===================== Login =====================
 loginForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  loginError.textContent = '';
+  hideLoginError();
+  setLoginLoading(true);
 
-  const email = document.getElementById('login-email').value;
+  const email    = document.getElementById('login-email').value;
   const password = document.getElementById('login-password').value;
 
-  const { error } = await sb.auth.signInWithPassword({ email, password });
+  const { data, error } = await sb.auth.signInWithPassword({ email, password });
 
   if (error) {
-    loginError.textContent = error.message;
+    showLoginError(error.message);
+    setLoginLoading(false);
     return;
   }
 
-  showDashboard();
+  setLoginLoading(false);
+  showDashboard(data.user.email);
 });
 
-// --- Logout ---
+function setLoginLoading(loading) {
+  loginBtn.disabled = loading;
+  loginBtnText.textContent = loading ? 'Signing in...' : 'Sign In';
+  loginSpinner.style.display = loading ? 'inline-block' : 'none';
+}
+
+function showLoginError(msg) {
+  loginErrorTxt.textContent = msg;
+  loginError.style.display = 'flex';
+}
+
+function hideLoginError() {
+  loginError.style.display = 'none';
+  loginErrorTxt.textContent = '';
+}
+
+// ===================== Logout =====================
 document.getElementById('btn-logout').addEventListener('click', async () => {
   await sb.auth.signOut();
-  loginSection.style.display = 'block';
   dashboard.style.display = 'none';
-  formWrap.style.display = 'none';
+  loginScreen.style.display = 'flex';
   editingId = null;
+  formDirty = false;
 });
 
-// --- New post ---
+// ===================== Show dashboard =====================
+async function showDashboard(email) {
+  loginScreen.style.display  = 'none';
+  dashboard.style.display    = 'block';
+  if (email) adminEmail.textContent = email;
+  loadAdminPosts();
+}
+
+// ===================== New Post =====================
 document.getElementById('btn-new-post').addEventListener('click', () => {
-  editingId = null;
-  formHeading.textContent = 'New Post';
-  postForm.reset();
-  formError.textContent = '';
-  slugWarning.style.display = 'none';
-  formWrap.style.display = 'block';
-  titleInput.focus();
+  openEditor(null);
 });
 
-// --- Cancel ---
+// ===================== Back / Cancel =====================
+document.getElementById('btn-back').addEventListener('click', () => {
+  if (formDirty && !confirmLeave()) return;
+  showPostsScreen();
+});
+
 document.getElementById('btn-cancel').addEventListener('click', () => {
-  formWrap.style.display = 'none';
-  editingId = null;
+  if (formDirty && !confirmLeave()) return;
+  showPostsScreen();
 });
 
-// --- Auto-slug from title ---
+function confirmLeave() {
+  return window.confirm('You have unsaved changes. Leave anyway?');
+}
+
+// ===================== Auto-slug from title =====================
 titleInput.addEventListener('input', () => {
+  formDirty = true;
   if (!editingId) {
     slugInput.value = toSlug(titleInput.value);
+    updateSlugPreview();
   }
 });
+
+slugInput.addEventListener('input', () => {
+  formDirty = true;
+  updateSlugPreview();
+});
+
+excerptInput.addEventListener('input', () => {
+  formDirty = true;
+  const len = excerptInput.value.length;
+  excerptCounter.textContent = len + '/160';
+  excerptCounter.classList.toggle('admin-char-counter--over', len > 160);
+});
+
+contentInput.addEventListener('input', () => {
+  formDirty = true;
+  autoGrow(contentInput);
+});
+
+function autoGrow(el) {
+  el.style.height = 'auto';
+  el.style.height = el.scrollHeight + 'px';
+}
+
+function updateSlugPreview() {
+  const val = slugInput.value.trim();
+  if (val) {
+    slugPreview.textContent = 'floratreeservices.com.au/blog/post.html?slug=' + val;
+    slugPreview.style.display = 'block';
+  } else {
+    slugPreview.style.display = 'none';
+  }
+}
 
 function toSlug(text) {
   return text
@@ -90,160 +194,303 @@ function toSlug(text) {
     .substring(0, 80);
 }
 
-// --- Save (create or update) ---
+// ===================== Unsaved changes warning =====================
+window.addEventListener('beforeunload', (e) => {
+  if (formDirty) {
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
+
+// ===================== Save (create or update) =====================
 postForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  formError.textContent = '';
+  clearFieldErrors();
 
   const post = {
-    title: titleInput.value.trim(),
-    slug: slugInput.value.trim(),
+    title:   titleInput.value.trim(),
+    slug:    slugInput.value.trim(),
     excerpt: excerptInput.value.trim() || null,
     content: contentInput.value.trim()
   };
 
-  if (!post.title || !post.slug || !post.content) {
-    formError.textContent = 'Title, slug and content are required.';
-    return;
+  let valid = true;
+  if (!post.title) {
+    showFieldError(errorTitle, 'Title is required.');
+    valid = false;
   }
+  if (!post.slug) {
+    showFieldError(errorSlug, 'Slug is required.');
+    valid = false;
+  }
+  if (!post.content) {
+    showFieldError(errorContent, 'Content is required.');
+    valid = false;
+  }
+  if (!valid) return;
+
+  const saveBtn = document.getElementById('btn-save');
+  saveBtn.disabled = true;
+  saveBtn.innerHTML = '<span class="admin-spinner"></span> Saving...';
 
   let result;
-
   if (editingId) {
-    result = await sb
-      .from('posts')
-      .update(post)
-      .eq('id', editingId)
-      .select();
+    result = await sb.from('posts').update(post).eq('id', editingId).select();
   } else {
-    result = await sb
-      .from('posts')
-      .insert(post)
-      .select();
+    result = await sb.from('posts').insert(post).select();
   }
+
+  saveBtn.disabled = false;
+  saveBtn.innerHTML = '<i class="fa-solid fa-floppy-disk"></i> Save';
 
   if (result.error) {
     if (result.error.message.includes('duplicate') || result.error.message.includes('unique')) {
-      formError.textContent = 'This slug is already taken. Choose a different one.';
+      showFieldError(errorSlug, 'This slug is already taken. Choose a different one.');
     } else if (result.error.code === '42501') {
-      formError.textContent = 'Permission denied. Are you signed in as an admin?';
+      showToast('Permission denied. Are you signed in as an admin?', 'error');
     } else {
-      formError.textContent = result.error.message;
+      showToast(result.error.message, 'error');
     }
     return;
   }
 
-  formWrap.style.display = 'none';
-  editingId = null;
+  formDirty = false;
+  showToast(editingId ? 'Post updated.' : 'Post created.', 'success');
+  showPostsScreen();
   loadAdminPosts();
 });
 
-// --- Show dashboard ---
-async function showDashboard() {
-  loginSection.style.display = 'none';
-  dashboard.style.display = 'block';
-  loadAdminPosts();
-}
-
-// --- Load posts list ---
+// ===================== Load posts list =====================
 async function loadAdminPosts() {
   const { data, error } = await sb
     .from('posts')
-    .select('id, title, slug, created_at')
+    .select('id, title, slug, excerpt, created_at, updated_at')
     .order('created_at', { ascending: false });
-
-  if (error) {
-    postsList.innerHTML = '';
-    const p = document.createElement('p');
-    p.className = 'admin-error';
-    p.textContent = 'Failed to load posts: ' + error.message;
-    postsList.appendChild(p);
-    return;
-  }
 
   postsList.innerHTML = '';
 
+  if (error) {
+    postsList.innerHTML = '<p class="admin-load-error"><i class="fa-solid fa-circle-exclamation"></i> Failed to load posts: ' + error.message + '</p>';
+    return;
+  }
+
+  postsCount.textContent = data && data.length ? '(' + data.length + ')' : '(0)';
+
   if (!data || data.length === 0) {
-    const p = document.createElement('p');
-    p.textContent = 'No posts yet. Click "+ New Post" to create one.';
-    postsList.appendChild(p);
+    postsList.innerHTML = `
+      <div class="admin-empty">
+        <i class="fa-regular fa-file-lines admin-empty-icon"></i>
+        <p class="admin-empty-text">No posts yet</p>
+        <button class="btn-admin" id="btn-first-post">Create your first post</button>
+      </div>`;
+    document.getElementById('btn-first-post').addEventListener('click', () => openEditor(null));
     return;
   }
 
   const table = document.createElement('table');
   table.className = 'admin-table';
-  table.innerHTML = '<thead><tr><th>Title</th><th>Date</th><th>Actions</th></tr></thead>';
+  table.innerHTML = `
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Updated</th>
+        <th>Actions</th>
+      </tr>
+    </thead>`;
+
   const tbody = document.createElement('tbody');
 
   data.forEach(post => {
     const tr = document.createElement('tr');
+    tr.className = 'admin-table-row';
 
-    const tdTitle = document.createElement('td');
-    tdTitle.textContent = post.title;
+    const excerptText = post.excerpt
+      ? '<span class="admin-table-excerpt">' + escHtml(post.excerpt) + '</span>'
+      : '';
 
-    const tdDate = document.createElement('td');
-    tdDate.textContent = new Date(post.created_at).toLocaleDateString('en-AU');
+    const dateStr = formatDate(post.updated_at || post.created_at);
 
-    const tdActions = document.createElement('td');
-    tdActions.className = 'admin-actions';
+    tr.innerHTML = `
+      <td class="admin-table-title-cell">
+        <span class="admin-table-title">${escHtml(post.title)}</span>
+        ${excerptText}
+      </td>
+      <td class="admin-table-date">${dateStr}</td>
+      <td class="admin-table-actions">
+        <a href="../blog/post.html?slug=${encodeURIComponent(post.slug)}" target="_blank" rel="noopener"
+           class="btn-admin-icon" title="View post" aria-label="View post">
+          <i class="fa-solid fa-up-right-from-square"></i>
+        </a>
+        <button class="btn-admin-icon btn-admin-icon--edit js-edit-btn" data-id="${post.id}" title="Edit" aria-label="Edit post">
+          <i class="fa-solid fa-pen"></i>
+        </button>
+        <button class="btn-admin-icon btn-admin-icon--delete js-delete-btn" data-id="${post.id}" data-title="${escAttr(post.title)}" title="Delete" aria-label="Delete post">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </td>`;
 
-    const editBtn = document.createElement('button');
-    editBtn.className = 'btn-admin btn-admin--small';
-    editBtn.textContent = 'Edit';
-    editBtn.addEventListener('click', () => editPost(post.id));
-
-    const deleteBtn = document.createElement('button');
-    deleteBtn.className = 'btn-admin btn-admin--small btn-admin--danger';
-    deleteBtn.textContent = 'Delete';
-    deleteBtn.addEventListener('click', () => deletePost(post.id, post.title));
-
-    tdActions.append(editBtn, deleteBtn);
-    tr.append(tdTitle, tdDate, tdActions);
     tbody.appendChild(tr);
   });
 
   table.appendChild(tbody);
   postsList.appendChild(table);
+
+  // Bind table buttons
+  postsList.querySelectorAll('.js-edit-btn').forEach(btn => {
+    btn.addEventListener('click', () => editPost(btn.dataset.id));
+  });
+  postsList.querySelectorAll('.js-delete-btn').forEach(btn => {
+    btn.addEventListener('click', () => openDeleteModal(btn.dataset.id, btn.dataset.title));
+  });
 }
 
-// --- Edit ---
-async function editPost(id) {
-  formError.textContent = '';
-  const { data, error } = await sb
-    .from('posts')
-    .select('*')
-    .eq('id', id)
-    .single();
-
-  if (error || !data) {
-    alert('Failed to load post.');
-    return;
-  }
-
+// ===================== Open editor =====================
+function openEditor(id) {
   editingId = id;
-  formHeading.textContent = 'Edit Post';
-  titleInput.value = data.title;
-  slugInput.value = data.slug;
-  excerptInput.value = data.excerpt || '';
-  contentInput.value = data.content;
-  slugWarning.style.display = 'block';
-  formWrap.style.display = 'block';
+  formDirty = false;
+  clearFieldErrors();
+  postForm.reset();
+  excerptCounter.textContent = '0/160';
+  excerptCounter.classList.remove('admin-char-counter--over');
+  slugPreview.style.display = 'none';
+  slugWarning.style.display = 'none';
+  postDates.style.display = 'none';
+  contentInput.style.height = '';
+
+  formHeading.textContent = id ? 'Edit Post' : 'New Post';
+
+  showEditorScreen();
   titleInput.focus();
 }
 
-// --- Delete ---
-async function deletePost(id, title) {
-  if (!window.confirm('Delete "' + title + '"? This cannot be undone.')) return;
+// ===================== Edit =====================
+async function editPost(id) {
+  openEditor(id);
 
-  const { error } = await sb
-    .from('posts')
-    .delete()
-    .eq('id', id);
+  const { data, error } = await sb.from('posts').select('*').eq('id', id).single();
 
-  if (error) {
-    alert('Failed to delete: ' + error.message);
+  if (error || !data) {
+    showToast('Failed to load post.', 'error');
+    showPostsScreen();
     return;
   }
 
+  titleInput.value   = data.title;
+  slugInput.value    = data.slug;
+  excerptInput.value = data.excerpt || '';
+  contentInput.value = data.content;
+
+  const len = excerptInput.value.length;
+  excerptCounter.textContent = len + '/160';
+  excerptCounter.classList.toggle('admin-char-counter--over', len > 160);
+
+  updateSlugPreview();
+  autoGrow(contentInput);
+
+  slugWarning.style.display = 'flex';
+
+  if (data.created_at || data.updated_at) {
+    postDates.style.display = 'block';
+    postCreatedAt.textContent = data.created_at ? formatDate(data.created_at) : '—';
+    postUpdatedAt.textContent = data.updated_at ? formatDate(data.updated_at) : '—';
+  }
+
+  titleInput.focus();
+}
+
+// ===================== Delete modal =====================
+function openDeleteModal(id, title) {
+  deleteTargetId = id;
+  deleteTitle.textContent = title;
+  deleteModal.style.display = 'flex';
+}
+
+deleteCancel.addEventListener('click', () => {
+  deleteModal.style.display = 'none';
+  deleteTargetId = null;
+});
+
+deleteConfirm.addEventListener('click', async () => {
+  if (!deleteTargetId) return;
+  const id = deleteTargetId;
+  deleteModal.style.display = 'none';
+  deleteTargetId = null;
+
+  const { error } = await sb.from('posts').delete().eq('id', id);
+
+  if (error) {
+    showToast('Failed to delete: ' + error.message, 'error');
+    return;
+  }
+
+  showToast('Post deleted.', 'success');
   loadAdminPosts();
+});
+
+// Close modal on overlay click
+deleteModal.addEventListener('click', (e) => {
+  if (e.target === deleteModal) {
+    deleteModal.style.display = 'none';
+    deleteTargetId = null;
+  }
+});
+
+// ===================== Screen switching =====================
+function showPostsScreen() {
+  screenPosts.style.display  = 'block';
+  screenEditor.style.display = 'none';
+  editingId = null;
+}
+
+function showEditorScreen() {
+  screenPosts.style.display  = 'none';
+  screenEditor.style.display = 'block';
+}
+
+// ===================== Field validation helpers =====================
+function showFieldError(el, msg) {
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+function clearFieldErrors() {
+  [errorTitle, errorSlug, errorContent].forEach(el => {
+    el.textContent = '';
+    el.style.display = 'none';
+  });
+}
+
+// ===================== Toasts =====================
+function showToast(msg, type) {
+  const toast = document.createElement('div');
+  toast.className = 'admin-toast admin-toast--' + (type || 'success');
+  toast.innerHTML = '<i class="fa-solid ' + (type === 'error' ? 'fa-circle-exclamation' : 'fa-circle-check') + '"></i> ' + escHtml(msg);
+  toastsEl.appendChild(toast);
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => toast.classList.add('admin-toast--visible'));
+  });
+
+  setTimeout(() => {
+    toast.classList.remove('admin-toast--visible');
+    toast.addEventListener('transitionend', () => toast.remove(), { once: true });
+  }, 3000);
+}
+
+// ===================== Utilities =====================
+function formatDate(iso) {
+  if (!iso) return '—';
+  return new Date(iso).toLocaleDateString('en-AU', { day: '2-digit', month: 'short', year: 'numeric' });
+}
+
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function escAttr(str) {
+  return String(str).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
