@@ -1,0 +1,297 @@
+/* ===== Woden Valley Page ===== */
+
+.wodenvalley-page header {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+    radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+    url(../images/tree-removal-woden-valley-1920.jpg) center 50% / cover no-repeat;
+  min-height: 60vh;
+}
+
+@media (max-width: 1280px) {
+  .wodenvalley-page header {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+      radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+      url(../images/tree-removal-woden-valley-1280.jpg);
+  }
+}
+
+@media (max-width: 800px) {
+  .wodenvalley-page header {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+      radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+      url(../images/tree-removal-woden-valley-800.jpg);
+  }
+}
+
+/* ----- SIGNATURE: Woden Quote Photos (.woden-quote-photos) ----- */
+
+.woden-quote-photos {
+  padding: clamp(48px, 7vw, 88px) 5%;
+  background: linear-gradient(160deg, #1a3a0e 0%, #2f6d2e 100%);
+  color: #fff;
+}
+
+.wqp-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.wqp-kicker {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #a8d88a;
+  margin-bottom: 10px;
+}
+
+.wqp-wrap h2 {
+  font-size: clamp(22px, 4vw, 34px);
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.wqp-intro {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 40px;
+}
+
+.wqp-steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+.wqp-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.wqp-num {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+}
+
+.wqp-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px 20px;
+  flex: 1;
+
+  > i {
+    font-size: 18px;
+    color: #a8d88a;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0;
+  }
+}
+
+.wqp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.wqp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+
+  &--primary {
+    background: var(--brand, #6AB435);
+    color: #fff;
+    box-shadow: 0 8px 18px rgba(91, 140, 81, 0.24);
+
+    &:hover {
+      background: #5a9c2b;
+    }
+  }
+
+  &--secondary {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .wqp-step {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .wqp-num {
+    margin-top: 0;
+  }
+
+  .wqp-actions {
+    flex-direction: column;
+  }
+
+  .wqp-btn {
+    justify-content: center;
+  }
+}
+
+/* ----- Woden Tree Pruning Section (.woden-pruning) ----- */
+
+.woden-pruning {
+  padding: clamp(48px, 7vw, 88px) 5%;
+  background: #fff;
+}
+
+.wp-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.wp-kicker {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 10px;
+}
+
+.wp-wrap h2 {
+  font-size: clamp(22px, 4vw, 36px);
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+
+.wp-wrap p {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 16px;
+
+  a {
+    color: var(--brand-700, #2f6d2e);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+}
+
+/* ----- Woden CTA banner (.woden-cta-banner) ----- */
+
+.woden-cta-banner {
+  background: var(--brand, #6AB435);
+  padding: clamp(40px, 6vw, 72px) 5%;
+  text-align: center;
+}
+
+.wcb-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: clamp(22px, 4vw, 36px);
+    color: #fff;
+    margin-bottom: 14px;
+  }
+
+  p {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+}
+
+.wcb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.wcb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+
+  &--white {
+    background: #fff;
+    color: var(--brand-700, #2f6d2e);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+
+    &:hover {
+      background: #f0f9e8;
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .wcb-actions {
+    flex-direction: column;
+  }
+
+  .wcb-btn {
+    justify-content: center;
+  }
+}
