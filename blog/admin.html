@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Admin | Flora Tree Services</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap"
+    as="style"
+    onload="this.rel='stylesheet'">
+    <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap"
+    rel="stylesheet">
+    </noscript>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/flora-tree-services-logo.svg">
+</head>
+
+<body class="blog-admin-page">
+  <div class="admin-wrap">
+    <h1 class="admin-logo">Flora Tree Services &mdash; Blog Admin</h1>
+
+    <!-- Login screen -->
+    <div class="admin-login" id="admin-login">
+      <form id="login-form">
+        <label>Email <input type="email" id="login-email" required autocomplete="email"></label>
+        <label>Password <input type="password" id="login-password" required autocomplete="current-password"></label>
+        <button type="submit" class="btn-admin">Sign In</button>
+        <p class="admin-error" id="login-error"></p>
+      </form>
+    </div>
+
+    <!-- Dashboard (hidden until login) -->
+    <div class="admin-dashboard" id="admin-dashboard" style="display:none;">
+      <div class="admin-bar">
+        <button id="btn-new-post" class="btn-admin">+ New Post</button>
+        <button id="btn-logout" class="btn-admin btn-admin--outline">Sign Out</button>
+      </div>
+
+      <!-- Posts list -->
+      <div id="admin-posts-list"></div>
+
+      <!-- Post form (hidden) -->
+      <div class="admin-form-wrap" id="admin-form-wrap" style="display:none;">
+        <h2 id="form-heading">New Post</h2>
+        <form id="post-form">
+          <label>Title <input type="text" id="post-title" required></label>
+          <label>Slug <input type="text" id="post-slug" required>
+            <small class="slug-warning" id="slug-warning" style="display:none;">Changing the slug will break existing links to this post</small>
+          </label>
+          <label>Excerpt <input type="text" id="post-excerpt"></label>
+          <label>Content <textarea id="post-content" rows="12" required></textarea></label>
+          <div class="admin-form-actions">
+            <button type="submit" class="btn-admin">Save</button>
+            <button type="button" id="btn-cancel" class="btn-admin btn-admin--outline">Cancel</button>
+          </div>
+          <p class="admin-error" id="form-error"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="admin.js"></script>
+</body>
+
+</html>
