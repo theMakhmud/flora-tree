@@ -1,0 +1,309 @@
+/* ===== Inner North Canberra Page ===== */
+
+.innernorth-page header {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+    radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+    url(../images/tree-removal-inner-north-1920.jpg) center 50% / cover no-repeat;
+  min-height: 60vh;
+}
+
+@media (max-width: 1280px) {
+  .innernorth-page header {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+      radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+      url(../images/tree-removal-inner-north-1280.jpg);
+  }
+}
+
+@media (max-width: 800px) {
+  .innernorth-page header {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+      radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+      url(../images/tree-removal-inner-north-800.jpg);
+  }
+}
+
+/* ----- SIGNATURE: Tight-Access Tree Work (.innernorth-access) ----- */
+
+.innernorth-access {
+  background: var(--brand, #6AB435);
+  padding: clamp(48px, 7vw, 88px) 5%;
+  color: #fff;
+}
+
+.ina-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ina-kicker {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 10px;
+}
+
+.ina-wrap h2 {
+  font-size: clamp(22px, 4vw, 36px);
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.ina-intro {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.7;
+  max-width: 760px;
+  margin-bottom: 40px;
+}
+
+.ina-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.ina-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: background 0.2s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.16);
+  }
+}
+
+.ina-card-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  i {
+    font-size: 20px;
+    color: #fff;
+  }
+}
+
+.ina-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.ina-card p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .ina-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ----- Inner North Pruning Cards (.innernorth-pruning) ----- */
+
+.innernorth-pruning {
+  padding: clamp(48px, 7vw, 88px) 5%;
+  background: #fff;
+}
+
+.inp-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.inp-kicker {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 10px;
+}
+
+.inp-wrap > h2 {
+  font-size: clamp(22px, 4vw, 36px);
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.inp-sub {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 780px;
+  margin-bottom: 36px;
+}
+
+/* ----- Inner North CTA banner (.innernorth-cta-banner) ----- */
+
+.innernorth-cta-banner {
+  background: var(--brand, #6AB435);
+  padding: clamp(40px, 6vw, 72px) 5%;
+  text-align: center;
+}
+
+.incb-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: clamp(22px, 4vw, 36px);
+    color: #fff;
+    margin-bottom: 14px;
+  }
+
+  p {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+}
+
+.incb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.incb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+
+  &--white {
+    background: #fff;
+    color: var(--brand-700, #2f6d2e);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+
+    &:hover {
+      background: #f0f9e8;
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .incb-actions {
+    flex-direction: column;
+  }
+
+  .incb-btn {
+    justify-content: center;
+  }
+}
+
+/* ----- Inner North Pruning block (.innernorth-pruning-block) ----- */
+
+.innernorth-pruning-block {
+  padding: clamp(48px, 7vw, 88px) 5%;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+
+.innernorth-pruning-block img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.innernorth-pruning-block > div {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.inpb-eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin: 0;
+}
+
+.innernorth-pruning-block > div h2 {
+  font-size: clamp(20px, 3.5vw, 32px);
+  color: var(--ink);
+  margin: 0;
+}
+
+.innernorth-pruning-block > div p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+
+  a {
+    color: var(--brand-700, #2f6d2e);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 900px) {
+  .innernorth-pruning-block {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+/* ----- district-chip bordered variant ----- */
+
+.district-chip--bordered {
+  background: transparent;
+  border: 1.5px solid var(--brand, #6AB435);
+  color: var(--brand-700, #2f6d2e);
+
+  &:hover {
+    background: var(--brand);
+    color: #fff;
+    border-color: var(--brand);
+  }
+}
