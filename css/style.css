@@ -2784,7 +2784,7 @@ header > section button:hover i {
 .clara.form-only {
   display: block; /* no grid */
   max-width: 960px; /* nice readable width */
-  margin: 0 auto; /* center */
+  margin: clamp(48px, 7vw, 88px) auto; /* vertical rhythm + center */
   border-radius: 24px;
   overflow: hidden;
   background: radial-gradient(900px 480px at 10% -10%, rgba(106, 180, 53, 0.1), transparent 60%), #fff;
@@ -2948,20 +2948,30 @@ input:focus, select:focus, textarea:focus {
 
 /* Actions */
 .actions {
-  margin-top: 10px;
+  margin-top: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 .agree {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   color: #374151;
   font-size: 14px;
+  line-height: 1.4;
+  flex: 1;
+  min-width: 200px;
+}
+
+.agree input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--brand);
 }
 
 .btn-send {
@@ -3632,6 +3642,13 @@ body.menu-open #backToTop {
   }
   .btn-send {
     margin: auto;
+  }
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .agree {
+    min-width: auto;
   }
   /*-----------------Footer----------------------------*/
   .footer-min .f-wrap {
