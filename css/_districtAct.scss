@@ -206,3 +206,40 @@
     padding: 7px 14px;
   }
 }
+
+/* Service details under gardencard (shared across all districts) */
+.services-details {
+  max-width: 1100px;
+  margin: 32px auto 0;
+  padding: 0 20px;
+}
+.services-details .otr-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 24px;
+  list-style: none;
+  margin-bottom: 20px;
+}
+.services-details .otr-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.services-details .otr-list li i {
+  color: var(--brand);
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+.services-details p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+@media (max-width: 768px) {
+  .services-details .otr-list {
+    grid-template-columns: 1fr;
+  }
+}
