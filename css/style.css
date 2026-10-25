@@ -6047,7 +6047,7 @@ input::-moz-placeholder, textarea::-moz-placeholder {
 }
 /* Approach block — extracted from underheader */
 .innersouth-approach {
-  background: var(--bg);
+  background: #fff;
   padding: clamp(40px, 6vw, 80px) 20px;
 }
 .innersouth-approach .isa-wrap {
