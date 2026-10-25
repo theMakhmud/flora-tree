@@ -5660,13 +5660,8 @@ input::-moz-placeholder, textarea::-moz-placeholder {
 /* ----- SIGNATURE: Inner South Process (.innersouth-process) ----- */
 .innersouth-process {
   background: var(--brand, #6AB435);
-  padding: clamp(48px, 7vw, 88px) 5%;
+  padding: clamp(48px, 7vw, 88px) 100px;
   color: #fff;
-}
-
-.isp-wrap {
-  width: 90%;
-  margin: 0 auto;
 }
 
 .isp-kicker {
@@ -5693,13 +5688,14 @@ input::-moz-placeholder, textarea::-moz-placeholder {
 }
 
 .isp-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   gap: 40px;
   align-items: start;
 }
 
 .isp-photo {
+  flex: 0 0 48%;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -5713,6 +5709,7 @@ input::-moz-placeholder, textarea::-moz-placeholder {
 }
 
 .isp-steps {
+  flex: 0 0 48%;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -5793,8 +5790,18 @@ input::-moz-placeholder, textarea::-moz-placeholder {
 }
 
 @media (max-width: 1024px) {
+  .innersouth-process {
+    padding-inline: clamp(28px, 6vw, 48px);
+  }
+  .innersouth-approach {
+    padding-inline: clamp(28px, 6vw, 48px);
+  }
   .isp-inner {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+  .isp-photo,
+  .isp-steps {
+    flex: 0 0 100%;
   }
   .isp-photo {
     max-width: 560px;
@@ -5927,6 +5934,12 @@ input::-moz-placeholder, textarea::-moz-placeholder {
 }
 
 @media (max-width: 480px) {
+  .innersouth-process {
+    padding-inline: 16px;
+  }
+  .innersouth-approach {
+    padding-inline: 16px;
+  }
   .innersouth-page .district-suburbs-list {
     grid-template-columns: 1fr;
   }
@@ -6048,11 +6061,7 @@ input::-moz-placeholder, textarea::-moz-placeholder {
 /* Approach block — extracted from underheader */
 .innersouth-approach {
   background: #fff;
-  padding: clamp(40px, 6vw, 80px) 20px;
-}
-.innersouth-approach .isa-wrap {
-  width: 90%;
-  margin: 0 auto;
+  padding: clamp(40px, 6vw, 80px) 100px;
 }
 .innersouth-approach .isa-eyebrow {
   font-size: 13px;

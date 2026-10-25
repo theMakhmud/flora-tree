@@ -21,13 +21,11 @@
 
 .innersouth-process {
   background: var(--brand, #6AB435);
-  padding: clamp(48px, 7vw, 88px) 5%;
+  padding: clamp(48px, 7vw, 88px) 100px;
   color: #fff;
 }
 
 .isp-wrap {
-  width: 90%;
-  margin: 0 auto;
 }
 
 .isp-kicker {
@@ -54,13 +52,13 @@
 }
 
 .isp-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   gap: 40px;
   align-items: start;
 }
-
 .isp-photo {
+  flex: 0 0 48%;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -74,6 +72,7 @@
 }
 
 .isp-steps {
+  flex: 0 0 48%;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -154,10 +153,19 @@
 }
 
 @media (max-width: 1024px) {
-  .isp-inner {
-    grid-template-columns: 1fr;
+  .innersouth-process {
+    padding-inline: clamp(28px, 6vw, 48px);
   }
-
+  .innersouth-approach {
+    padding-inline: clamp(28px, 6vw, 48px);
+  }
+  .isp-inner {
+    flex-direction: column;
+  }
+  .isp-photo,
+  .isp-steps {
+    flex: 0 0 100%;
+  }
   .isp-photo {
     max-width: 560px;
   }
@@ -297,6 +305,12 @@
 }
 
 @media (max-width: 480px) {
+  .innersouth-process {
+    padding-inline: 16px;
+  }
+  .innersouth-approach {
+    padding-inline: 16px;
+  }
   .innersouth-page .district-suburbs-list {
     grid-template-columns: 1fr;
   }
@@ -414,11 +428,9 @@
 // ----- innersouth-approach: 2-column text layout -----
 .innersouth-approach {
   background: #fff;
-  padding: clamp(40px, 6vw, 80px) 20px;
+  padding: clamp(40px, 6vw, 80px) 100px;
 
   .isa-wrap {
-    width: 90%;
-    margin: 0 auto;
   }
 
   .isa-eyebrow {
