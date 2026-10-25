@@ -59,7 +59,7 @@ $emergency-accent-text: #B94700;
   text-decoration: none;
 }
 .btn-emergency-primary:hover {
-  background: darken(#{$emergency-accent}, 8%);
+  background: darken($emergency-accent, 8%);
   box-shadow: 0 12px 24px rgba(211, 84, 0, 0.45);
 }
 
@@ -150,7 +150,7 @@ $emergency-accent-text: #B94700;
   background: #fff8f5;
 }
 .eac-card--accent:hover {
-  border-color: darken(#{$emergency-accent}, 6%);
+  border-color: darken($emergency-accent, 6%);
 }
 
 .eac-icon {
@@ -451,7 +451,7 @@ $emergency-accent-text: #B94700;
   box-shadow: 0 6px 14px rgba(211, 84, 0, 0.4);
 }
 .ecc-btn--primary:hover {
-  background: darken(#{$emergency-accent}, 8%);
+  background: darken($emergency-accent, 8%);
 }
 
 .ecc-btn--secondary {
@@ -547,7 +547,7 @@ $emergency-accent-text: #B94700;
   transition: color 0.2s;
 }
 .ean-contact-number:hover {
-  color: darken(#{$emergency-accent-text}, 10%);
+  color: darken($emergency-accent-text, 10%);
 }
 
 .ean-contact-name {
