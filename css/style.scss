@@ -38,9 +38,11 @@ min-height: 60vh;}
 .index-page header{
      background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/hero.webp) center/cover no-repeat;
 }
-.tuggeranong-page header{
+.tuggeranong-page header,
+.gungahlin-page header {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),url(../images/treepruning-canberra3.jpeg) center/cover no-repeat;
-  min-height: 60vh;}
+  min-height: 60vh;
+}
 
 header {
   min-height: 100vh;
@@ -1147,9 +1149,11 @@ body.menu-open #backToTop{
 @media (max-width: 480px) {
 
     header {
-    background-position: center top;   /* keep main subject visible */
-    min-height: 75vh;                  /* shorter hero for small screens */
+    background-position: center top;
+    min-height: 75vh;
   }
+
+  .treeTypes { width: 94%; }
 
   header > section {
     padding: 80px 14px 0;              /* top padding = nav height + margin */
@@ -1386,4 +1390,42 @@ body.menu-open #backToTop{
   font-weight: 600;
   text-decoration: none;
   text-align: center;
+}
+
+/* Standalone .otr-cta (used outside .ourTreeRemoval in FAQ CTA, etc.) */
+.otr-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  padding: 12px 20px;
+  box-shadow: 0 8px 18px rgba(91, 140, 81, 0.24);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.otr-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px rgba(91, 140, 81, 0.32);
+}
+.otr-cta:active {
+  transform: translateY(0);
+}
+
+/* Compliance note (form consent area) */
+.compliance-note {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+/* District suburb intro link */
+.ds-intro a {
+  color: var(--brand-700, #2f6d2e);
+  font-weight: 600;
+  text-decoration: underline;
 }
