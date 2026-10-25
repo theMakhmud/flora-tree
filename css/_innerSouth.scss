@@ -306,3 +306,102 @@
     align-items: center;
   }
 }
+
+/* Restored from style.css */
+/* ===== Inner South Pruning Steps (.innersouth-pruning-steps) ===== */
+.innersouth-pruning-steps {
+  padding: clamp(48px, 7vw, 88px) 5%;
+  background: #f7f8f5;
+}
+.ips-wrap {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: start;
+}
+.ips-media {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,.09);
+}
+.ips-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.ips-kicker {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 10px;
+}
+.ips-content h2 {
+  font-size: clamp(22px, 4vw, 36px);
+  color: var(--ink);
+  margin-bottom: 28px;
+  line-height: 1.2;
+}
+.ips-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.ips-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.ips-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brand, #6AB435);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: .04em;
+}
+.ips-step-body h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 5px;
+}
+.ips-step-body p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
+}
+.ips-step-body p a {
+  color: var(--brand-700, #2f6d2e);
+  font-weight: 600;
+  text-decoration: underline;
+}
+@media (max-width: 900px) {
+  .ips-wrap {
+    grid-template-columns: 1fr;
+  }
+  .ips-media {
+    max-width: 560px;
+  }
+}
+@media (max-width: 480px) {
+  .innersouth-pruning-steps {
+    padding: 32px 5%;
+  }
+  .ips-num {
+    width: 38px;
+    height: 38px;
+    font-size: 12px;
+  }
+}

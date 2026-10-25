@@ -1,4 +1,5 @@
 @use 'base';
+@use 'blog';
 @use 'treeRemoval';
 @use 'pruning';
 @use 'hedgeTrimming';
@@ -71,6 +72,7 @@ header {
             display: flex;
             align-items: center;
             gap: 20px;
+            flex: 1;
 
             a,
             p {
@@ -99,6 +101,10 @@ header {
                 height: 6px;
                 background-color: black;
                 border-radius: 50%;
+            }
+
+            > a:first-of-type {
+                margin-left: auto;
             }
         }
         
@@ -150,6 +156,9 @@ header {
             &:hover p i { transform: rotate(180deg); }
         }
         
+        .call {
+            margin-left: auto;
+        }
         .call a{
                 display: flex;
                 align-items: center;
@@ -738,7 +747,7 @@ header {
 .clara.form-only{
   display:block;                 /* no grid */
   max-width: 960px;              /* nice readable width */
-  margin: 0 auto;                /* center */
+  margin: clamp(48px, 7vw, 88px) auto; /* vertical rhythm + center */
   border-radius:24px;
   overflow:hidden;
   background:
@@ -785,8 +794,12 @@ input:focus, select:focus, textarea:focus{ border-color:var(--brand); box-shadow
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis; background:rgba(255,255,255,.8); padding:1px 3px; border-radius:4px; }
 
 /* Actions */
-.actions{ margin-top:10px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-.agree{ display:flex; align-items:center; gap:8px; color:#374151; font-size:14px; }
+.actions{ margin-top:16px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.agree{
+  display:flex; align-items:center; gap:10px; color:#374151; font-size:14px;
+  line-height:1.4; flex:1; min-width:200px;
+  input[type="checkbox"]{ flex-shrink:0; width:18px; height:18px; accent-color:var(--brand); }
+}
 .btn-send{
   display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:12px;
   background:var(--brand); color:#fff; border:0; font-weight:800; cursor:pointer;
@@ -1274,7 +1287,102 @@ body.menu-open #backToTop{
     .btn-quote{ width:100%; }
 }
 
+/* Form actions — mobile stack */
+@media (max-width: 600px){
+  .actions{ flex-direction: column; align-items: stretch; }
+  .agree{ min-width: auto; }
+  .btn-send{ justify-content: center; }
+}
+
 /* Motion preference */
 @media (prefers-reduced-motion: reduce){
   .review{ scroll-behavior: auto; }
+}
+
+/* Restored from style.css */
+
+/* Intro text fills card width on new pages */
+.underheader--wide > :nth-child(2) h2 {
+  max-width: none;
+}
+.underheader--wide > :nth-child(2) p {
+  max-width: none;
+}
+
+/* Hero content (shared across pages) */
+.hero_content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.hero_title {
+  width: 100%;
+  margin: auto;
+  font-size: clamp(38px, 6vw, 60px);
+  font-weight: 500;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
+}
+
+.hero_desc {
+  margin: 0 auto 28px;
+  max-width: 760px;
+  font-size: clamp(18px, 2.2vw, 28px);
+  font-weight: 500;
+  line-height: 1.5;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Review additions (carousel enhancements) */
+.review-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+}
+
+.review-stars {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.review-author {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.google-icon {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+}
+
+.google-icon img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.9;
+}
+
+.review-cta {
+  display: block;
+  width: fit-content;
+  margin: 20px auto 20px;
+  padding: 12px 22px;
+  border-radius: 8px;
+  background: #2e7d32;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
 }

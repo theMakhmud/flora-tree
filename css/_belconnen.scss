@@ -361,3 +361,100 @@
     padding: 8px 10px;
   }
 }
+
+/* Restored from style.css */
+/* ===== Belconnen Pruning Card (.belconnen-pruning-card) ===== */
+.belconnen-pruning-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(18px, 3vw, 36px);
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: clamp(24px, 5vw, 40px) auto;
+  padding: clamp(20px, 3vw, 36px);
+  background: linear-gradient(180deg, #fff, #fbfdf9);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: 0 12px 32px rgba(17, 24, 39, 0.06);
+}
+.belconnen-pruning-card .bpc-kicker {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.belconnen-pruning-card .bpc-kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+.belconnen-pruning-card h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  line-height: 1.15;
+  margin: 0 0 18px;
+  color: var(--ink);
+}
+.belconnen-pruning-card .bpc-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.belconnen-pruning-card .bpc-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  color: var(--ink);
+  line-height: 1.5;
+}
+.belconnen-pruning-card .bpc-list li i {
+  color: var(--brand);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.belconnen-pruning-card .bpc-body {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+.belconnen-pruning-card .bpc-media {
+  margin: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.belconnen-pruning-card .bpc-media img {
+  width: 100%;
+  height: clamp(260px, 40vh, 450px);
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .belconnen-pruning-card {
+    grid-template-columns: 1fr;
+    width: 94%;
+  }
+  .belconnen-pruning-card .bpc-media {
+    order: -1;
+  }
+}
+@media (max-width: 480px) {
+  .belconnen-pruning-card {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+}

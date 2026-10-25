@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Admin | Flora Tree Services</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap"
+    as="style"
+    onload="this.rel='stylesheet'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap" rel="stylesheet">
+  </noscript>
+
+  <!-- Font Awesome -->
+  <link rel="preload"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    as="style"
+    onload="this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  </noscript>
+
+  <!-- Favicon -->
+  <link rel="icon" href="../images/flora-tree-services-logo.svg">
+</head>
+
+<body class="blog-admin-page">
+
+  <!-- ===================== LOGIN SCREEN ===================== -->
+  <div class="admin-login-screen" id="admin-login">
+    <div class="admin-login-card">
+      <img src="../images/flora-tree-services-logo.png" alt="Flora Tree Services" class="admin-logo-img">
+      <h1 class="admin-login-title">Blog Admin</h1>
+      <p class="admin-login-sub">Sign in to manage posts</p>
+
+      <form id="login-form" novalidate>
+        <div class="admin-field">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" name="email" required autocomplete="email" placeholder="admin@example.com">
+        </div>
+
+        <div class="admin-field">
+          <label for="login-password">Password</label>
+          <div class="admin-input-wrap">
+            <input type="password" id="login-password" name="password" required autocomplete="current-password" placeholder="••••••••">
+            <button type="button" class="admin-eye-btn" id="toggle-password" aria-label="Show password">
+              <i class="fa-regular fa-eye" id="eye-icon"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="admin-error-banner" id="login-error" style="display:none;" role="alert">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span id="login-error-text"></span>
+        </div>
+
+        <button type="submit" class="btn-admin btn-admin--full" id="login-btn">
+          <span id="login-btn-text">Sign In</span>
+          <span id="login-spinner" class="admin-spinner" style="display:none;" aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================== DASHBOARD ===================== -->
+  <div id="admin-dashboard" style="display:none;">
+
+    <!-- Top bar -->
+    <header class="admin-topbar">
+      <div class="admin-topbar-inner">
+        <div class="admin-topbar-brand">
+          <img src="../images/flora-tree-services-logo.png" alt="Flora Tree Services" class="admin-topbar-logo">
+          <span class="admin-topbar-title">Blog Admin</span>
+        </div>
+        <div class="admin-topbar-right">
+          <a href="../blog.html" target="_blank" rel="noopener" class="admin-view-blog">
+            View blog <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+          <span class="admin-user-email" id="admin-user-email"></span>
+          <button class="btn-admin btn-admin--outline btn-admin--sm" id="btn-logout">Sign Out</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="admin-main">
+
+      <!-- Posts list screen -->
+      <div id="screen-posts">
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Posts <span class="admin-posts-count" id="posts-count"></span></h2>
+            <button class="btn-admin btn-admin--sm" id="btn-new-post">
+              <i class="fa-solid fa-plus"></i> New Post
+            </button>
+          </div>
+
+          <!-- Table (populated by JS) -->
+          <div id="admin-posts-list"></div>
+        </div>
+      </div>
+
+      <!-- Editor screen (hidden) -->
+      <div id="screen-editor" style="display:none;">
+        <div class="admin-editor-back">
+          <button class="admin-back-link" id="btn-back">
+            <i class="fa-solid fa-arrow-left"></i> Back to posts
+          </button>
+          <h2 class="admin-editor-heading" id="form-heading">New Post</h2>
+        </div>
+
+        <div class="admin-editor-grid">
+          <!-- Left: fields -->
+          <div class="admin-editor-fields">
+            <form id="post-form" novalidate>
+
+              <div class="admin-field">
+                <label for="post-title">Title <span class="admin-required" aria-hidden="true">*</span></label>
+                <input type="text" id="post-title" required autocomplete="off">
+                <span class="admin-field-error" id="error-title"></span>
+              </div>
+
+              <div class="admin-field">
+                <label for="post-slug">Slug <span class="admin-required" aria-hidden="true">*</span></label>
+                <input type="text" id="post-slug" required autocomplete="off">
+                <span class="admin-slug-preview" id="slug-preview"></span>
+                <div class="admin-warning-banner" id="slug-warning" style="display:none;">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  Changing the slug will break existing links to this post
+                </div>
+                <span class="admin-field-error" id="error-slug"></span>
+              </div>
+
+              <div class="admin-field">
+                <label for="post-excerpt">
+                  Excerpt
+                  <span class="admin-char-counter" id="excerpt-counter">0/160</span>
+                </label>
+                <input type="text" id="post-excerpt" maxlength="200" autocomplete="off" placeholder="Short description for search results">
+                <span class="admin-field-hint">~150–160 characters works best for search results</span>
+              </div>
+
+              <div class="admin-field">
+                <label for="post-content">Content <span class="admin-required" aria-hidden="true">*</span></label>
+                <textarea id="post-content" rows="12" required placeholder="Write your post content here..."></textarea>
+                <span class="admin-field-hint">Leave a blank line between paragraphs</span>
+                <span class="admin-field-error" id="error-content"></span>
+              </div>
+
+              <!-- Cover Image -->
+              <div class="admin-field">
+                <label>Cover image</label>
+                <div class="admin-cover-wrap" id="cover-wrap">
+                  <div class="admin-cover-preview" id="cover-preview" style="display:none;">
+                    <img id="cover-preview-img" alt="">
+                    <div class="admin-cover-actions">
+                      <label class="btn-admin btn-admin--sm btn-admin--outline" for="cover-input">
+                        <i class="fa-solid fa-arrows-rotate"></i> Replace
+                      </label>
+                      <button type="button" class="btn-admin btn-admin--sm btn-admin--danger" id="btn-cover-remove">
+                        <i class="fa-solid fa-trash"></i> Remove
+                      </button>
+                    </div>
+                  </div>
+                  <div class="admin-cover-empty" id="cover-empty">
+                    <label class="btn-admin btn-admin--sm btn-admin--outline" for="cover-input">
+                      <i class="fa-solid fa-image"></i> Upload cover image
+                    </label>
+                    <p class="admin-field-hint">JPEG, PNG or WebP, max 10 MB. Will be resized to 1600px.</p>
+                  </div>
+                  <input type="file" id="cover-input" accept="image/jpeg,image/png,image/webp" hidden>
+                  <div class="admin-cover-uploading" id="cover-uploading" style="display:none;">
+                    <span class="admin-spinner"></span> Uploading…
+                  </div>
+                </div>
+              </div>
+
+              <div class="admin-field" id="cover-alt-field" style="display:none;">
+                <label>Cover alt text <span class="admin-required">*</span></label>
+                <input type="text" id="cover-alt-input" placeholder="Describe what's in the photo">
+                <p class="admin-field-hint">Required when a cover image is set.</p>
+                <p class="admin-field-error" id="error-cover-alt"></p>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Right: sidebar -->
+          <aside class="admin-editor-sidebar">
+            <div class="admin-sidebar-card">
+              <button type="submit" form="post-form" class="btn-admin btn-admin--full" id="btn-save">
+                <i class="fa-solid fa-floppy-disk"></i> Save
+              </button>
+              <button type="button" class="btn-admin btn-admin--outline btn-admin--full" id="btn-cancel">
+                Cancel
+              </button>
+              <div class="admin-post-dates" id="post-dates" style="display:none;">
+                <p><span class="admin-dates-label">Created:</span> <span id="post-created-at"></span></p>
+                <p><span class="admin-dates-label">Updated:</span> <span id="post-updated-at"></span></p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ===================== DELETE MODAL ===================== -->
+  <div class="admin-modal-overlay" id="delete-modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title">
+    <div class="admin-modal">
+      <h3 id="delete-modal-title">Delete post</h3>
+      <p>Delete "<strong><span id="delete-title"></span></strong>"? This can't be undone.</p>
+      <div class="admin-modal-actions">
+        <button id="delete-cancel" class="btn-admin btn-admin--outline">Cancel</button>
+        <button id="delete-confirm" class="btn-admin btn-admin--danger">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== TOASTS ===================== -->
+  <div class="admin-toasts" id="admin-toasts" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="admin.js"></script>
+</body>
+
+</html>

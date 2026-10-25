@@ -276,3 +276,651 @@
   .texthowtree{ grid-template-columns: 52px 1fr; }
   .step-num{ width:48px; height:48px; border-radius:12px; }
 }
+
+/* Restored from style.css */
+
+/* ===== Professional Tree Removal Solutions ===== */
+.trSolutions {
+  width: 90%;
+  margin: clamp(26px, 4vw, 44px) auto;
+}
+
+.trs-wrap {
+  background: linear-gradient(180deg, #fff, #fbfdf9);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: clamp(18px, 3vw, 36px);
+  box-shadow: 0 12px 32px rgba(17, 24, 39, 0.06);
+}
+
+.trs-head {
+  max-width: 880px;
+}
+
+.trs-kicker {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--brand);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+}
+.trs-kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--brand);
+}
+
+.trs-head h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+  line-height: 1.15;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+.trs-sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.05rem);
+  line-height: 1.7;
+}
+
+/* Grid */
+.trs-grid {
+  margin-top: clamp(16px, 2vw, 22px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 18px);
+}
+
+.trs-card {
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 16px 16px 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+.trs-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+}
+.trs-card h3 {
+  margin: 10px 0 8px;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+.trs-card p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+.trs-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #ecf6e8;
+  color: var(--brand);
+  border: 1px solid rgba(91, 140, 81, 0.18);
+}
+.trs-icon i {
+  font-size: 1.05rem;
+}
+
+.trs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+.trs-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--ink);
+  font-size: 0.98rem;
+}
+.trs-list li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--brand);
+  margin-top: 7px;
+  flex: 0 0 auto;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+/* CTA card */
+.trs-card.trs-cta {
+  background: linear-gradient(180deg, #ffffff, #f6fbf3);
+  border: 1px solid rgba(91, 140, 81, 0.25);
+}
+.trs-card.trs-cta .trs-actions {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ===== Cost of Tree Removal (premium) ===== */
+.trCost {
+  width: 90%;
+  margin: clamp(26px, 4vw, 44px) auto;
+}
+
+.trc-wrap {
+  background: linear-gradient(180deg, #fff, #fbfdf9);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: clamp(18px, 3vw, 36px);
+  box-shadow: 0 12px 32px rgba(17, 24, 39, 0.06);
+}
+
+.trc-head {
+  max-width: 920px;
+}
+
+.trc-kicker {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--brand);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+}
+.trc-kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--brand);
+}
+
+.trc-head h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+  line-height: 1.15;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+.trc-sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.05rem);
+  line-height: 1.7;
+}
+
+.trc-grid {
+  margin-top: clamp(16px, 2vw, 22px);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(12px, 2vw, 18px);
+  align-items: stretch;
+}
+
+.trc-card {
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 16px 16px 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+}
+.trc-card h3 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: 1.15rem;
+}
+.trc-card p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.trc-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink);
+  line-height: 1.7;
+}
+.trc-list li {
+  margin: 8px 0;
+}
+
+.trc-highlight {
+  background: linear-gradient(180deg, #ffffff, #f6fbf3);
+  border: 1px solid rgba(91, 140, 81, 0.25);
+}
+
+.trc-note {
+  margin-bottom: 12px;
+}
+
+.trc-bands {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+
+.trc-band {
+  border-radius: 16px;
+  border: 1px solid rgba(91, 140, 81, 0.18);
+  background: rgba(91, 140, 81, 0.06);
+  padding: 10px 12px;
+  display: grid;
+  gap: 3px;
+}
+.trc-band .trc-label {
+  font-weight: 900;
+  color: var(--ink);
+}
+.trc-band .trc-desc {
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.trc-tip {
+  margin: 10px 0 0;
+}
+
+.trc-actions {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.trc-foot {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.trc-footItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(91, 140, 81, 0.18);
+  background: rgba(91, 140, 81, 0.06);
+}
+.trc-footItem i {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 1px solid rgba(91, 140, 81, 0.18);
+  color: var(--brand);
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+.trc-footItem p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--ink);
+}
+.trc-footItem a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 800;
+}
+
+.trc-emph {
+  font-weight: 900;
+  color: var(--brand);
+}
+
+.trc-footUrgent {
+  border-color: rgba(230, 126, 34, 0.35);
+  background: rgba(230, 126, 34, 0.08);
+}
+.trc-footUrgent i {
+  border-color: rgba(230, 126, 34, 0.35);
+}
+.trc-footUrgent .trc-emph {
+  color: #b45309;
+}
+
+/* ===== FAQ (Premium Accordion) ===== */
+.trFaq {
+  width: 70%;
+  margin: clamp(26px, 4vw, 44px) auto;
+}
+
+.trf-wrap {
+  background: linear-gradient(180deg, #fff, #fbfdf9);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: clamp(18px, 3vw, 36px);
+  box-shadow: 0 12px 32px rgba(17, 24, 39, 0.06);
+}
+
+.trf-head {
+  max-width: 920px;
+  margin-bottom: 14px;
+}
+
+.trf-kicker {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--brand);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+}
+.trf-kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--brand);
+}
+
+.trf-head h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+  line-height: 1.15;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+.trf-sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.05rem);
+  line-height: 1.7;
+}
+
+.trf-accordion {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.trf-item {
+  border-radius: 18px;
+  border: 1px solid rgba(91, 140, 81, 0.18);
+  background: rgba(91, 140, 81, 0.05);
+  overflow: hidden;
+}
+
+.trf-q {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-weight: 900;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.trf-q::-webkit-details-marker {
+  display: none;
+}
+
+.trf-q::after {
+  content: "+";
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 1px solid rgba(91, 140, 81, 0.18);
+  color: var(--brand);
+  flex: 0 0 auto;
+  font-weight: 900;
+}
+
+.trf-item[open] .trf-q::after {
+  content: "-";
+}
+
+.trf-a {
+  padding: 0 16px 14px;
+}
+
+.trf-a p {
+  margin: 0;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.trf-a a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 800;
+}
+
+/* CTA row */
+.trf-cta {
+  margin-top: 18px;
+  padding: 14px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  background: rgba(0, 0, 0, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.trf-ctaText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.trf-ctaText strong {
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+.trf-ctaText span {
+  color: var(--muted);
+}
+
+.trf-ctaBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ===== Compliance / Regulations Section ===== */
+.trCompliance {
+  width: 90%;
+  margin: clamp(26px, 4vw, 44px) auto;
+}
+
+.trcomp-wrap {
+  background: linear-gradient(180deg, #fff, #fbfdf9);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: clamp(18px, 3vw, 36px);
+  box-shadow: 0 12px 32px rgba(17, 24, 39, 0.06);
+}
+
+.trcomp-head {
+  max-width: 900px;
+}
+
+.trcomp-kicker {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--brand);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+}
+.trcomp-kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--brand);
+}
+
+.trcomp-head h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+  margin: 0 0 10px;
+}
+
+.trcomp-sub {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.trcomp-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.trcomp-card {
+  border-radius: 18px;
+  border: 1px solid rgba(91, 140, 81, 0.18);
+  background: #fff;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+}
+.trcomp-card h3 {
+  margin: 0 0 8px;
+}
+.trcomp-card p {
+  margin: 0 0 10px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.trcomp-card ul {
+  margin: 0 0 8px 18px;
+}
+
+.trcomp-note {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(91, 140, 81, 0.06);
+  border: 1px solid rgba(91, 140, 81, 0.18);
+}
+
+/* ===== Related Services ===== */
+.related-services {
+  padding: 80px 20px;
+  background: #f7faf7;
+}
+
+.related-wrap {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.related-wrap h2 {
+  margin-bottom: 10px;
+}
+
+.related-wrap p {
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.related-card {
+  display: block;
+  padding: 25px;
+  background: white;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.related-card i {
+  font-size: 26px;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+/* ===== Responsive overrides for tree removal components ===== */
+@media (max-width: 1024px) {
+  .trs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .trc-grid {
+    grid-template-columns: 1fr;
+  }
+  .trc-foot {
+    grid-template-columns: 1fr;
+  }
+  .trcomp-grid {
+    grid-template-columns: 1fr;
+  }
+  .trf-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .related-wrap p {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .trSolutions {
+    width: 94%;
+  }
+  .trs-grid {
+    grid-template-columns: 1fr;
+  }
+  .trCost {
+    width: 94%;
+  }
+  .trFaq {
+    width: 94%;
+  }
+  .trf-ctaBtns {
+    width: 100%;
+  }
+  .trf-ctaBtns .otr-cta {
+    width: 100%;
+  }
+  .related-services {
+    padding: 60px 18px;
+  }
+  .related-card {
+    padding: 20px;
+  }
+  .related-card h3 {
+    font-size: 18px;
+  }
+}
