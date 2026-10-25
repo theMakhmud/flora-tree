@@ -6087,6 +6087,53 @@ input::-moz-placeholder, textarea::-moz-placeholder {
   margin: 0;
 }
 
+/* Light-background variant of process block */
+.innersouth-process--light {
+  background: var(--bg, #f7f8f5);
+  color: var(--ink, #111827);
+}
+
+.innersouth-process--light .isp-kicker {
+  color: var(--brand);
+}
+
+.innersouth-process--light .isp-wrap h2 {
+  color: var(--ink);
+}
+
+.innersouth-process--light .isp-num {
+  background: var(--brand);
+  color: #fff;
+}
+
+.innersouth-process--light .isp-step-body h3 {
+  color: var(--ink);
+}
+
+.innersouth-process--light .isp-step-body p {
+  color: var(--muted);
+}
+
+.innersouth-process--light .isp-btn--primary {
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(106, 180, 53, 0.24);
+}
+
+.innersouth-process--light .isp-btn--primary:hover {
+  background: var(--brand-700, #2f6d2e);
+}
+
+.innersouth-process--light .isp-btn--outline-dark {
+  background: transparent;
+  color: var(--ink);
+  border: 2px solid var(--brand);
+}
+
+.innersouth-process--light .isp-btn--outline-dark:hover {
+  background: rgba(106, 180, 53, 0.08);
+}
+
 /* ===== Shared NSW District Components ===== */
 /* Used by: Queanbeyan, Googong, Jerrabomberra (NSW pages) */
 /* ----- NSW Tree Rules (.nsw-tree-rules) ----- */
