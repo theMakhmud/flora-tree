@@ -7235,13 +7235,21 @@ input::-moz-placeholder, textarea::-moz-placeholder {
 
 /* ===== Jerrabomberra Page — Unique Styles ===== */
 /* ----- Hero background ----- */
-/* NOTE: No dedicated Jerrabomberra hero photo exists yet (pending client).
-   Using tree-removal-canberra3.webp (3840px wide) as placeholder. */
 .jerrabomberra-page header {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/tree-removal-canberra3.webp) center 50%/cover no-repeat;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/tree-removal-jerrabomberra-1920.jpg) center 50%/cover no-repeat;
   min-height: 60vh;
 }
 
+@media (max-width: 1280px) {
+  .jerrabomberra-page header {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/tree-removal-jerrabomberra-1280.jpg);
+  }
+}
+@media (max-width: 800px) {
+  .jerrabomberra-page header {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/tree-removal-jerrabomberra-800.jpg);
+  }
+}
 @media (max-width: 1280px) {
   .jerrabomberra-page header {
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/tree-removal-canberra3.webp);
