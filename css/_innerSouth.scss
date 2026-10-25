@@ -405,3 +405,54 @@
     font-size: 12px;
   }
 }
+
+/* Approach block — extracted from underheader */
+// =============================================================
+// _innerSouth.scss — Inner South Canberra page styles
+// =============================================================
+
+// ----- innersouth-approach: 2-column text layout -----
+.innersouth-approach {
+  background: var(--bg);
+  padding: clamp(40px, 6vw, 80px) 20px;
+
+  .isa-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .isa-eyebrow {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--brand);
+    font-weight: 600;
+    margin: 0 0 28px;
+  }
+
+  .isa-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+  }
+
+  .isa-col h3 {
+    font-size: 20px;
+    color: var(--ink);
+    margin: 0 0 12px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--brand);
+  }
+
+  .isa-col p {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0;
+  }
+}
