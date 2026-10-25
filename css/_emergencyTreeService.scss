@@ -366,65 +366,54 @@ $emergency-accent-text: $brand-deep;
   line-height: 1.6;
 }
 
-.ecc-steps {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+.ecc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
 }
-
-.ecc-step {
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
+.ecc-card {
   background: #fff;
   border-radius: 12px;
-  padding: 20px 22px;
+  padding: 22px 24px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
-
-.ecc-num {
+.ecc-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.ecc-icon {
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(47, 109, 46, 0.85);
-  color: #fff;
+  background: $brand-tint;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  i { font-size: 18px; color: $brand-dark; }
 }
-
-.ecc-body {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  flex: 1;
-}
-
-.ecc-body > i {
-  font-size: 20px;
-  color: var(--emergency-accent);
-  margin-top: 3px;
-  flex-shrink: 0;
-}
-
-.ecc-body h3 {
+.ecc-card h3 {
   font-size: 17px;
   font-weight: 700;
   color: var(--ink, #111827);
-  margin-bottom: 4px;
+  margin: 0;
 }
-
-.ecc-body p {
+.ecc-card p {
   font-size: 15px;
   color: #374151;
-  line-height: 1.55;
+  line-height: 1.6;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .ecc-grid { grid-template-columns: 1fr; gap: 14px; }
+  .ecc-card { padding: 16px 18px; }
+  .ecc-card-head { gap: 10px; margin-bottom: 6px; }
+  .ecc-icon { width: 34px; height: 34px; i { font-size: 15px; } }
+  .ecc-card h3 { font-size: 15px; }
+  .ecc-card p { font-size: 14px; }
 }
 
 .ecc-actions {

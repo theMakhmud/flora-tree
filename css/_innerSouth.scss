@@ -156,9 +156,6 @@
   .innersouth-process {
     padding-inline: clamp(28px, 6vw, 48px);
   }
-  .innersouth-approach {
-    padding-inline: clamp(28px, 6vw, 48px);
-  }
   .isp-inner {
     flex-direction: column;
   }
@@ -308,9 +305,6 @@
   .innersouth-process {
     padding-inline: 16px;
   }
-  .innersouth-approach {
-    padding-inline: 16px;
-  }
   .innersouth-page .district-suburbs-list {
     grid-template-columns: 1fr;
   }
@@ -430,9 +424,6 @@
   background: #fff;
   padding: clamp(40px, 6vw, 80px) 100px;
 
-  .isa-wrap {
-  }
-
   .isa-eyebrow {
     font-size: 13px;
     text-transform: uppercase;
@@ -467,6 +458,12 @@
     line-height: 1.7;
     margin: 0;
   }
+}
+@media (max-width: 1024px) {
+  .innersouth-approach { padding-inline: clamp(28px, 6vw, 48px); }
+}
+@media (max-width: 480px) {
+  .innersouth-approach { padding-inline: 16px; }
 }
 
 /* Light-background variant of process block */

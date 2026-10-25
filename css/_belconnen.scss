@@ -333,7 +333,15 @@
   }
 
   .ba-vs {
-    transform: rotate(90deg);
+    transform: none;
+  }
+  .ba-divider::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--line);
+    margin: 0 auto 8px;
   }
 }
 
