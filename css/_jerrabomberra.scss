@@ -50,19 +50,19 @@
 }
 
 .je-panel {
-  border: 2px solid #D35400;
+  border: 2px solid #2f6d2e;
   border-radius: 16px;
   padding: 28px 32px;
   display: flex;
   gap: 20px;
   align-items: flex-start;
-  background: #fff8f4;
+  background: #ecf6e8;
 
   .je-icon {
     flex-shrink: 0;
     width: 52px;
     height: 52px;
-    background: #fde8d4;
+    background: #d4edcf;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -70,7 +70,7 @@
 
     i {
       font-size: 22px;
-      color: #D35400;
+      color: #2f6d2e;
     }
   }
 
@@ -93,12 +93,12 @@
       }
 
       a {
-        color: #D35400;
+        color: #2f6d2e;
         font-weight: 600;
         text-decoration: underline;
 
         &:hover {
-          color: #a84000;
+          color: #1b5e20;
         }
       }
 

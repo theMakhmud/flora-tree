@@ -35,7 +35,7 @@
   align-items: flex-start;
   gap: 16px;
   background: #fff;
-  border: 2px solid #3b6fa0;
+  border: 2px solid #2f6d2e;
   border-radius: 12px;
   padding: 20px 24px;
   margin-bottom: 36px;
@@ -45,7 +45,7 @@
     flex-shrink: 0;
     width: 44px;
     height: 44px;
-    background: #dbeafe;
+    background: #ecf6e8;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -53,7 +53,7 @@
 
     i {
       font-size: 20px;
-      color: #1d4ed8;
+      color: #2E7D32;
     }
   }
 
@@ -62,7 +62,7 @@
       display: block;
       font-size: 16px;
       font-weight: 700;
-      color: #1e3a5f;
+      color: #1b5e20;
       margin-bottom: 6px;
     }
 
@@ -106,8 +106,8 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #3b6fa0;
-  background: #dbeafe;
+  color: #2f6d2e;
+  background: #ecf6e8;
   border-radius: 999px;
   padding: 4px 12px;
 }
@@ -115,7 +115,7 @@
 .ntr-step-icon {
   width: 52px;
   height: 52px;
-  background: #dbeafe;
+  background: #ecf6e8;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -123,7 +123,7 @@
 
   i {
     font-size: 22px;
-    color: #1d4ed8;
+    color: #2E7D32;
   }
 }
 
@@ -148,7 +148,7 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
-  color: #3b6fa0;
+  color: #2f6d2e;
   opacity: 0.5;
   z-index: 1;
 }
@@ -156,7 +156,7 @@
 /* Note / disclaimer */
 .ntr-note {
   background: #fff;
-  border-left: 3px solid #3b6fa0;
+  border-left: 3px solid #2f6d2e;
   border-radius: 0 8px 8px 0;
   padding: 20px 24px;
   max-width: 900px;
@@ -169,7 +169,7 @@
   }
 
   a {
-    color: #1d4ed8;
+    color: #2E7D32;
     font-weight: 600;
     text-decoration: underline;
   }
@@ -216,9 +216,9 @@
 .ds-nsw-cluster {
   margin-top: 28px;
   padding: 16px 22px;
-  background: #f0f7ff;
+  background: #f0f7f0;
   border-radius: 12px;
-  border-left: 3px solid #3b6fa0;
+  border-left: 3px solid #2f6d2e;
   font-size: 15px;
   color: var(--muted);
   line-height: 1.7;
@@ -228,7 +228,7 @@
   }
 
   a {
-    color: #1d4ed8;
+    color: #2E7D32;
     font-weight: 600;
     text-decoration: underline;
 

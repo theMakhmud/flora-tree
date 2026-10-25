@@ -3546,7 +3546,7 @@
   color: var(--stump-accent);
 }
 .stump-vs-con i {
-  color: #d1373b;
+  color: #374151;
 }
 .stump-vs-note {
   margin-top: 20px;
@@ -3935,8 +3935,8 @@
 
 /* ===== Emergency Tree Service Page ===== */
 .emergencytreeservice-page {
-  --emergency-accent: #D35400;
-  --emergency-accent-text: #B94700;
+  --emergency-accent: #2f6d2e;
+  --emergency-accent-text: #1b5e20;
 }
 
 .emergencytreeservice-page header {
@@ -3970,14 +3970,14 @@
   font-size: 17px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 8px 18px rgba(211, 84, 0, 0.35);
+  box-shadow: 0 8px 18px rgba(47, 109, 46, 0.35);
   transition: background 0.25s, box-shadow 0.25s;
   text-decoration: none;
 }
 
 .btn-emergency-primary:hover {
-  background: rgb(170.2, 67.7573459716, 0);
-  box-shadow: 0 12px 24px rgba(211, 84, 0, 0.45);
+  background: rgb(34.6283870968, 80.3083870968, 33.8916129032);
+  box-shadow: 0 12px 24px rgba(47, 109, 46, 0.45);
 }
 
 .btn-emergency-secondary {
@@ -4061,11 +4061,11 @@
 
 .eac-card--accent {
   border-color: var(--emergency-accent);
-  background: #fff8f5;
+  background: #ecf6e8;
 }
 
 .eac-card--accent:hover {
-  border-color: rgb(180.4, 71.8180094787, 0);
+  border-color: rgb(37.7212903226, 87.4812903226, 36.9187096774);
 }
 
 .eac-icon {
@@ -4082,7 +4082,7 @@
 }
 
 .eac-card--accent .eac-icon {
-  background: rgba(211, 84, 0, 0.1);
+  background: rgba(47, 109, 46, 0.1);
   color: var(--emergency-accent);
 }
 
@@ -4296,7 +4296,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(211, 84, 0, 0.85);
+  background: rgba(47, 109, 46, 0.85);
   color: #fff;
   display: flex;
   align-items: center;
@@ -4354,11 +4354,11 @@
 .ecc-btn--primary {
   background: var(--emergency-accent);
   color: #fff;
-  box-shadow: 0 6px 14px rgba(211, 84, 0, 0.4);
+  box-shadow: 0 6px 14px rgba(47, 109, 46, 0.4);
 }
 
 .ecc-btn--primary:hover {
-  background: rgb(170.2, 67.7573459716, 0);
+  background: rgb(34.6283870968, 80.3083870968, 33.8916129032);
 }
 
 .ecc-btn--secondary {
@@ -4452,7 +4452,7 @@
 }
 
 .ean-contact-number:hover {
-  color: rgb(134, 51.427027027, 0);
+  color: rgb(15.6198347107, 54.3801652893, 18.5123966942);
 }
 
 .ean-contact-name {
@@ -5214,7 +5214,7 @@
 }
 
 .ba-col--restricted {
-  border-top: 3px solid #c0392b;
+  border-top: 3px solid #374151;
 }
 
 .ba-col-badge {
@@ -5236,8 +5236,8 @@
 }
 
 .ba-col--restricted .ba-col-badge {
-  background: #fdecea;
-  color: #c0392b;
+  background: #f3f4f6;
+  color: #374151;
 }
 
 .ba-list {
@@ -5268,7 +5268,7 @@
 }
 
 .ba-col--restricted .ba-list li i {
-  color: #c0392b;
+  color: #374151;
 }
 
 .ba-divider {
@@ -6000,7 +6000,7 @@
   align-items: flex-start;
   gap: 16px;
   background: #fff;
-  border: 2px solid #3b6fa0;
+  border: 2px solid #2f6d2e;
   border-radius: 12px;
   padding: 20px 24px;
   margin-bottom: 36px;
@@ -6010,7 +6010,7 @@
   flex-shrink: 0;
   width: 44px;
   height: 44px;
-  background: #dbeafe;
+  background: #ecf6e8;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -6018,13 +6018,13 @@
 }
 .ntr-alert .ntr-alert-icon i {
   font-size: 20px;
-  color: #1d4ed8;
+  color: #2E7D32;
 }
 .ntr-alert .ntr-alert-body strong {
   display: block;
   font-size: 16px;
   font-weight: 700;
-  color: #1e3a5f;
+  color: #1b5e20;
   margin-bottom: 6px;
 }
 .ntr-alert .ntr-alert-body p {
@@ -6064,8 +6064,8 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #3b6fa0;
-  background: #dbeafe;
+  color: #2f6d2e;
+  background: #ecf6e8;
   border-radius: 999px;
   padding: 4px 12px;
 }
@@ -6073,7 +6073,7 @@
 .ntr-step-icon {
   width: 52px;
   height: 52px;
-  background: #dbeafe;
+  background: #ecf6e8;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -6081,7 +6081,7 @@
 }
 .ntr-step-icon i {
   font-size: 22px;
-  color: #1d4ed8;
+  color: #2E7D32;
 }
 
 .ntr-step h3 {
@@ -6105,7 +6105,7 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
-  color: #3b6fa0;
+  color: #2f6d2e;
   opacity: 0.5;
   z-index: 1;
 }
@@ -6113,7 +6113,7 @@
 /* Note / disclaimer */
 .ntr-note {
   background: #fff;
-  border-left: 3px solid #3b6fa0;
+  border-left: 3px solid #2f6d2e;
   border-radius: 0 8px 8px 0;
   padding: 20px 24px;
   max-width: 900px;
@@ -6125,7 +6125,7 @@
   color: var(--ink);
 }
 .ntr-note a {
-  color: #1d4ed8;
+  color: #2E7D32;
   font-weight: 600;
   text-decoration: underline;
 }
@@ -6165,9 +6165,9 @@
 .ds-nsw-cluster {
   margin-top: 28px;
   padding: 16px 22px;
-  background: #f0f7ff;
+  background: #f0f7f0;
   border-radius: 12px;
-  border-left: 3px solid #3b6fa0;
+  border-left: 3px solid #2f6d2e;
   font-size: 15px;
   color: var(--muted);
   line-height: 1.7;
@@ -6176,7 +6176,7 @@
   color: var(--ink);
 }
 .ds-nsw-cluster a {
-  color: #1d4ed8;
+  color: #2E7D32;
   font-weight: 600;
   text-decoration: underline;
 }
@@ -6237,8 +6237,8 @@
 }
 
 .qn-card {
-  background: #f7f9fc;
-  border: 2px solid #3b6fa0;
+  background: #f0f7f0;
+  border: 2px solid #2f6d2e;
   border-radius: 16px;
   padding: 28px 32px;
   max-width: 860px;
@@ -6250,7 +6250,7 @@
   flex-shrink: 0;
   width: 52px;
   height: 52px;
-  background: #dbeafe;
+  background: #ecf6e8;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -6258,7 +6258,7 @@
 }
 .qn-card .qn-card-icon i {
   font-size: 22px;
-  color: #1d4ed8;
+  color: #2E7D32;
 }
 .qn-card .qn-card-body h3 {
   font-size: 18px;
@@ -6280,7 +6280,7 @@
   margin-top: 20px;
   max-width: 860px;
   background: #fff;
-  border-left: 3px solid #3b6fa0;
+  border-left: 3px solid #2f6d2e;
   border-radius: 0 8px 8px 0;
   padding: 16px 22px;
   font-size: 14px;
