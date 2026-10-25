@@ -1,4 +1,5 @@
 /* ===== Stump Grinding Page ===== */
+@use 'brand' as *;
 
 // Warm amber accent — used ONLY inside .stumpgrinding-page signature blocks
 $stump-accent: #C4883A;
@@ -325,7 +326,7 @@ $stump-accent: #C4883A;
 
   &-pro  i { color: var(--brand); }
   &-neutral i { color: var(--stump-accent); }
-  &-con  i { color: #d1373b; }
+  &-con  i { color: $neutral-dark; }
 
   &-note {
     margin-top: 20px; padding: 14px 16px;

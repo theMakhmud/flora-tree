@@ -1,4 +1,34 @@
 @charset "UTF-8";
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: signika, sans-serif;
+}
+
+:root {
+  --brand: #6AB435;
+  --brand-700: #2f6d2e;
+  --ink: #111827;
+  --muted: #6b7280;
+  --line: rgba(17, 24, 39, .08);
+  --ring: rgba(106, 180, 53, .14);
+  --card: #fff;
+  --bg: #f7f8f5;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #9aa3af;
+}
+
 .blog-admin-page .admin-topbar {
   min-height: 0;
   padding-bottom: 0;
@@ -3546,7 +3576,7 @@
   color: var(--stump-accent);
 }
 .stump-vs-con i {
-  color: #d1373b;
+  color: #374151;
 }
 .stump-vs-note {
   margin-top: 20px;
@@ -3935,8 +3965,8 @@
 
 /* ===== Emergency Tree Service Page ===== */
 .emergencytreeservice-page {
-  --emergency-accent: #D35400;
-  --emergency-accent-text: #B94700;
+  --emergency-accent: rgb(68.9, 117, 34.45);
+  --emergency-accent-text: rgb(47.7, 81, 23.85);
 }
 
 .emergencytreeservice-page header {
@@ -3970,14 +4000,14 @@
   font-size: 17px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 8px 18px rgba(211, 84, 0, 0.35);
+  box-shadow: 0 8px 18px rgba(47, 109, 46, 0.35);
   transition: background 0.25s, box-shadow 0.25s;
   text-decoration: none;
 }
 
 .btn-emergency-primary:hover {
-  background: rgb(170.2, 67.7573459716, 0);
-  box-shadow: 0 12px 24px rgba(211, 84, 0, 0.45);
+  background: rgb(50.3386266094, 85.4806866953, 25.1693133047);
+  box-shadow: 0 12px 24px rgba(47, 109, 46, 0.45);
 }
 
 .btn-emergency-secondary {
@@ -4061,11 +4091,11 @@
 
 .eac-card--accent {
   border-color: var(--emergency-accent);
-  background: #fff8f5;
+  background: rgb(240.1, 247.5, 234.8);
 }
 
 .eac-card--accent:hover {
-  border-color: rgb(180.4, 71.8180094787, 0);
+  border-color: rgb(54.9789699571, 93.3605150215, 27.4894849785);
 }
 
 .eac-icon {
@@ -4082,7 +4112,7 @@
 }
 
 .eac-card--accent .eac-icon {
-  background: rgba(211, 84, 0, 0.1);
+  background: rgba(47, 109, 46, 0.1);
   color: var(--emergency-accent);
 }
 
@@ -4296,7 +4326,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(211, 84, 0, 0.85);
+  background: rgba(47, 109, 46, 0.85);
   color: #fff;
   display: flex;
   align-items: center;
@@ -4354,11 +4384,11 @@
 .ecc-btn--primary {
   background: var(--emergency-accent);
   color: #fff;
-  box-shadow: 0 6px 14px rgba(211, 84, 0, 0.4);
+  box-shadow: 0 6px 14px rgba(47, 109, 46, 0.4);
 }
 
 .ecc-btn--primary:hover {
-  background: rgb(170.2, 67.7573459716, 0);
+  background: rgb(50.3386266094, 85.4806866953, 25.1693133047);
 }
 
 .ecc-btn--secondary {
@@ -4452,7 +4482,7 @@
 }
 
 .ean-contact-number:hover {
-  color: rgb(134, 51.427027027, 0);
+  color: rgb(24.4982832618, 41.6008583691, 12.2491416309);
 }
 
 .ean-contact-name {
@@ -4780,6 +4810,56 @@
   .district-chip {
     font-size: 13px;
     padding: 7px 14px;
+  }
+}
+/* Service details under gardencard (shared across all districts) */
+.services-details {
+  width: 90%;
+  margin: 24px auto 0;
+}
+
+@media (max-width: 1024px) {
+  .services-details {
+    width: 94%;
+  }
+}
+@media (max-width: 480px) {
+  .services-details {
+    width: 92%;
+  }
+}
+.services-details .otr-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 24px;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.services-details .otr-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.services-details .otr-list li i {
+  color: var(--brand);
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.services-details p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .services-details .otr-list {
+    grid-template-columns: 1fr;
   }
 }
 /* ===== Woden Valley Page ===== */
@@ -5214,7 +5294,7 @@
 }
 
 .ba-col--restricted {
-  border-top: 3px solid #c0392b;
+  border-top: 3px solid #374151;
 }
 
 .ba-col-badge {
@@ -5236,8 +5316,8 @@
 }
 
 .ba-col--restricted .ba-col-badge {
-  background: #fdecea;
-  color: #c0392b;
+  background: #f3f4f6;
+  color: #374151;
 }
 
 .ba-list {
@@ -5268,7 +5348,7 @@
 }
 
 .ba-col--restricted .ba-list li i {
-  color: #c0392b;
+  color: #374151;
 }
 
 .ba-divider {
@@ -5580,13 +5660,8 @@
 /* ----- SIGNATURE: Inner South Process (.innersouth-process) ----- */
 .innersouth-process {
   background: var(--brand, #6AB435);
-  padding: clamp(48px, 7vw, 88px) 5%;
+  padding: clamp(48px, 7vw, 88px) 100px;
   color: #fff;
-}
-
-.isp-wrap {
-  max-width: 1100px;
-  margin: 0 auto;
 }
 
 .isp-kicker {
@@ -5613,13 +5688,14 @@
 }
 
 .isp-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   gap: 40px;
   align-items: start;
 }
 
 .isp-photo {
+  flex: 0 0 48%;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -5633,6 +5709,7 @@
 }
 
 .isp-steps {
+  flex: 0 0 48%;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -5713,8 +5790,18 @@
 }
 
 @media (max-width: 1024px) {
+  .innersouth-process {
+    padding-inline: clamp(28px, 6vw, 48px);
+  }
+  .innersouth-approach {
+    padding-inline: clamp(28px, 6vw, 48px);
+  }
   .isp-inner {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+  .isp-photo,
+  .isp-steps {
+    flex: 0 0 100%;
   }
   .isp-photo {
     max-width: 560px;
@@ -5847,6 +5934,12 @@
 }
 
 @media (max-width: 480px) {
+  .innersouth-process {
+    padding-inline: 16px;
+  }
+  .innersouth-approach {
+    padding-inline: 16px;
+  }
   .innersouth-page .district-suburbs-list {
     grid-template-columns: 1fr;
   }
@@ -5965,6 +6058,91 @@
     font-size: 12px;
   }
 }
+/* Approach block — extracted from underheader */
+.innersouth-approach {
+  background: #fff;
+  padding: clamp(40px, 6vw, 80px) 100px;
+}
+.innersouth-approach .isa-eyebrow {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand);
+  font-weight: 600;
+  margin: 0 0 28px;
+}
+.innersouth-approach .isa-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+  .innersouth-approach .isa-cols {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+.innersouth-approach .isa-col h3 {
+  font-size: 20px;
+  color: var(--ink);
+  margin: 0 0 12px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--brand);
+}
+.innersouth-approach .isa-col p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Light-background variant of process block */
+.innersouth-process--light {
+  background: var(--bg, #f7f8f5);
+  color: var(--ink, #111827);
+}
+
+.innersouth-process--light .isp-kicker {
+  color: var(--brand);
+}
+
+.innersouth-process--light .isp-wrap h2 {
+  color: var(--ink);
+}
+
+.innersouth-process--light .isp-num {
+  background: var(--brand);
+  color: #fff;
+}
+
+.innersouth-process--light .isp-step-body h3 {
+  color: var(--ink);
+}
+
+.innersouth-process--light .isp-step-body p {
+  color: var(--muted);
+}
+
+.innersouth-process--light .isp-btn--primary {
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(106, 180, 53, 0.24);
+}
+
+.innersouth-process--light .isp-btn--primary:hover {
+  background: var(--brand-700, #2f6d2e);
+}
+
+.innersouth-process--light .isp-btn--outline-dark {
+  background: transparent;
+  color: var(--ink);
+  border: 2px solid var(--brand);
+}
+
+.innersouth-process--light .isp-btn--outline-dark:hover {
+  background: rgba(106, 180, 53, 0.08);
+}
+
 /* ===== Shared NSW District Components ===== */
 /* Used by: Queanbeyan, Googong, Jerrabomberra (NSW pages) */
 /* ----- NSW Tree Rules (.nsw-tree-rules) ----- */
@@ -6000,7 +6178,7 @@
   align-items: flex-start;
   gap: 16px;
   background: #fff;
-  border: 2px solid #3b6fa0;
+  border: 2px solid rgb(68.9, 117, 34.45);
   border-radius: 12px;
   padding: 20px 24px;
   margin-bottom: 36px;
@@ -6010,7 +6188,7 @@
   flex-shrink: 0;
   width: 44px;
   height: 44px;
-  background: #dbeafe;
+  background: rgb(240.1, 247.5, 234.8);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -6018,13 +6196,13 @@
 }
 .ntr-alert .ntr-alert-icon i {
   font-size: 20px;
-  color: #1d4ed8;
+  color: rgb(68.9, 117, 34.45);
 }
 .ntr-alert .ntr-alert-body strong {
   display: block;
   font-size: 16px;
   font-weight: 700;
-  color: #1e3a5f;
+  color: rgb(47.7, 81, 23.85);
   margin-bottom: 6px;
 }
 .ntr-alert .ntr-alert-body p {
@@ -6064,8 +6242,8 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #3b6fa0;
-  background: #dbeafe;
+  color: rgb(68.9, 117, 34.45);
+  background: rgb(240.1, 247.5, 234.8);
   border-radius: 999px;
   padding: 4px 12px;
 }
@@ -6073,7 +6251,7 @@
 .ntr-step-icon {
   width: 52px;
   height: 52px;
-  background: #dbeafe;
+  background: rgb(240.1, 247.5, 234.8);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -6081,7 +6259,7 @@
 }
 .ntr-step-icon i {
   font-size: 22px;
-  color: #1d4ed8;
+  color: rgb(68.9, 117, 34.45);
 }
 
 .ntr-step h3 {
@@ -6105,7 +6283,7 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
-  color: #3b6fa0;
+  color: rgb(68.9, 117, 34.45);
   opacity: 0.5;
   z-index: 1;
 }
@@ -6113,7 +6291,7 @@
 /* Note / disclaimer */
 .ntr-note {
   background: #fff;
-  border-left: 3px solid #3b6fa0;
+  border-left: 3px solid rgb(68.9, 117, 34.45);
   border-radius: 0 8px 8px 0;
   padding: 20px 24px;
   max-width: 900px;
@@ -6125,7 +6303,7 @@
   color: var(--ink);
 }
 .ntr-note a {
-  color: #1d4ed8;
+  color: rgb(68.9, 117, 34.45);
   font-weight: 600;
   text-decoration: underline;
 }
@@ -6165,9 +6343,9 @@
 .ds-nsw-cluster {
   margin-top: 28px;
   padding: 16px 22px;
-  background: #f0f7ff;
+  background: rgb(240.1, 247.5, 234.8);
   border-radius: 12px;
-  border-left: 3px solid #3b6fa0;
+  border-left: 3px solid rgb(68.9, 117, 34.45);
   font-size: 15px;
   color: var(--muted);
   line-height: 1.7;
@@ -6176,7 +6354,7 @@
   color: var(--ink);
 }
 .ds-nsw-cluster a {
-  color: #1d4ed8;
+  color: rgb(68.9, 117, 34.45);
   font-weight: 600;
   text-decoration: underline;
 }
@@ -6237,8 +6415,8 @@
 }
 
 .qn-card {
-  background: #f7f9fc;
-  border: 2px solid #3b6fa0;
+  background: rgb(240.1, 247.5, 234.8);
+  border: 2px solid rgb(68.9, 117, 34.45);
   border-radius: 16px;
   padding: 28px 32px;
   max-width: 860px;
@@ -6250,7 +6428,7 @@
   flex-shrink: 0;
   width: 52px;
   height: 52px;
-  background: #dbeafe;
+  background: rgb(240.1, 247.5, 234.8);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -6258,7 +6436,7 @@
 }
 .qn-card .qn-card-icon i {
   font-size: 22px;
-  color: #1d4ed8;
+  color: rgb(68.9, 117, 34.45);
 }
 .qn-card .qn-card-body h3 {
   font-size: 18px;
@@ -6280,7 +6458,7 @@
   margin-top: 20px;
   max-width: 860px;
   background: #fff;
-  border-left: 3px solid #3b6fa0;
+  border-left: 3px solid rgb(68.9, 117, 34.45);
   border-radius: 0 8px 8px 0;
   padding: 16px 22px;
   font-size: 14px;
@@ -6421,6 +6599,74 @@
     justify-content: center;
   }
 }
+/* Approach block — extracted from underheader */
+.queanbeyan-approach {
+  background: var(--bg);
+  padding: clamp(40px, 6vw, 80px) 20px;
+}
+.queanbeyan-approach .qa-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.queanbeyan-approach .qa-eyebrow {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand);
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+.queanbeyan-approach h2 {
+  font-size: clamp(22px, 4vw, 38px);
+  color: var(--ink);
+  margin: 0 0 40px;
+}
+.queanbeyan-approach .qa-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .queanbeyan-approach .qa-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.queanbeyan-approach .qa-card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
+}
+.queanbeyan-approach .qa-card:hover {
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+.queanbeyan-approach .qa-icon {
+  width: 48px;
+  height: 48px;
+  background: #ecf6e8;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.queanbeyan-approach .qa-icon i {
+  font-size: 22px;
+  color: var(--brand);
+}
+.queanbeyan-approach .qa-card h3 {
+  font-size: 18px;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+.queanbeyan-approach .qa-card p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
 /* ===== Googong Page — Unique Styles ===== */
 /* ----- Hero background ----- */
 .googong-page header {
@@ -6752,6 +6998,68 @@
     justify-content: center;
   }
 }
+/* Approach block — extracted from underheader */
+.googong-approach {
+  background: var(--bg);
+  padding: clamp(40px, 6vw, 80px) 20px;
+}
+.googong-approach .ga-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.googong-approach .ga-eyebrow {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand);
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+.googong-approach h2 {
+  font-size: clamp(22px, 4vw, 38px);
+  color: var(--ink);
+  margin: 0 0 40px;
+}
+.googong-approach .ga-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .googong-approach .ga-steps {
+    grid-template-columns: 1fr;
+  }
+}
+.googong-approach .ga-step {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.googong-approach .ga-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.googong-approach .ga-step-body h3 {
+  font-size: 18px;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+.googong-approach .ga-step-body p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
 /* ===== Inner North Canberra Page ===== */
 .innernorth-page header {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/tree-removal-inner-north-1920.jpg) center 50%/cover no-repeat;
@@ -7031,6 +7339,239 @@
   border-color: var(--brand);
 }
 
+/* ===== Jerrabomberra Page — Unique Styles ===== */
+/* ----- Hero background ----- */
+.jerrabomberra-page header {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/tree-removal-jerrabomberra-1920.jpg) center 50%/cover no-repeat;
+  min-height: 60vh;
+}
+
+@media (max-width: 1280px) {
+  .jerrabomberra-page header {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/tree-removal-jerrabomberra-1280.jpg);
+  }
+}
+@media (max-width: 800px) {
+  .jerrabomberra-page header {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/tree-removal-jerrabomberra-800.jpg);
+  }
+}
+@media (max-width: 1280px) {
+  .jerrabomberra-page header {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/tree-removal-canberra3.webp);
+  }
+}
+@media (max-width: 800px) {
+  .jerrabomberra-page header {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/tree-removal-canberra3.webp);
+  }
+}
+/* ----- SIGNATURE: Pruning Steps (.jerrabomberra-pruning-steps) ----- */
+/* Green howTreeCard variant for Jerrabomberra pruning section */
+/* Uses shared .howTreeCard styles — no overrides needed here */
+/* ----- SIGNATURE: Emergency (.jerrabomberra-emergency) ----- */
+/* Orange-accented note panel with exclamation icon */
+.jerrabomberra-emergency {
+  padding: clamp(40px, 6vw, 72px) 5%;
+  background: #fff;
+}
+
+.je-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.je-panel {
+  border: 2px solid rgb(68.9, 117, 34.45);
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: rgb(240.1, 247.5, 234.8);
+}
+.je-panel .je-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  background: rgb(225.2, 240, 214.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.je-panel .je-icon i {
+  font-size: 22px;
+  color: rgb(68.9, 117, 34.45);
+}
+.je-panel .je-body h2 {
+  font-size: clamp(18px, 2.5vw, 22px);
+  font-weight: 700;
+  color: var(--ink, #111827);
+  margin-bottom: 12px;
+}
+.je-panel .je-body p {
+  font-size: 16px;
+  color: var(--muted, #6b7280);
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+.je-panel .je-body p:last-child {
+  margin-bottom: 0;
+}
+.je-panel .je-body p a {
+  color: rgb(68.9, 117, 34.45);
+  font-weight: 600;
+  text-decoration: underline;
+}
+.je-panel .je-body p a:hover {
+  color: rgb(47.7, 81, 23.85);
+}
+.je-panel .je-body p strong {
+  color: var(--ink, #111827);
+}
+
+@media (max-width: 640px) {
+  .je-panel {
+    flex-direction: column;
+    gap: 14px;
+    padding: 22px 20px;
+  }
+}
+/* ----- Jerrabomberra CTA Banner (.jerrabomberra-cta-banner) ----- */
+.jerrabomberra-cta-banner {
+  background: var(--brand, #6AB435);
+  padding: clamp(40px, 6vw, 72px) 5%;
+  text-align: center;
+}
+
+.jcb-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.jcb-wrap h2 {
+  font-size: clamp(22px, 4vw, 36px);
+  color: #fff;
+  margin-bottom: 14px;
+}
+.jcb-wrap p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.jcb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.jcb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.jcb-btn--white {
+  background: #fff;
+  color: var(--brand-700, #2f6d2e);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+.jcb-btn--white:hover {
+  background: #f0f9e8;
+}
+.jcb-btn--outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+}
+.jcb-btn--outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 480px) {
+  .jcb-actions {
+    flex-direction: column;
+  }
+  .jcb-btn {
+    justify-content: center;
+  }
+}
+/* Approach block — extracted from underheader */
+.jerrabomberra-approach {
+  background: var(--bg);
+  padding: clamp(40px, 6vw, 80px) 20px;
+}
+.jerrabomberra-approach .ja-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.jerrabomberra-approach .ja-eyebrow {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand);
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+.jerrabomberra-approach h2 {
+  font-size: clamp(22px, 4vw, 38px);
+  color: var(--ink);
+  margin: 0 0 32px;
+}
+.jerrabomberra-approach .ja-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.jerrabomberra-approach .ja-item {
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.jerrabomberra-approach .ja-item[open] {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.jerrabomberra-approach .ja-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+}
+.jerrabomberra-approach .ja-q::after {
+  content: "+";
+  font-size: 22px;
+  color: var(--brand);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.jerrabomberra-approach .ja-item[open] .ja-q::after {
+  transform: rotate(45deg);
+}
+.jerrabomberra-approach .ja-a {
+  padding: 0 24px 20px;
+}
+.jerrabomberra-approach .ja-a p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
 .contact-page header {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/treepruning-canberra3.jpeg) center/cover no-repeat;
   min-height: 60vh;
@@ -7070,7 +7611,8 @@
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/hero.webp) center/cover no-repeat;
 }
 
-.tuggeranong-page header {
+.tuggeranong-page header,
+.gungahlin-page header {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/treepruning-canberra3.jpeg) center/cover no-repeat;
   min-height: 60vh;
 }
@@ -8508,8 +9050,11 @@ body.menu-open #backToTop {
 /* ≤ 480px */
 @media (max-width: 480px) {
   header {
-    background-position: center top; /* keep main subject visible */
-    min-height: 75vh; /* shorter hero for small screens */
+    background-position: center top;
+    min-height: 75vh;
+  }
+  .treeTypes {
+    width: 94%;
   }
   header > section {
     padding: 80px 14px 0; /* top padding = nav height + margin */
@@ -8816,4 +9361,44 @@ body.menu-open #backToTop {
   font-weight: 600;
   text-decoration: none;
   text-align: center;
+}
+
+/* Standalone .otr-cta (used outside .ourTreeRemoval in FAQ CTA, etc.) */
+.otr-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  padding: 12px 20px;
+  box-shadow: 0 8px 18px rgba(91, 140, 81, 0.24);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.otr-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px rgba(91, 140, 81, 0.32);
+}
+
+.otr-cta:active {
+  transform: translateY(0);
+}
+
+/* Compliance note (form consent area) */
+.compliance-note {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+/* District suburb intro link */
+.ds-intro a {
+  color: var(--brand-700, #2f6d2e);
+  font-weight: 600;
+  text-decoration: underline;
 }

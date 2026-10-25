@@ -1,3 +1,32 @@
-// _base.scss — placeholder
-// Original base styles are in style.scss directly.
-// This file exists so @use 'base' resolves during compilation.
+// _base.scss — Global resets and variables from original SiteGround CSS
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: signika, sans-serif;
+}
+
+:root {
+  --brand: #6AB435;
+  --brand-700: #2f6d2e;
+  --ink: #111827;
+  --muted: #6b7280;
+  --line: rgba(17, 24, 39, .08);
+  --ring: rgba(106, 180, 53, .14);
+  --card: #fff;
+  --bg: #f7f8f5;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// Placeholder color (Firefox)
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #9aa3af;
+}

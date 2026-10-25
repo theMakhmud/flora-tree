@@ -1,8 +1,8 @@
 /* ===== Emergency Tree Service Page ===== */
+@use 'brand' as *;
 
-// Orange accent — used ONLY inside .emergencytreeservice-page signature blocks
-$emergency-accent: #D35400;
-$emergency-accent-text: #B94700;
+$emergency-accent: $brand-dark;
+$emergency-accent-text: $brand-deep;
 
 .emergencytreeservice-page {
   --emergency-accent: #{$emergency-accent};
@@ -54,13 +54,13 @@ $emergency-accent-text: #B94700;
   font-size: 17px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 8px 18px rgba(211, 84, 0, 0.35);
+  box-shadow: 0 8px 18px rgba(47, 109, 46, 0.35);
   transition: background 0.25s, box-shadow 0.25s;
   text-decoration: none;
 }
 .btn-emergency-primary:hover {
   background: darken($emergency-accent, 8%);
-  box-shadow: 0 12px 24px rgba(211, 84, 0, 0.45);
+  box-shadow: 0 12px 24px rgba(47, 109, 46, 0.45);
 }
 
 .btn-emergency-secondary {
@@ -147,7 +147,7 @@ $emergency-accent-text: #B94700;
 
 .eac-card--accent {
   border-color: var(--emergency-accent);
-  background: #fff8f5;
+  background: $brand-tint;
 }
 .eac-card--accent:hover {
   border-color: darken($emergency-accent, 6%);
@@ -167,7 +167,7 @@ $emergency-accent-text: #B94700;
 }
 
 .eac-card--accent .eac-icon {
-  background: rgba(211, 84, 0, 0.1);
+  background: rgba(47, 109, 46, 0.1);
   color: var(--emergency-accent);
 }
 
@@ -390,7 +390,7 @@ $emergency-accent-text: #B94700;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(211, 84, 0, 0.85);
+  background: rgba(47, 109, 46, 0.85);
   color: #fff;
   display: flex;
   align-items: center;
@@ -448,7 +448,7 @@ $emergency-accent-text: #B94700;
 .ecc-btn--primary {
   background: var(--emergency-accent);
   color: #fff;
-  box-shadow: 0 6px 14px rgba(211, 84, 0, 0.4);
+  box-shadow: 0 6px 14px rgba(47, 109, 46, 0.4);
 }
 .ecc-btn--primary:hover {
   background: darken($emergency-accent, 8%);

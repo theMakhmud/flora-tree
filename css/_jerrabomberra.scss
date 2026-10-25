@@ -1,15 +1,29 @@
 /* ===== Jerrabomberra Page — Unique Styles ===== */
+@use 'brand' as *;
 
 /* ----- Hero background ----- */
-/* NOTE: No dedicated Jerrabomberra hero photo exists yet (pending client).
-   Using tree-removal-canberra3.webp (3840px wide) as placeholder. */
-
 .jerrabomberra-page header {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
     radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
-    url(../images/tree-removal-canberra3.webp) center 50% / cover no-repeat;
+    url(../images/tree-removal-jerrabomberra-1920.jpg) center 50% / cover no-repeat;
   min-height: 60vh;
+}
+@media (max-width: 1280px) {
+  .jerrabomberra-page header {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+      radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+      url(../images/tree-removal-jerrabomberra-1280.jpg);
+  }
+}
+@media (max-width: 800px) {
+  .jerrabomberra-page header {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%),
+      radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%),
+      url(../images/tree-removal-jerrabomberra-800.jpg);
+  }
 }
 
 @media (max-width: 1280px) {
@@ -50,19 +64,19 @@
 }
 
 .je-panel {
-  border: 2px solid #D35400;
+  border: 2px solid $brand-dark;
   border-radius: 16px;
   padding: 28px 32px;
   display: flex;
   gap: 20px;
   align-items: flex-start;
-  background: #fff8f4;
+  background: $brand-tint;
 
   .je-icon {
     flex-shrink: 0;
     width: 52px;
     height: 52px;
-    background: #fde8d4;
+    background: $brand-light;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -70,7 +84,7 @@
 
     i {
       font-size: 22px;
-      color: #D35400;
+      color: $brand-dark;
     }
   }
 
@@ -93,12 +107,12 @@
       }
 
       a {
-        color: #D35400;
+        color: $brand-dark;
         font-weight: 600;
         text-decoration: underline;
 
         &:hover {
-          color: #a84000;
+          color: $brand-deep;
         }
       }
 
@@ -190,5 +204,89 @@
 
   .jcb-btn {
     justify-content: center;
+  }
+}
+
+/* Approach block — extracted from underheader */
+// =============================================================
+// _jerrabomberra.scss — Jerrabomberra page styles
+// =============================================================
+
+// ----- jerrabomberra-approach: accordion FAQ style -----
+.jerrabomberra-approach {
+  background: var(--bg);
+  padding: clamp(40px, 6vw, 80px) 20px;
+
+  .ja-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .ja-eyebrow {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--brand);
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+
+  h2 {
+    font-size: clamp(22px, 4vw, 38px);
+    color: var(--ink);
+    margin: 0 0 32px;
+  }
+
+  .ja-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ja-item {
+    background: var(--card);
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+
+    &[open] {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
+    }
+  }
+
+  .ja-q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 24px;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+
+    &::after {
+      content: '+';
+      font-size: 22px;
+      color: var(--brand);
+      flex-shrink: 0;
+      transition: transform .2s ease;
+    }
+  }
+
+  .ja-item[open] .ja-q::after {
+    transform: rotate(45deg);
+  }
+
+  .ja-a {
+    padding: 0 24px 20px;
+
+    p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
   }
 }

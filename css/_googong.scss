@@ -375,3 +375,77 @@
     justify-content: center;
   }
 }
+
+/* Approach block — extracted from underheader */
+// =============================================================
+// _googong.scss — Googong page styles
+// =============================================================
+
+// ----- googong-approach: numbered steps (light bg) -----
+.googong-approach {
+  background: var(--bg);
+  padding: clamp(40px, 6vw, 80px) 20px;
+
+  .ga-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .ga-eyebrow {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--brand);
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+
+  h2 {
+    font-size: clamp(22px, 4vw, 38px);
+    color: var(--ink);
+    margin: 0 0 40px;
+  }
+
+  .ga-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .ga-step {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .ga-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--brand);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .ga-step-body h3 {
+    font-size: 18px;
+    color: var(--ink);
+    margin: 0 0 8px;
+  }
+
+  .ga-step-body p {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0;
+  }
+}

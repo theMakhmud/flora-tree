@@ -21,13 +21,11 @@
 
 .innersouth-process {
   background: var(--brand, #6AB435);
-  padding: clamp(48px, 7vw, 88px) 5%;
+  padding: clamp(48px, 7vw, 88px) 100px;
   color: #fff;
 }
 
 .isp-wrap {
-  max-width: 1100px;
-  margin: 0 auto;
 }
 
 .isp-kicker {
@@ -54,13 +52,13 @@
 }
 
 .isp-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   gap: 40px;
   align-items: start;
 }
-
 .isp-photo {
+  flex: 0 0 48%;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -74,6 +72,7 @@
 }
 
 .isp-steps {
+  flex: 0 0 48%;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -154,10 +153,19 @@
 }
 
 @media (max-width: 1024px) {
-  .isp-inner {
-    grid-template-columns: 1fr;
+  .innersouth-process {
+    padding-inline: clamp(28px, 6vw, 48px);
   }
-
+  .innersouth-approach {
+    padding-inline: clamp(28px, 6vw, 48px);
+  }
+  .isp-inner {
+    flex-direction: column;
+  }
+  .isp-photo,
+  .isp-steps {
+    flex: 0 0 100%;
+  }
   .isp-photo {
     max-width: 560px;
   }
@@ -297,6 +305,12 @@
 }
 
 @media (max-width: 480px) {
+  .innersouth-process {
+    padding-inline: 16px;
+  }
+  .innersouth-approach {
+    padding-inline: 16px;
+  }
   .innersouth-page .district-suburbs-list {
     grid-template-columns: 1fr;
   }
@@ -404,4 +418,91 @@
     height: 38px;
     font-size: 12px;
   }
+}
+
+/* Approach block — extracted from underheader */
+// =============================================================
+// _innerSouth.scss — Inner South Canberra page styles
+// =============================================================
+
+// ----- innersouth-approach: 2-column text layout -----
+.innersouth-approach {
+  background: #fff;
+  padding: clamp(40px, 6vw, 80px) 100px;
+
+  .isa-wrap {
+  }
+
+  .isa-eyebrow {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--brand);
+    font-weight: 600;
+    margin: 0 0 28px;
+  }
+
+  .isa-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+  }
+
+  .isa-col h3 {
+    font-size: 20px;
+    color: var(--ink);
+    margin: 0 0 12px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--brand);
+  }
+
+  .isa-col p {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0;
+  }
+}
+
+/* Light-background variant of process block */
+.innersouth-process--light {
+  background: var(--bg, #f7f8f5);
+  color: var(--ink, #111827);
+}
+.innersouth-process--light .isp-kicker {
+  color: var(--brand);
+}
+.innersouth-process--light .isp-wrap h2 {
+  color: var(--ink);
+}
+.innersouth-process--light .isp-num {
+  background: var(--brand);
+  color: #fff;
+}
+.innersouth-process--light .isp-step-body h3 {
+  color: var(--ink);
+}
+.innersouth-process--light .isp-step-body p {
+  color: var(--muted);
+}
+.innersouth-process--light .isp-btn--primary {
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(106, 180, 53, 0.24);
+}
+.innersouth-process--light .isp-btn--primary:hover {
+  background: var(--brand-700, #2f6d2e);
+}
+.innersouth-process--light .isp-btn--outline-dark {
+  background: transparent;
+  color: var(--ink);
+  border: 2px solid var(--brand);
+}
+.innersouth-process--light .isp-btn--outline-dark:hover {
+  background: rgba(106, 180, 53, 0.08);
 }
