@@ -295,3 +295,82 @@
     justify-content: center;
   }
 }
+
+/* Restored from style.css */
+/* ===== Woden Valley — Tree Pruning block (.woden-pruning-block) ===== */
+.woden-pruning-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  padding: clamp(48px, 7vw, 88px) clamp(20px, 5%, 100px);
+  background: var(--bg, #f7f8f5);
+}
+.woden-pruning-block img {
+  width: 100%;
+  max-width: 520px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  aspect-ratio: 800 / 533;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+}
+.woden-pruning-block > div {
+  flex: 1;
+  background: #fff;
+  padding: clamp(18px, 3vw, 32px);
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.woden-pruning-block .wpb-eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 10px;
+}
+.woden-pruning-block h2 {
+  font-size: clamp(22px, 4vw, 36px);
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.woden-pruning-block p {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+.woden-pruning-block p:last-child { margin-bottom: 0; }
+.woden-pruning-block p a {
+  color: var(--brand-700, #2f6d2e);
+  font-weight: 600;
+  text-decoration: underline;
+}
+@media (max-width: 900px) {
+  .woden-pruning-block {
+    flex-direction: column;
+    gap: 24px;
+    padding: clamp(28px, 6vw, 48px);
+  }
+  .woden-pruning-block img {
+    max-width: 100%;
+    order: 0;
+  }
+  .woden-pruning-block > div {
+    order: 1;
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .woden-pruning-block {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+  .woden-pruning-block img {
+    border-radius: 14px;
+  }
+  .woden-pruning-block > div {
+    border-radius: 14px;
+    padding: 16px;
+  }
+}

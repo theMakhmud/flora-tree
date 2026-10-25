@@ -1298,3 +1298,91 @@ body.menu-open #backToTop{
 @media (prefers-reduced-motion: reduce){
   .review{ scroll-behavior: auto; }
 }
+
+/* Restored from style.css */
+
+/* Intro text fills card width on new pages */
+.underheader--wide > :nth-child(2) h2 {
+  max-width: none;
+}
+.underheader--wide > :nth-child(2) p {
+  max-width: none;
+}
+
+/* Hero content (shared across pages) */
+.hero_content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.hero_title {
+  width: 100%;
+  margin: auto;
+  font-size: clamp(38px, 6vw, 60px);
+  font-weight: 500;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
+}
+
+.hero_desc {
+  margin: 0 auto 28px;
+  max-width: 760px;
+  font-size: clamp(18px, 2.2vw, 28px);
+  font-weight: 500;
+  line-height: 1.5;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Review additions (carousel enhancements) */
+.review-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+}
+
+.review-stars {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.review-author {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.google-icon {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+}
+
+.google-icon img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.9;
+}
+
+.review-cta {
+  display: block;
+  width: fit-content;
+  margin: 20px auto 20px;
+  padding: 12px 22px;
+  border-radius: 8px;
+  background: #2e7d32;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+}

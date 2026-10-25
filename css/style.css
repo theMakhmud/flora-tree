@@ -416,6 +416,780 @@
     padding: 20px 16px;
   }
 }
+/* Restored from style.css */
+/* ---- Login screen ---- */
+.admin-login-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bg, #f7f8f5);
+}
+
+.admin-login-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.admin-logo-img {
+  width: 160px;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.admin-login-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink, #111827);
+  margin: 0;
+}
+
+.admin-login-sub {
+  font-size: 14px;
+  color: var(--muted, #6b7280);
+  margin-bottom: 20px;
+}
+
+.admin-login-card form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---- Shared field ---- */
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.admin-field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink, #111827);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-required {
+  color: #dc2626;
+  margin-left: 2px;
+}
+
+.admin-input-wrap {
+  position: relative;
+}
+
+.admin-input-wrap input {
+  width: 100%;
+}
+
+.admin-eye-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted, #6b7280);
+  padding: 4px 6px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
+}
+
+.admin-eye-btn:hover {
+  color: var(--ink, #111827);
+}
+
+/* Inputs shared */
+.admin-field input,
+.admin-field textarea {
+  padding: 10px 14px;
+  border: 1px solid rgba(17, 24, 39, 0.2);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  background: #fff;
+  color: var(--ink, #111827);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  width: 100%;
+}
+
+.admin-field input:focus,
+.admin-field textarea:focus {
+  border-color: var(--brand, #6AB435);
+  box-shadow: 0 0 0 3px var(--ring, rgba(106, 180, 53, 0.14));
+}
+
+.admin-field textarea {
+  resize: vertical;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.admin-field-hint {
+  font-size: 12px;
+  color: var(--muted, #6b7280);
+}
+
+.admin-field-error {
+  font-size: 13px;
+  color: #dc2626;
+  display: none;
+}
+
+/* Error banner (login) */
+.admin-error-banner {
+  background: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  border-radius: 8px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #b91c1c;
+  font-size: 14px;
+}
+
+.admin-error-banner i {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Warning banner (slug) */
+.admin-warning-banner {
+  background: #FFFBEB;
+  border: 1px solid #FCD34D;
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #92400e;
+  font-size: 13px;
+}
+
+.admin-warning-banner i {
+  margin-top: 2px;
+  flex-shrink: 0;
+  color: #d97706;
+}
+
+/* Slug preview */
+.admin-slug-preview {
+  font-size: 12px;
+  color: var(--muted, #6b7280);
+  word-break: break-all;
+  display: none;
+}
+
+/* Char counter */
+.admin-char-counter {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted, #6b7280);
+}
+
+.admin-char-counter--over {
+  color: #dc2626;
+}
+
+/* Spinner */
+.admin-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: admin-spin 0.7s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes admin-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* ---- Buttons (new design) ---- */
+.btn-admin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 22px;
+  background: var(--brand, #6AB435);
+  color: #fff;
+  border: 2px solid var(--brand, #6AB435);
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-admin:hover {
+  background: var(--brand-700, #2f6d2e);
+  border-color: var(--brand-700, #2f6d2e);
+}
+
+.btn-admin:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-admin--outline {
+  background: transparent;
+  color: var(--brand, #6AB435);
+}
+
+.btn-admin--outline:hover {
+  background: rgba(106, 180, 53, 0.08);
+  border-color: var(--brand-700, #2f6d2e);
+  color: var(--brand-700, #2f6d2e);
+}
+
+.btn-admin--danger {
+  background: #dc2626;
+  border-color: #dc2626;
+  color: #fff;
+}
+
+.btn-admin--danger:hover {
+  background: #b91c1c;
+  border-color: #b91c1c;
+}
+
+.btn-admin--sm {
+  padding: 7px 16px;
+  font-size: 14px;
+}
+
+.btn-admin--full {
+  width: 100%;
+}
+
+/* Icon-only action buttons */
+.btn-admin-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(17, 24, 39, 0.15);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--muted, #6b7280);
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.btn-admin-icon:hover {
+  background: var(--bg, #f7f8f5);
+  color: var(--ink, #111827);
+}
+
+.btn-admin-icon--edit {
+  color: var(--brand, #6AB435);
+  border-color: var(--brand, #6AB435);
+}
+
+.btn-admin-icon--edit:hover {
+  background: rgba(106, 180, 53, 0.08);
+  color: var(--brand-700, #2f6d2e);
+}
+
+.btn-admin-icon--delete {
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+.btn-admin-icon--delete:hover {
+  background: #FEF2F2;
+  color: #b91c1c;
+}
+
+/* ---- Topbar ---- */
+.admin-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(17, 24, 39, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  height: 56px;
+}
+
+.admin-topbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.admin-topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.admin-topbar-logo {
+  height: 32px;
+  width: auto;
+}
+
+.admin-topbar-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink, #111827);
+}
+
+.admin-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.admin-view-blog {
+  font-size: 13px;
+  color: var(--brand-700, #2f6d2e);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+  transition: opacity 0.15s;
+}
+
+.admin-view-blog:hover {
+  opacity: 0.75;
+}
+
+.admin-user-email {
+  font-size: 13px;
+  color: var(--muted, #6b7280);
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---- Main ---- */
+.admin-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ---- Card ---- */
+.admin-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.admin-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line, rgba(17, 24, 39, 0.08));
+  gap: 12px;
+}
+
+.admin-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink, #111827);
+}
+
+.admin-posts-count {
+  font-weight: 400;
+  color: var(--muted, #6b7280);
+  font-size: 15px;
+}
+
+/* ---- Table ---- */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table thead th {
+  padding: 12px 24px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted, #6b7280);
+  background: var(--bg, #f7f8f5);
+  border-bottom: 1px solid var(--line, rgba(17, 24, 39, 0.08));
+}
+
+.admin-table tbody tr {
+  border-bottom: 1px solid var(--line, rgba(17, 24, 39, 0.08));
+  transition: background 0.1s;
+}
+
+.admin-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.admin-table tbody tr:hover {
+  background: #fafafa;
+}
+
+.admin-table td {
+  padding: 14px 24px;
+  vertical-align: middle;
+}
+
+.admin-table-title-cell {
+  max-width: 0;
+}
+
+.admin-table-title {
+  font-weight: 600;
+  color: var(--ink, #111827);
+  display: block;
+}
+
+.admin-table-excerpt {
+  display: block;
+  font-size: 13px;
+  color: var(--muted, #6b7280);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 480px;
+}
+
+.admin-table-date {
+  white-space: nowrap;
+  font-size: 14px;
+  color: var(--muted, #6b7280);
+  width: 120px;
+}
+
+.admin-table-actions {
+  white-space: nowrap;
+  width: 110px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---- Empty state ---- */
+.admin-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 24px;
+  gap: 12px;
+  text-align: center;
+}
+
+.admin-empty-icon {
+  font-size: 64px;
+  color: rgba(17, 24, 39, 0.15);
+}
+
+.admin-empty-text {
+  font-size: 16px;
+  color: var(--muted, #6b7280);
+}
+
+/* Load error */
+.admin-load-error {
+  padding: 20px 24px;
+  color: #b91c1c;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ---- Editor ---- */
+.admin-editor-back {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.admin-back-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--brand-700, #2f6d2e);
+  font-family: inherit;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  transition: opacity 0.15s;
+}
+
+.admin-back-link:hover {
+  opacity: 0.7;
+}
+
+.admin-editor-heading {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink, #111827);
+}
+
+/* 2-column editor grid */
+.admin-editor-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  align-items: start;
+}
+
+.admin-editor-fields {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-editor-fields form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Sidebar */
+.admin-editor-sidebar {
+  position: sticky;
+  top: 72px;
+}
+
+.admin-sidebar-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-post-dates {
+  border-top: 1px solid var(--line, rgba(17, 24, 39, 0.08));
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-post-dates p {
+  font-size: 13px;
+  color: var(--muted, #6b7280);
+}
+
+.admin-dates-label {
+  font-weight: 600;
+  color: var(--ink, #111827);
+}
+
+/* ---- Delete modal ---- */
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.admin-modal {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+  padding: 32px;
+  max-width: 420px;
+  width: 100%;
+}
+
+.admin-modal h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink, #111827);
+  margin-bottom: 10px;
+}
+
+.admin-modal p {
+  font-size: 15px;
+  color: var(--muted, #6b7280);
+  margin-bottom: 24px;
+}
+
+.admin-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+/* ---- Toasts ---- */
+.admin-toasts {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.admin-toast {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Signika, sans-serif;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  transform: translateX(24px);
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: auto;
+}
+
+.admin-toast--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.admin-toast--success {
+  background: #166534;
+  color: #fff;
+}
+
+.admin-toast--error {
+  background: #dc2626;
+  color: #fff;
+}
+
+/* ---- Responsive (new admin) ---- */
+@media (max-width: 768px) {
+  .admin-editor-grid {
+    grid-template-columns: 1fr;
+  }
+  .admin-editor-sidebar {
+    position: static;
+    order: -1;
+  }
+  .admin-table thead {
+    display: none;
+  }
+  .admin-table,
+  .admin-table tbody,
+  .admin-table tr,
+  .admin-table td {
+    display: block;
+    width: 100%;
+  }
+  .admin-table tr {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line, rgba(17, 24, 39, 0.08));
+  }
+  .admin-table td {
+    padding: 0;
+    border: none;
+  }
+  .admin-table-title-cell {
+    max-width: none;
+    margin-bottom: 4px;
+  }
+  .admin-table-date {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .admin-table-actions {
+    width: auto;
+    display: flex;
+    gap: 8px;
+  }
+  .admin-card-header {
+    padding: 16px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .admin-main {
+    padding: 20px 16px 60px;
+  }
+  .admin-editor-fields {
+    padding: 20px 16px;
+  }
+  .admin-sidebar-card {
+    padding: 16px;
+  }
+  .admin-topbar-inner {
+    padding: 0 16px;
+  }
+  .admin-user-email {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .admin-login-card {
+    padding: 28px 20px;
+  }
+  .admin-modal {
+    padding: 24px 20px;
+  }
+  .admin-modal-actions {
+    flex-direction: column-reverse;
+  }
+  .admin-modal-actions .btn-admin {
+    width: 100%;
+    justify-content: center;
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -688,6 +1462,678 @@
     width: 48px;
     height: 48px;
     border-radius: 12px;
+  }
+}
+/* Restored from style.css */
+/* ===== Professional Tree Removal Solutions ===== */
+.trSolutions {
+  width: 90%;
+  margin: clamp(26px, 4vw, 44px) auto;
+}
+
+.trs-wrap {
+  background: linear-gradient(180deg, #fff, #fbfdf9);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: clamp(18px, 3vw, 36px);
+  box-shadow: 0 12px 32px rgba(17, 24, 39, 0.06);
+}
+
+.trs-head {
+  max-width: 880px;
+}
+
+.trs-kicker {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--brand);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+}
+
+.trs-kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--brand);
+}
+
+.trs-head h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+  line-height: 1.15;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+.trs-sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.05rem);
+  line-height: 1.7;
+}
+
+/* Grid */
+.trs-grid {
+  margin-top: clamp(16px, 2vw, 22px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 18px);
+}
+
+.trs-card {
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 16px 16px 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.trs-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+}
+
+.trs-card h3 {
+  margin: 10px 0 8px;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+
+.trs-card p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+.trs-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #ecf6e8;
+  color: var(--brand);
+  border: 1px solid rgba(91, 140, 81, 0.18);
+}
+
+.trs-icon i {
+  font-size: 1.05rem;
+}
+
+.trs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.trs-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--ink);
+  font-size: 0.98rem;
+}
+
+.trs-list li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--brand);
+  margin-top: 7px;
+  flex: 0 0 auto;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+/* CTA card */
+.trs-card.trs-cta {
+  background: linear-gradient(180deg, #ffffff, #f6fbf3);
+  border: 1px solid rgba(91, 140, 81, 0.25);
+}
+
+.trs-card.trs-cta .trs-actions {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ===== Cost of Tree Removal (premium) ===== */
+.trCost {
+  width: 90%;
+  margin: clamp(26px, 4vw, 44px) auto;
+}
+
+.trc-wrap {
+  background: linear-gradient(180deg, #fff, #fbfdf9);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: clamp(18px, 3vw, 36px);
+  box-shadow: 0 12px 32px rgba(17, 24, 39, 0.06);
+}
+
+.trc-head {
+  max-width: 920px;
+}
+
+.trc-kicker {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--brand);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+}
+
+.trc-kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--brand);
+}
+
+.trc-head h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+  line-height: 1.15;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+.trc-sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.05rem);
+  line-height: 1.7;
+}
+
+.trc-grid {
+  margin-top: clamp(16px, 2vw, 22px);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(12px, 2vw, 18px);
+  align-items: stretch;
+}
+
+.trc-card {
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 16px 16px 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+}
+
+.trc-card h3 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: 1.15rem;
+}
+
+.trc-card p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.trc-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+.trc-list li {
+  margin: 8px 0;
+}
+
+.trc-highlight {
+  background: linear-gradient(180deg, #ffffff, #f6fbf3);
+  border: 1px solid rgba(91, 140, 81, 0.25);
+}
+
+.trc-note {
+  margin-bottom: 12px;
+}
+
+.trc-bands {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+
+.trc-band {
+  border-radius: 16px;
+  border: 1px solid rgba(91, 140, 81, 0.18);
+  background: rgba(91, 140, 81, 0.06);
+  padding: 10px 12px;
+  display: grid;
+  gap: 3px;
+}
+
+.trc-band .trc-label {
+  font-weight: 900;
+  color: var(--ink);
+}
+
+.trc-band .trc-desc {
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.trc-tip {
+  margin: 10px 0 0;
+}
+
+.trc-actions {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.trc-foot {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.trc-footItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(91, 140, 81, 0.18);
+  background: rgba(91, 140, 81, 0.06);
+}
+
+.trc-footItem i {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 1px solid rgba(91, 140, 81, 0.18);
+  color: var(--brand);
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.trc-footItem p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.trc-footItem a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 800;
+}
+
+.trc-emph {
+  font-weight: 900;
+  color: var(--brand);
+}
+
+.trc-footUrgent {
+  border-color: rgba(230, 126, 34, 0.35);
+  background: rgba(230, 126, 34, 0.08);
+}
+
+.trc-footUrgent i {
+  border-color: rgba(230, 126, 34, 0.35);
+}
+
+.trc-footUrgent .trc-emph {
+  color: #b45309;
+}
+
+/* ===== FAQ (Premium Accordion) ===== */
+.trFaq {
+  width: 70%;
+  margin: clamp(26px, 4vw, 44px) auto;
+}
+
+.trf-wrap {
+  background: linear-gradient(180deg, #fff, #fbfdf9);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: clamp(18px, 3vw, 36px);
+  box-shadow: 0 12px 32px rgba(17, 24, 39, 0.06);
+}
+
+.trf-head {
+  max-width: 920px;
+  margin-bottom: 14px;
+}
+
+.trf-kicker {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--brand);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+}
+
+.trf-kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--brand);
+}
+
+.trf-head h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+  line-height: 1.15;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+.trf-sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.05rem);
+  line-height: 1.7;
+}
+
+.trf-accordion {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.trf-item {
+  border-radius: 18px;
+  border: 1px solid rgba(91, 140, 81, 0.18);
+  background: rgba(91, 140, 81, 0.05);
+  overflow: hidden;
+}
+
+.trf-q {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-weight: 900;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.trf-q::-webkit-details-marker {
+  display: none;
+}
+
+.trf-q::after {
+  content: "+";
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 1px solid rgba(91, 140, 81, 0.18);
+  color: var(--brand);
+  flex: 0 0 auto;
+  font-weight: 900;
+}
+
+.trf-item[open] .trf-q::after {
+  content: "-";
+}
+
+.trf-a {
+  padding: 0 16px 14px;
+}
+
+.trf-a p {
+  margin: 0;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.trf-a a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 800;
+}
+
+/* CTA row */
+.trf-cta {
+  margin-top: 18px;
+  padding: 14px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  background: rgba(0, 0, 0, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.trf-ctaText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.trf-ctaText strong {
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+.trf-ctaText span {
+  color: var(--muted);
+}
+
+.trf-ctaBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ===== Compliance / Regulations Section ===== */
+.trCompliance {
+  width: 90%;
+  margin: clamp(26px, 4vw, 44px) auto;
+}
+
+.trcomp-wrap {
+  background: linear-gradient(180deg, #fff, #fbfdf9);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: clamp(18px, 3vw, 36px);
+  box-shadow: 0 12px 32px rgba(17, 24, 39, 0.06);
+}
+
+.trcomp-head {
+  max-width: 900px;
+}
+
+.trcomp-kicker {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--brand);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+}
+
+.trcomp-kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--brand);
+}
+
+.trcomp-head h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+  margin: 0 0 10px;
+}
+
+.trcomp-sub {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.trcomp-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.trcomp-card {
+  border-radius: 18px;
+  border: 1px solid rgba(91, 140, 81, 0.18);
+  background: #fff;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+}
+
+.trcomp-card h3 {
+  margin: 0 0 8px;
+}
+
+.trcomp-card p {
+  margin: 0 0 10px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.trcomp-card ul {
+  margin: 0 0 8px 18px;
+}
+
+.trcomp-note {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(91, 140, 81, 0.06);
+  border: 1px solid rgba(91, 140, 81, 0.18);
+}
+
+/* ===== Related Services ===== */
+.related-services {
+  padding: 80px 20px;
+  background: #f7faf7;
+}
+
+.related-wrap {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.related-wrap h2 {
+  margin-bottom: 10px;
+}
+
+.related-wrap p {
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.related-card {
+  display: block;
+  padding: 25px;
+  background: white;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.related-card i {
+  font-size: 26px;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+/* ===== Responsive overrides for tree removal components ===== */
+@media (max-width: 1024px) {
+  .trs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .trc-grid {
+    grid-template-columns: 1fr;
+  }
+  .trc-foot {
+    grid-template-columns: 1fr;
+  }
+  .trcomp-grid {
+    grid-template-columns: 1fr;
+  }
+  .trf-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .related-wrap p {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .trSolutions {
+    width: 94%;
+  }
+  .trs-grid {
+    grid-template-columns: 1fr;
+  }
+  .trCost {
+    width: 94%;
+  }
+  .trFaq {
+    width: 94%;
+  }
+  .trf-ctaBtns {
+    width: 100%;
+  }
+  .trf-ctaBtns .otr-cta {
+    width: 100%;
+  }
+  .related-services {
+    padding: 60px 18px;
+  }
+  .related-card {
+    padding: 20px;
+  }
+  .related-card h3 {
+    font-size: 18px;
   }
 }
 .treepruning-page header section {
@@ -3496,6 +4942,94 @@
     justify-content: center;
   }
 }
+/* Restored from style.css */
+/* ===== Woden Valley — Tree Pruning block (.woden-pruning-block) ===== */
+.woden-pruning-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  padding: clamp(48px, 7vw, 88px) clamp(20px, 5%, 100px);
+  background: var(--bg, #f7f8f5);
+}
+
+.woden-pruning-block img {
+  width: 100%;
+  max-width: 520px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  aspect-ratio: 800/533;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+}
+
+.woden-pruning-block > div {
+  flex: 1;
+  background: #fff;
+  padding: clamp(18px, 3vw, 32px);
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.woden-pruning-block .wpb-eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 10px;
+}
+
+.woden-pruning-block h2 {
+  font-size: clamp(22px, 4vw, 36px);
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+
+.woden-pruning-block p {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.woden-pruning-block p:last-child {
+  margin-bottom: 0;
+}
+
+.woden-pruning-block p a {
+  color: var(--brand-700, #2f6d2e);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .woden-pruning-block {
+    flex-direction: column;
+    gap: 24px;
+    padding: clamp(28px, 6vw, 48px);
+  }
+  .woden-pruning-block img {
+    max-width: 100%;
+    order: 0;
+  }
+  .woden-pruning-block > div {
+    order: 1;
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .woden-pruning-block {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+  .woden-pruning-block img {
+    border-radius: 14px;
+  }
+  .woden-pruning-block > div {
+    border-radius: 14px;
+    padding: 16px;
+  }
+}
 /* ===== Belconnen Page ===== */
 .belconnen-page header {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/tree-removal-belconnen-1920.jpg) center 50%/cover no-repeat;
@@ -3824,6 +5358,111 @@
     padding: 8px 10px;
   }
 }
+/* Restored from style.css */
+/* ===== Belconnen Pruning Card (.belconnen-pruning-card) ===== */
+.belconnen-pruning-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(18px, 3vw, 36px);
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: clamp(24px, 5vw, 40px) auto;
+  padding: clamp(20px, 3vw, 36px);
+  background: linear-gradient(180deg, #fff, #fbfdf9);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: 0 12px 32px rgba(17, 24, 39, 0.06);
+}
+
+.belconnen-pruning-card .bpc-kicker {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.belconnen-pruning-card .bpc-kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+
+.belconnen-pruning-card h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  line-height: 1.15;
+  margin: 0 0 18px;
+  color: var(--ink);
+}
+
+.belconnen-pruning-card .bpc-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.belconnen-pruning-card .bpc-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.belconnen-pruning-card .bpc-list li i {
+  color: var(--brand);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.belconnen-pruning-card .bpc-body {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.belconnen-pruning-card .bpc-media {
+  margin: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.belconnen-pruning-card .bpc-media img {
+  width: 100%;
+  height: clamp(260px, 40vh, 450px);
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .belconnen-pruning-card {
+    grid-template-columns: 1fr;
+    width: 94%;
+  }
+  .belconnen-pruning-card .bpc-media {
+    order: -1;
+  }
+}
+@media (max-width: 480px) {
+  .belconnen-pruning-card {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+}
 /* ===== Inner South Canberra Page ===== */
 .innersouth-page header {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 40%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(1000px 520px at 24% 34%, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 65%), url(../images/tree-removal-canberra5.webp) center 40%/cover no-repeat;
@@ -4111,6 +5750,116 @@
   .innersouth-cta-banner .icb-actions {
     flex-direction: column;
     align-items: center;
+  }
+}
+/* Restored from style.css */
+/* ===== Inner South Pruning Steps (.innersouth-pruning-steps) ===== */
+.innersouth-pruning-steps {
+  padding: clamp(48px, 7vw, 88px) 5%;
+  background: #f7f8f5;
+}
+
+.ips-wrap {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: start;
+}
+
+.ips-media {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+}
+
+.ips-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.ips-kicker {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 10px;
+}
+
+.ips-content h2 {
+  font-size: clamp(22px, 4vw, 36px);
+  color: var(--ink);
+  margin-bottom: 28px;
+  line-height: 1.2;
+}
+
+.ips-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ips-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.ips-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brand, #6AB435);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+.ips-step-body h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 5px;
+}
+
+.ips-step-body p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.ips-step-body p a {
+  color: var(--brand-700, #2f6d2e);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .ips-wrap {
+    grid-template-columns: 1fr;
+  }
+  .ips-media {
+    max-width: 560px;
+  }
+}
+@media (max-width: 480px) {
+  .innersouth-pruning-steps {
+    padding: 32px 5%;
+  }
+  .ips-num {
+    width: 38px;
+    height: 38px;
+    font-size: 12px;
   }
 }
 /* ===== Shared NSW District Components ===== */
@@ -6877,4 +8626,91 @@ body.menu-open #backToTop {
   .review {
     scroll-behavior: auto;
   }
+}
+/* Restored from style.css */
+/* Intro text fills card width on new pages */
+.underheader--wide > :nth-child(2) h2 {
+  max-width: none;
+}
+
+.underheader--wide > :nth-child(2) p {
+  max-width: none;
+}
+
+/* Hero content (shared across pages) */
+.hero_content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.hero_title {
+  width: 100%;
+  margin: auto;
+  font-size: clamp(38px, 6vw, 60px);
+  font-weight: 500;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
+}
+
+.hero_desc {
+  margin: 0 auto 28px;
+  max-width: 760px;
+  font-size: clamp(18px, 2.2vw, 28px);
+  font-weight: 500;
+  line-height: 1.5;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Review additions (carousel enhancements) */
+.review-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+}
+
+.review-stars {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.review-author {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.google-icon {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+}
+
+.google-icon img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.9;
+}
+
+.review-cta {
+  display: block;
+  width: fit-content;
+  margin: 20px auto 20px;
+  padding: 12px 22px;
+  border-radius: 8px;
+  background: #2e7d32;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
 }
