@@ -46,6 +46,18 @@ const deleteConfirm = document.getElementById('delete-confirm');
 
 const toastsEl      = document.getElementById('admin-toasts');
 
+const coverInput     = document.getElementById('cover-input');
+const coverPreview   = document.getElementById('cover-preview');
+const coverImg       = document.getElementById('cover-preview-img');
+const coverEmpty     = document.getElementById('cover-empty');
+const coverUploading = document.getElementById('cover-uploading');
+const coverAltField  = document.getElementById('cover-alt-field');
+const coverAltInput  = document.getElementById('cover-alt-input');
+const errorCoverAlt  = document.getElementById('error-cover-alt');
+
+let currentCoverUrl  = null;
+let currentCoverPath = null; // path in bucket for delete
+
 let editingId = null;
 let formDirty = false;
 let deleteTargetId = null;
@@ -143,6 +155,97 @@ function confirmLeave() {
   return window.confirm('You have unsaved changes. Leave anyway?');
 }
 
+// ===================== Cover image — compress =====================
+async function compressImage(file) {
+  if (!file.type.startsWith('image/')) throw new Error('Not an image file.');
+  if (file.size > 10 * 1024 * 1024) throw new Error('File too large (max 10 MB).');
+
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => {
+      const MAX = 1600;
+      let w = img.width, h = img.height;
+      if (w > MAX || h > MAX) {
+        const ratio = Math.min(MAX / w, MAX / h);
+        w = Math.round(w * ratio);
+        h = Math.round(h * ratio);
+      }
+      const canvas = document.createElement('canvas');
+      canvas.width = w;
+      canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+      canvas.toBlob(blob => {
+        if (!blob) return reject(new Error('Compression failed.'));
+        resolve(blob);
+      }, 'image/webp', 0.82);
+    };
+    img.onerror = () => reject(new Error('Cannot read image.'));
+    img.src = URL.createObjectURL(file);
+  });
+}
+
+// ===================== Cover image — upload =====================
+coverInput.addEventListener('change', async () => {
+  const file = coverInput.files[0];
+  if (!file) return;
+
+  try {
+    coverEmpty.style.display = 'none';
+    coverPreview.style.display = 'none';
+    coverUploading.style.display = 'flex';
+
+    const blob = await compressImage(file);
+    const slug = slugInput.value.trim() || 'cover';
+    const fileName = slug + '-' + Date.now() + '.webp';
+
+    // Delete old file if replacing
+    if (currentCoverPath) {
+      await sb.storage.from('blog-images').remove([currentCoverPath]);
+    }
+
+    const { data, error } = await sb.storage
+      .from('blog-images')
+      .upload(fileName, blob, { contentType: 'image/webp', upsert: false });
+
+    if (error) throw new Error(error.message);
+
+    const { data: urlData } = sb.storage.from('blog-images').getPublicUrl(data.path);
+
+    currentCoverUrl  = urlData.publicUrl;
+    currentCoverPath = data.path;
+
+    coverImg.src = currentCoverUrl;
+    coverPreview.style.display = 'block';
+    coverUploading.style.display = 'none';
+    coverAltField.style.display = 'block';
+    formDirty = true;
+
+    showToast('Cover image uploaded.', 'success');
+  } catch (err) {
+    coverUploading.style.display = 'none';
+    if (currentCoverUrl) coverPreview.style.display = 'block';
+    else coverEmpty.style.display = 'block';
+    showToast(err.message, 'error');
+  }
+  coverInput.value = '';
+});
+
+// ===================== Cover image — remove =====================
+document.getElementById('btn-cover-remove').addEventListener('click', async () => {
+  if (currentCoverPath) {
+    await sb.storage.from('blog-images').remove([currentCoverPath]);
+  }
+  currentCoverUrl  = null;
+  currentCoverPath = null;
+  coverImg.src = '';
+  coverPreview.style.display = 'none';
+  coverAltField.style.display = 'none';
+  coverAltInput.value = '';
+  coverEmpty.style.display = 'block';
+  formDirty = true;
+  showToast('Cover image removed.', 'success');
+});
+
 // ===================== Auto-slug from title =====================
 titleInput.addEventListener('input', () => {
   formDirty = true;
@@ -208,10 +311,12 @@ postForm.addEventListener('submit', async (e) => {
   clearFieldErrors();
 
   const post = {
-    title:   titleInput.value.trim(),
-    slug:    slugInput.value.trim(),
-    excerpt: excerptInput.value.trim() || null,
-    content: contentInput.value.trim()
+    title:     titleInput.value.trim(),
+    slug:      slugInput.value.trim(),
+    excerpt:   excerptInput.value.trim() || null,
+    content:   contentInput.value.trim(),
+    cover_url: currentCoverUrl,
+    cover_alt: coverAltInput.value.trim() || null
   };
 
   let valid = true;
@@ -225,6 +330,10 @@ postForm.addEventListener('submit', async (e) => {
   }
   if (!post.content) {
     showFieldError(errorContent, 'Content is required.');
+    valid = false;
+  }
+  if (currentCoverUrl && !post.cover_alt) {
+    showFieldError(errorCoverAlt, 'Alt text is required when a cover image is set.');
     valid = false;
   }
   if (!valid) return;
@@ -264,7 +373,7 @@ postForm.addEventListener('submit', async (e) => {
 async function loadAdminPosts() {
   const { data, error } = await sb
     .from('posts')
-    .select('id, title, slug, excerpt, created_at, updated_at')
+    .select('id, title, slug, excerpt, cover_url, created_at, updated_at')
     .order('created_at', { ascending: false });
 
   postsList.innerHTML = '';
@@ -310,10 +419,17 @@ async function loadAdminPosts() {
 
     const dateStr = formatDate(post.updated_at || post.created_at);
 
+    const thumbHtml = post.cover_url
+      ? '<img class="admin-table-thumb" src="' + escHtml(post.cover_url) + '" alt="" width="32" height="32">'
+      : '<span class="admin-table-thumb admin-table-thumb--empty"><i class="fa-regular fa-image"></i></span>';
+
     tr.innerHTML = `
       <td class="admin-table-title-cell">
-        <span class="admin-table-title">${escHtml(post.title)}</span>
-        ${excerptText}
+        ${thumbHtml}
+        <div>
+          <span class="admin-table-title">${escHtml(post.title)}</span>
+          ${excerptText}
+        </div>
       </td>
       <td class="admin-table-date">${dateStr}</td>
       <td class="admin-table-actions">
@@ -359,6 +475,15 @@ function openEditor(id) {
 
   formHeading.textContent = id ? 'Edit Post' : 'New Post';
 
+  // Reset cover state
+  currentCoverUrl  = null;
+  currentCoverPath = null;
+  coverImg.src = '';
+  coverPreview.style.display = 'none';
+  coverEmpty.style.display = 'block';
+  coverAltField.style.display = 'none';
+  coverAltInput.value = '';
+
   showEditorScreen();
   titleInput.focus();
 }
@@ -386,6 +511,27 @@ async function editPost(id) {
 
   updateSlugPreview();
   autoGrow(contentInput);
+
+  // Load cover
+  if (data.cover_url) {
+    currentCoverUrl = data.cover_url;
+    const urlObj = new URL(data.cover_url);
+    const pathMatch = urlObj.pathname.match(/\/storage\/v1\/object\/public\/blog-images\/(.*)/);
+    currentCoverPath = pathMatch ? pathMatch[1] : null;
+    coverImg.src = data.cover_url;
+    coverPreview.style.display = 'block';
+    coverEmpty.style.display = 'none';
+    coverAltField.style.display = 'block';
+    coverAltInput.value = data.cover_alt || '';
+  } else {
+    currentCoverUrl  = null;
+    currentCoverPath = null;
+    coverImg.src = '';
+    coverPreview.style.display = 'none';
+    coverEmpty.style.display = 'block';
+    coverAltField.style.display = 'none';
+    coverAltInput.value = '';
+  }
 
   slugWarning.style.display = 'flex';
 
@@ -415,6 +561,16 @@ deleteConfirm.addEventListener('click', async () => {
   const id = deleteTargetId;
   deleteModal.style.display = 'none';
   deleteTargetId = null;
+
+  // Clean up cover image from storage before deleting the post
+  const { data: postData } = await sb.from('posts').select('cover_url').eq('id', id).single();
+  if (postData && postData.cover_url) {
+    const urlObj = new URL(postData.cover_url);
+    const pathMatch = urlObj.pathname.match(/\/storage\/v1\/object\/public\/blog-images\/(.*)/);
+    if (pathMatch) {
+      await sb.storage.from('blog-images').remove([pathMatch[1]]);
+    }
+  }
 
   const { error } = await sb.from('posts').delete().eq('id', id);
 
@@ -454,7 +610,7 @@ function showFieldError(el, msg) {
 }
 
 function clearFieldErrors() {
-  [errorTitle, errorSlug, errorContent].forEach(el => {
+  [errorTitle, errorSlug, errorContent, errorCoverAlt].forEach(el => {
     el.textContent = '';
     el.style.display = 'none';
   });

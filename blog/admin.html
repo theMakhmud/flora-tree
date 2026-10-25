@@ -155,6 +155,41 @@
                 <span class="admin-field-error" id="error-content"></span>
               </div>
 
+              <!-- Cover Image -->
+              <div class="admin-field">
+                <label>Cover image</label>
+                <div class="admin-cover-wrap" id="cover-wrap">
+                  <div class="admin-cover-preview" id="cover-preview" style="display:none;">
+                    <img id="cover-preview-img" alt="">
+                    <div class="admin-cover-actions">
+                      <label class="btn-admin btn-admin--sm btn-admin--outline" for="cover-input">
+                        <i class="fa-solid fa-arrows-rotate"></i> Replace
+                      </label>
+                      <button type="button" class="btn-admin btn-admin--sm btn-admin--danger" id="btn-cover-remove">
+                        <i class="fa-solid fa-trash"></i> Remove
+                      </button>
+                    </div>
+                  </div>
+                  <div class="admin-cover-empty" id="cover-empty">
+                    <label class="btn-admin btn-admin--sm btn-admin--outline" for="cover-input">
+                      <i class="fa-solid fa-image"></i> Upload cover image
+                    </label>
+                    <p class="admin-field-hint">JPEG, PNG or WebP, max 10 MB. Will be resized to 1600px.</p>
+                  </div>
+                  <input type="file" id="cover-input" accept="image/jpeg,image/png,image/webp" hidden>
+                  <div class="admin-cover-uploading" id="cover-uploading" style="display:none;">
+                    <span class="admin-spinner"></span> Uploading…
+                  </div>
+                </div>
+              </div>
+
+              <div class="admin-field" id="cover-alt-field" style="display:none;">
+                <label>Cover alt text <span class="admin-required">*</span></label>
+                <input type="text" id="cover-alt-input" placeholder="Describe what's in the photo">
+                <p class="admin-field-hint">Required when a cover image is set.</p>
+                <p class="admin-field-error" id="error-cover-alt"></p>
+              </div>
+
             </form>
           </div>
 

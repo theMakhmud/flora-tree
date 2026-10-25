@@ -1,4 +1,5 @@
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from './supabase-config.js';
+// SUPABASE_URL is also used to validate image origins
 
 const { createClient } = supabase;
 const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -19,7 +20,7 @@ if (isPostPage) {
 async function loadPosts() {
   const { data, error } = await sb
     .from('posts')
-    .select('title, slug, excerpt, created_at')
+    .select('title, slug, excerpt, cover_url, cover_alt, created_at')
     .order('created_at', { ascending: false });
 
   // Remove skeletons
@@ -37,6 +38,22 @@ async function loadPosts() {
     const link = document.createElement('a');
     link.href = 'blog/post.html?slug=' + encodeURIComponent(post.slug);
     link.className = 'blog-card-link';
+
+    // Cover image
+    const imgWrap = document.createElement('div');
+    imgWrap.className = 'blog-card-img';
+
+    if (post.cover_url && post.cover_url.startsWith(SUPABASE_URL)) {
+      const img = document.createElement('img');
+      img.src = post.cover_url;
+      img.setAttribute('alt', post.cover_alt || '');
+      img.width = 800;
+      img.height = 500;
+      img.loading = 'lazy';
+      imgWrap.appendChild(img);
+    } else {
+      imgWrap.innerHTML = '<div class="blog-card-placeholder"><i class="fa-solid fa-tree"></i></div>';
+    }
 
     const body = document.createElement('div');
     body.className = 'blog-card-body';
@@ -62,6 +79,7 @@ async function loadPosts() {
     more.textContent = 'Read more →';
 
     body.append(time, h2, p, more);
+    link.appendChild(imgWrap);
     link.appendChild(body);
     article.appendChild(link);
     grid.appendChild(article);
@@ -108,9 +126,7 @@ async function loadPost() {
   }
 
   // JSON-LD BlogPosting
-  const ld = document.createElement('script');
-  ld.type = 'application/ld+json';
-  ld.textContent = JSON.stringify({
+  const ldData = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: data.title,
@@ -125,7 +141,13 @@ async function loadPost() {
       name: 'Flora Tree Services',
       url: 'https://floratreeservices.com.au/'
     }
-  });
+  };
+  if (data.cover_url && data.cover_url.startsWith(SUPABASE_URL)) {
+    ldData.image = data.cover_url;
+  }
+  const ld = document.createElement('script');
+  ld.type = 'application/ld+json';
+  ld.textContent = JSON.stringify(ldData);
   document.head.appendChild(ld);
 
   // Render content
@@ -142,6 +164,26 @@ async function loadPost() {
   h2.textContent = data.title;
 
   postEl.append(time, h2);
+
+  // Cover image (no lazy — this is LCP)
+  if (data.cover_url && data.cover_url.startsWith(SUPABASE_URL)) {
+    const coverImgEl = document.createElement('img');
+    coverImgEl.src = data.cover_url;
+    coverImgEl.setAttribute('alt', data.cover_alt || '');
+    coverImgEl.className = 'blog-post-cover';
+    coverImgEl.width = 1600;
+    coverImgEl.height = 1000;
+    postEl.appendChild(coverImgEl);
+
+    // og:image
+    let ogImg = document.querySelector('meta[property="og:image"]');
+    if (!ogImg) {
+      ogImg = document.createElement('meta');
+      ogImg.setAttribute('property', 'og:image');
+      document.head.appendChild(ogImg);
+    }
+    ogImg.content = data.cover_url;
+  }
 
   // Safe content rendering: split by double newline into paragraphs
   const paragraphs = data.content.split(/\n\n+/);
