@@ -1,8 +1,8 @@
 /* ===== Emergency Tree Service Page ===== */
+@use 'brand' as *;
 
-// Emergency accent — dark green (site palette)
-$emergency-accent: #2f6d2e;
-$emergency-accent-text: #1b5e20;
+$emergency-accent: $brand-dark;
+$emergency-accent-text: $brand-deep;
 
 .emergencytreeservice-page {
   --emergency-accent: #{$emergency-accent};
@@ -147,7 +147,7 @@ $emergency-accent-text: #1b5e20;
 
 .eac-card--accent {
   border-color: var(--emergency-accent);
-  background: #ecf6e8;
+  background: $brand-tint;
 }
 .eac-card--accent:hover {
   border-color: darken($emergency-accent, 6%);

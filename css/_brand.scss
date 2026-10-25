@@ -1,0 +1,12 @@
+// _brand.scss — Shared brand palette derived from #6AB435
+// All accent colors are mix() of brand green with black or white.
+// Import with @use 'brand' as *; in partials that need accents.
+
+@use "sass:color";
+
+$brand: #6AB435;
+$brand-dark: color.mix(#000, $brand, 35%);    // ~#457522 — dark green
+$brand-deep: color.mix(#000, $brand, 55%);    // ~#305118 — deepest green
+$brand-tint: color.mix(#fff, $brand, 90%);    // ~#f0f8eb — very light green bg
+$brand-light: color.mix(#fff, $brand, 80%);   // ~#e1f0d7 — light green bg
+$neutral-dark: #374151;                        // dark grey (for con/restricted)

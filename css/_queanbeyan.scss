@@ -1,4 +1,5 @@
 /* ===== Queanbeyan Page — Unique Styles ===== */
+@use 'brand' as *;
 
 /* ----- Hero background ----- */
 
@@ -65,8 +66,8 @@
 }
 
 .qn-card {
-  background: #f0f7f0;
-  border: 2px solid #2f6d2e;
+  background: $brand-tint;
+  border: 2px solid $brand-dark;
   border-radius: 16px;
   padding: 28px 32px;
   max-width: 860px;
@@ -78,7 +79,7 @@
     flex-shrink: 0;
     width: 52px;
     height: 52px;
-    background: #ecf6e8;
+    background: $brand-tint;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -86,7 +87,7 @@
 
     i {
       font-size: 22px;
-      color: #2E7D32;
+      color: $brand-dark;
     }
   }
 
@@ -115,7 +116,7 @@
   margin-top: 20px;
   max-width: 860px;
   background: #fff;
-  border-left: 3px solid #2f6d2e;
+  border-left: 3px solid $brand-dark;
   border-radius: 0 8px 8px 0;
   padding: 16px 22px;
   font-size: 14px;

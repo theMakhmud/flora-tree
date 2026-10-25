@@ -1,4 +1,5 @@
 /* ===== Belconnen Page ===== */
+@use 'brand' as *;
 
 .belconnen-page header {
   background:
@@ -94,7 +95,7 @@
 }
 
 .ba-col--restricted {
-  border-top: 3px solid #374151;
+  border-top: 3px solid $neutral-dark;
 }
 
 .ba-col-badge {
@@ -116,8 +117,8 @@
 }
 
 .ba-col--restricted .ba-col-badge {
-  background: #f3f4f6;
-  color: #374151;
+  background: #f3f4f6; // grey-100, neutral background for restricted badge
+  color: $neutral-dark;
 }
 
 .ba-list {
@@ -149,7 +150,7 @@
 }
 
 .ba-col--restricted .ba-list li i {
-  color: #374151;
+  color: $neutral-dark;
 }
 
 .ba-divider {

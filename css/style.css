@@ -3935,8 +3935,8 @@
 
 /* ===== Emergency Tree Service Page ===== */
 .emergencytreeservice-page {
-  --emergency-accent: #2f6d2e;
-  --emergency-accent-text: #1b5e20;
+  --emergency-accent: rgb(68.9, 117, 34.45);
+  --emergency-accent-text: rgb(47.7, 81, 23.85);
 }
 
 .emergencytreeservice-page header {
@@ -3976,7 +3976,7 @@
 }
 
 .btn-emergency-primary:hover {
-  background: rgb(34.6283870968, 80.3083870968, 33.8916129032);
+  background: rgb(50.3386266094, 85.4806866953, 25.1693133047);
   box-shadow: 0 12px 24px rgba(47, 109, 46, 0.45);
 }
 
@@ -4061,11 +4061,11 @@
 
 .eac-card--accent {
   border-color: var(--emergency-accent);
-  background: #ecf6e8;
+  background: rgb(240.1, 247.5, 234.8);
 }
 
 .eac-card--accent:hover {
-  border-color: rgb(37.7212903226, 87.4812903226, 36.9187096774);
+  border-color: rgb(54.9789699571, 93.3605150215, 27.4894849785);
 }
 
 .eac-icon {
@@ -4358,7 +4358,7 @@
 }
 
 .ecc-btn--primary:hover {
-  background: rgb(34.6283870968, 80.3083870968, 33.8916129032);
+  background: rgb(50.3386266094, 85.4806866953, 25.1693133047);
 }
 
 .ecc-btn--secondary {
@@ -4452,7 +4452,7 @@
 }
 
 .ean-contact-number:hover {
-  color: rgb(15.6198347107, 54.3801652893, 18.5123966942);
+  color: rgb(24.4982832618, 41.6008583691, 12.2491416309);
 }
 
 .ean-contact-name {
@@ -6000,7 +6000,7 @@
   align-items: flex-start;
   gap: 16px;
   background: #fff;
-  border: 2px solid #2f6d2e;
+  border: 2px solid rgb(68.9, 117, 34.45);
   border-radius: 12px;
   padding: 20px 24px;
   margin-bottom: 36px;
@@ -6010,7 +6010,7 @@
   flex-shrink: 0;
   width: 44px;
   height: 44px;
-  background: #ecf6e8;
+  background: rgb(240.1, 247.5, 234.8);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -6018,13 +6018,13 @@
 }
 .ntr-alert .ntr-alert-icon i {
   font-size: 20px;
-  color: #2E7D32;
+  color: rgb(68.9, 117, 34.45);
 }
 .ntr-alert .ntr-alert-body strong {
   display: block;
   font-size: 16px;
   font-weight: 700;
-  color: #1b5e20;
+  color: rgb(47.7, 81, 23.85);
   margin-bottom: 6px;
 }
 .ntr-alert .ntr-alert-body p {
@@ -6064,8 +6064,8 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #2f6d2e;
-  background: #ecf6e8;
+  color: rgb(68.9, 117, 34.45);
+  background: rgb(240.1, 247.5, 234.8);
   border-radius: 999px;
   padding: 4px 12px;
 }
@@ -6073,7 +6073,7 @@
 .ntr-step-icon {
   width: 52px;
   height: 52px;
-  background: #ecf6e8;
+  background: rgb(240.1, 247.5, 234.8);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -6081,7 +6081,7 @@
 }
 .ntr-step-icon i {
   font-size: 22px;
-  color: #2E7D32;
+  color: rgb(68.9, 117, 34.45);
 }
 
 .ntr-step h3 {
@@ -6105,7 +6105,7 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
-  color: #2f6d2e;
+  color: rgb(68.9, 117, 34.45);
   opacity: 0.5;
   z-index: 1;
 }
@@ -6113,7 +6113,7 @@
 /* Note / disclaimer */
 .ntr-note {
   background: #fff;
-  border-left: 3px solid #2f6d2e;
+  border-left: 3px solid rgb(68.9, 117, 34.45);
   border-radius: 0 8px 8px 0;
   padding: 20px 24px;
   max-width: 900px;
@@ -6125,7 +6125,7 @@
   color: var(--ink);
 }
 .ntr-note a {
-  color: #2E7D32;
+  color: rgb(68.9, 117, 34.45);
   font-weight: 600;
   text-decoration: underline;
 }
@@ -6165,9 +6165,9 @@
 .ds-nsw-cluster {
   margin-top: 28px;
   padding: 16px 22px;
-  background: #f0f7f0;
+  background: rgb(240.1, 247.5, 234.8);
   border-radius: 12px;
-  border-left: 3px solid #2f6d2e;
+  border-left: 3px solid rgb(68.9, 117, 34.45);
   font-size: 15px;
   color: var(--muted);
   line-height: 1.7;
@@ -6176,7 +6176,7 @@
   color: var(--ink);
 }
 .ds-nsw-cluster a {
-  color: #2E7D32;
+  color: rgb(68.9, 117, 34.45);
   font-weight: 600;
   text-decoration: underline;
 }
@@ -6237,8 +6237,8 @@
 }
 
 .qn-card {
-  background: #f0f7f0;
-  border: 2px solid #2f6d2e;
+  background: rgb(240.1, 247.5, 234.8);
+  border: 2px solid rgb(68.9, 117, 34.45);
   border-radius: 16px;
   padding: 28px 32px;
   max-width: 860px;
@@ -6250,7 +6250,7 @@
   flex-shrink: 0;
   width: 52px;
   height: 52px;
-  background: #ecf6e8;
+  background: rgb(240.1, 247.5, 234.8);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -6258,7 +6258,7 @@
 }
 .qn-card .qn-card-icon i {
   font-size: 22px;
-  color: #2E7D32;
+  color: rgb(68.9, 117, 34.45);
 }
 .qn-card .qn-card-body h3 {
   font-size: 18px;
@@ -6280,7 +6280,7 @@
   margin-top: 20px;
   max-width: 860px;
   background: #fff;
-  border-left: 3px solid #2f6d2e;
+  border-left: 3px solid rgb(68.9, 117, 34.45);
   border-radius: 0 8px 8px 0;
   padding: 16px 22px;
   font-size: 14px;
